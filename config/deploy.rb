@@ -1,38 +1,45 @@
 require 'bundler/capistrano'
-# require 'capistrano/ext/multistage'
-# set :default_stage, "production"
-
 # set :application, "tamarindoflondon.com"
-set :application, "50.56.57.18"
-
-role :web, "50.56.57.18"                          # Your HTTP server, Apache/etc
-role :app, "50.56.57.18"                          # This may be the same as your `Web` server
-role :db,  "50.56.57.18", :primary => true # This is where Rails migrations will run
-
+set :ip, "50.56.57.18"
 set :user, "tamarind"
-set :repository,  "git@github.com:kaliara/tamarind.git"
+set :application, ip
+role :web, ip
+role :app, ip
+role :db,  ip, :primary => true
 
+set :repository,  "git@github.com:kaliara/tamarind.git"
 set :deploy_to, "/home/tamarind/www"
 set :deploy_via, :copy
 
 set :port, 30000
-set :use_sudo, true
+set :use_sudo, false
 set :scm, :git
 
-# If you are using Passenger mod_rails uncomment this:
-# if you're still using the script/reapear helper you will need
-# these http://github.com/rails/irs_process_scripts
+set :runner, user
 
+# Passenger
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-    # run "cd #{deploy_to}/current && rvmsudo #{passenger_path}passenger start -e #{rails_env} -p #{passenger_port} -a 127.0.0.1 -d --pid-file #{release_path}\ /tmp/pids/passenger.#{passenger_port}.pid"
   end
 end
 
-set :runner, user
+namespace :assets do
+  task :symlink, :roles => :app do
+    run "ln -nfs #{shared_path}/images #{release_path}/public/images"
+  end
+end
+
+namespace :deploy do  
+  desc "Update the crontab file"  
+  task :update_crontab, :roles => :db do  
+    # run "cd /home/kaliara/public_html/wtd/current && whenever --update-crontab wtd"  
+  end  
+end
 
 after "deploy", "deploy:migrate" 
 after "deploy", "deploy:cleanup"
+after "deploy:symlink", "assets:symlink"
+# after "deploy:symlink", "deploy:update_crontab"  

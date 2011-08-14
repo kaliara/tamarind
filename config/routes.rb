@@ -1,4 +1,10 @@
 App::Application.routes.draw do
+  resources :applicants, :only => [:new, :create, :show]
+
+  namespace :admin do
+    resources :applicants
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -33,7 +33,7 @@ class Admin::ApplicantsController < ApplicationController
 
     respond_to do |format|
       if @applicant.update_attributes(params[:applicant])
-        format.html { redirect_to @applicant, :notice => 'Applicant was successfully updated.' }
+        format.html { redirect_to admin_applicant_path(@applicant), :notice => 'Applicant was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }

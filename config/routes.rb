@@ -1,4 +1,6 @@
 App::Application.routes.draw do
+  match 'invite/:code' => 'subscribers#new', :as => :invite
+
   resources :applicants, :only => [:new, :create, :show]
   resources :subscribers, :only => [:new, :create, :show]
 

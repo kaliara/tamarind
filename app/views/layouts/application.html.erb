@@ -8,7 +8,21 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="wrapper">
+
+  <div class="main">
+    <div class="header">
+      <h1 class="logo"><a href="/"><img src="/assets/logo.png" alt="Tamarind of London" title="Tamarind of London"></a></h1>
+    </div>
+
+    <%= yield %>
+  </div>
+
+</div>
+
+<% unless current_page?(root_path) %>
+<div class="shade"></div>
+<% end %>
 
 </body>
 </html>

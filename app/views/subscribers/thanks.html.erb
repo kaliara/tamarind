@@ -1,7 +1,9 @@
-<h1>Thanks for Signing Up</h1>
+<h2>Thanks for Signing Up</h2>
 
-<p>We'll let you know when we open.</p>
+<p>We'll let you know when we open by sending an email to <%= @subscriber.email %></p>
 
-<p>Get a friend to we'll give you 10% off your first visit.</p>
 
-<p><%= invite_url(:code => @subscriber.invite_url) %></p>
+<h2>Invite a Friend</h2>
+<p>Get a friend to we'll give you <strong>10% off your first visit</strong>.</p>
+
+<p><strong class="link"><%= invite_url(:code => @subscriber.invite_url) %></strong></p>

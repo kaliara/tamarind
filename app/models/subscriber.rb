@@ -11,10 +11,13 @@ class Subscriber < ActiveRecord::Base
   
   def add_to_mailchimp_list
     h = Hominid::API.new(MAILCHIMP_API_KEY)
-    h.list_subscribe(MAILCHIMP_LIST_ID, self.email, {'FNAME' => '', 'LNAME' => ''}, 'html', false, true, true, false)
+    if h.list_subscribe(MAILCHIMP_LIST_ID, self.email, {'FNAME' => '', 'LNAME' => ''}, 'html', false, true, true, false)
+      self.subscribed = true
+      self.save
+    end
   end
   
   def invite_url
-    "tol1234"
+    "tol" + (self.id + 533).to_s
   end
 end

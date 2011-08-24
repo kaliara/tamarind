@@ -41,5 +41,5 @@ end
 
 after "deploy", "deploy:migrate" 
 after "deploy", "deploy:cleanup"
-after "deploy:symlink", "assets:symlink"
+# after "deploy:symlink", "assets:symlink"
 # after "deploy:symlink", "deploy:update_crontab"  

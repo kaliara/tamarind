@@ -1,0 +1,21 @@
+<h1>Listing subscribers</h1>
+
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Added On</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @subscribers.each do |subscriber| %>
+  <tr>
+    <td><%= subscriber.email %></td>
+    <td><%= subscriber.created_on %></td>
+    <td><%= link_to 'Show', admin_subscriber_path(subscriber) %></td>
+    <td><%= link_to 'Edit', edit_admin_subscriber_path(subscriber) %></td>
+    <td><%= link_to 'Destroy', admin_subscriber_path(subscriber), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

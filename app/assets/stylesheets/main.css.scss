@@ -34,7 +34,7 @@ html, body, p, div, strong, div, span, h1, h2, h3, h4, h5{
 }
 
 body{
-  background: #000 url(image_path('background.jpg')) 45% -400px no-repeat;
+  background: #000 url(image_path('background.jpg')) 45% -300px no-repeat;
   padding: 10px;
 }
 
@@ -189,7 +189,7 @@ $label_width: 125px;
   }
   .button{
     @include button-base;
-    margin: 20px 0;
+    margin: 20px 0 0 $label_width + 10;
     padding: 4px 5px;
     font-size: 100%;
     font-weight: bold;
@@ -210,8 +210,8 @@ $label_width: 125px;
   z-index: 0;
 }
 .scrollbar_present{
-  padding-left: 35px;
-  background-position: 44.5% -400px;
+  padding-left: 25px;
+  background-position: 44.2% -300px;
 }
 
 

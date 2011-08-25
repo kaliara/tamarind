@@ -29,7 +29,7 @@ $accent: #a0422a;
 
 
 html, body, p, div, strong, div, span, h1, h2, h3, h4, h5{
-  font: 14px/1em 'Myriad Pro', 'myriad-pro-condensed', 'Myriad', Helvetica, sans-serif;
+  font: 14px/1em 'Myriad Pro', 'Myriad', Helvetica, sans-serif;
   color: #b1aca0;
 }
 
@@ -61,8 +61,8 @@ h2 {
   margin: 50px 0 0;
   text-transform: uppercase;
   font-size: 270%;
-  font-stretch: condensed;
   font-weight: normal;
+  font-family: 'myriad-pro-condensed'; 
 }
 
 h3{

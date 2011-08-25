@@ -25,11 +25,7 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :daytime_phone, "Daytime Phone" %>
-    <%= f.text_field :daytime_phone %>
-  </div>
-  <div class="field">
-    <%= f.label :evening_phone, "Evening Phone" %>
+    <%= f.label :evening_phone, "Phone" %>
     <%= f.text_field :evening_phone %>
   </div>
   <h3>Mailing Address</h3>
@@ -61,6 +57,10 @@
     <%= f.text_field :employer1_name %>
   </div>
   <div class="field">
+    <%= f.label :employer1_position, "Position" %>
+    <%= f.text_field :employer1_position %>
+  </div>
+  <div class="field">
     <%= f.label :employer1_address_street1, "Street 1" %>
     <%= f.text_field :employer1_address_street1 %>
   </div>
@@ -81,6 +81,10 @@
     <%= f.text_field :employer1_address_zipcode %>
   </div>
   <div class="field">
+    <%= f.label :employer1_phone, "Phone" %>
+    <%= f.text_field :employer1_phone %>
+  </div>
+  <div class="field">
     <%= f.label :employer1_start_date, "Start Date" %>
     <%= f.date_select :employer1_start_date, :start_year => 1970, :end_year => Date.today.year, :order => [:month, :day, :year] %>
   </div>
@@ -89,86 +93,22 @@
     <%= f.date_select :employer1_end_date, :start_year => 1970, :end_year => Date.today.year, :order => [:month, :day, :year], :include_blank => true, :default => "" %><span class="note">(leave blank if current employer)</span>
   </div>
   <div class="field">
-    <%= f.label :employer1_notes %>
+    <%= f.label :employer1_contactable, "May we contact this employer?" %>
+    <%= f.check_box :employer1_contactable %>
+  </div>
+  <div class="field">
+    <%= f.label :employer1_no_contact_reason, "If not, provide reason" %>
+    <%= f.text_field :employer1_no_contact_reason %>
+  </div>
+  <div class="field">
+    <%= f.label :employer1_notes, "Highlights and Contributions" %>
     <%= f.text_area :employer1_notes %>
   </div>
   
   <div style="display: none">
     <h3>Second Most Recent Employer</h3>
-    <div class="field">
-      <%= f.label :employer2_name %>
-      <%= f.text_field :employer2_name %>
-    </div>
-    <div class="field">
-      <%= f.label :employer2_address_street1 %>
-      <%= f.text_field :employer2_address_street1 %>
-    </div>
-    <div class="field">
-      <%= f.label :employer2_address_street2 %>
-      <%= f.text_field :employer2_address_street2 %>
-    </div>
-    <div class="field">
-      <%= f.label :employer2_address_city %>
-      <%= f.text_field :employer2_address_city %>
-    </div>
-    <div class="field">
-      <%= f.label :employer2_address_state %>
-      <%= f.text_field :employer2_address_state %>
-    </div>
-    <div class="field">
-      <%= f.label :employer2_address_zipcode %>
-      <%= f.text_field :employer2_address_zipcode %>
-    </div>
-    <div class="field">
-      <%= f.label :employer2_start_date %>
-      <%= f.date_select :employer2_start_date, :start_year => 1970, :end_year => Date.today.year, :order => [:month, :day, :year] %>
-    </div>
-    <div class="field">
-      <%= f.label :employer2_end_date %>
-      <%= f.date_select :employer2_end_date, :start_year => 1970, :end_year => Date.today.year, :order => [:month, :day, :year] %>
-    </div>
-    <div class="field">
-      <%= f.label :employer2_notes %>
-      <%= f.text_area :employer2_notes %>
-    </div>
-  
-    <h3>Third Most Recent Employer</h3>
-    <div class="field">
-      <%= f.label :employer3_name %>
-      <%= f.text_field :employer3_name %>
-    </div>
-    <div class="field">
-      <%= f.label :employer3_address_street1 %>
-      <%= f.text_field :employer3_address_street1 %>
-    </div>
-    <div class="field">
-      <%= f.label :employer3_address_street2 %>
-      <%= f.text_field :employer3_address_street2 %>
-    </div>
-    <div class="field">
-      <%= f.label :employer3_address_city %>
-      <%= f.text_field :employer3_address_city %>
-    </div>
-    <div class="field">
-      <%= f.label :employer3_address_state %>
-      <%= f.text_field :employer3_address_state %>
-    </div>
-    <div class="field">
-      <%= f.label :employer3_address_zipcode %>
-      <%= f.text_field :employer3_address_zipcode %>
-    </div>
-    <div class="field">
-      <%= f.label :employer3_start_date %>
-      <%= f.date_select :employer3_start_date, :start_year => 1970, :end_year => Date.today.year, :order => [:month, :day, :year] %>
-    </div>
-    <div class="field">
-      <%= f.label :employer3_end_date %>
-      <%= f.date_select :employer3_end_date, :start_year => 1970, :end_year => Date.today.year, :order => [:month, :day, :year] %>
-    </div>
-    <div class="field">
-      <%= f.label :employer3_notes %>
-      <%= f.text_area :employer3_notes %>
-    </div>
+    
+    
   </div>
   
   <h2>Education and Experience</h2>
@@ -180,14 +120,55 @@
     <%= f.label :brag, "Highlights" %>
     <%= f.text_area :brag %>
   </div>
+  
+  <h2>References</h2>
+  <p class="note">Please provide references of supervisors from previous positions within the Restaurant and Hospitality industry:</p>
+  <h3>First Reference</h3>
   <div class="field">
-    <%= f.label :contact_previous_employers, "May we contact your previous employers?" %>
-    <%= f.check_box :contact_previous_employers %>
+    <%= f.label :reference1_name, "First and Last Name" %>
+    <%= f.text_field :reference1_name %>
   </div>
   <div class="field">
-    <%= f.label :convicted_of_felony, "Have you ever been convicted of a felony?" %>
+    <%= f.label :reference1_company, "Company" %>
+    <%= f.text_field :reference1_company %>
+  </div>
+  <div class="field">
+    <%= f.label :reference1_relationship, "Relationship" %>
+    <%= f.text_field :reference1_relationship %> <span class="note">(example: "direct supervisor")</span>
+  </div>
+  <div class="field">
+    <%= f.label :reference1_contact, "Contact Information" %>
+    <%= f.text_field :reference1_contact %> <span class="note">(phone number or email address)</span>
+  </div>
+  
+  <h3>Second Reference</h3>
+  <div class="field">
+    <%= f.label :reference2_name, "First and Last Name" %>
+    <%= f.text_field :reference2_name %>
+  </div>
+  <div class="field">
+    <%= f.label :reference2_company, "Company" %>
+    <%= f.text_field :reference2_company %>
+  </div>
+  <div class="field">
+    <%= f.label :reference2_relationship, "Relationship" %>
+    <%= f.text_field :reference2_relationship %>
+  </div>
+  <div class="field">
+    <%= f.label :reference2_contact, "Contact Information" %>
+    <%= f.text_field :reference2_contact %>
+  </div>
+
+  <h3>Legal Information</h3>
+  <div class="field">
+    <%= f.label :convicted_of_felony, "Have you ever been convicted of a felony?" %><span class="note">(check the box if you have)</span>
     <%= f.check_box :convicted_of_felony %>
   </div>
+  <div class="field">
+    <%= f.label :legal_to_work_in_usa, "Are you legally eligible to work in the USA?" %> <span class="note">(proof of documentation required)</span>
+    <%= f.check_box :legal_to_work_in_usa %>
+  </div>
+  
   
   <h2>Position Information</h2>
   <div class="field checkbox">
@@ -204,7 +185,7 @@
   </div>
   <div class="field">
     <%= f.label :available_shifts, "Available Shifts" %>
-    <%= f.text_field :available_shifts %>
+    <%= f.text_field :available_shifts %> <span class="note">(example: "Weekends Fri-Sun and Evenings Tue-Thu")</span>
   </div>
   <div class="field">
     <%= f.label :available_start_date, "Available Start Date" %>

@@ -1,5 +1,5 @@
 <h2>Opening Soon</h2>
-<p><address>7862 East Pacific Coast Highway<span>&bull;</span>Newport Beach<span>&bull;</span>California</address></p>
+<address>7862 East Pacific Coast Highway<span>&bull;</span>Newport Beach<span>&bull;</span>California</address>
 <p>Be the first to be invited to our restaurant opening:</p>
 
 <%= form_for(@subscriber) do |f| %>
@@ -8,7 +8,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.text_field :email, :size => 27 %>
+    <%= f.text_field :email, :size => 25 %>
     <%= f.submit "submit", :class => "button" %>
   </div>
 
@@ -22,7 +22,7 @@
   <li><a href="http://blog.tamarindoflondon.com" class="blog">Blog</a></li>
 </ul>  
 
-<h2>Job Openings</h2>
+<h2>Join Our Team</h2>
 <ul>
   <li><%= link_to "Front of the House", new_applicant_path(:position => "front") %></li>
   <li><%= link_to "Back of the House", new_applicant_path(:position => "back") %></li>

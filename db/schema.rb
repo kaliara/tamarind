@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110822235635) do
+ActiveRecord::Schema.define(:version => 20110825032259) do
 
   create_table "admins", :force => true do |t|
     t.string   "email"
@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(:version => 20110822235635) do
     t.text     "employer3_notes"
     t.string   "education_completed"
     t.text     "brag"
-    t.boolean  "contact_previous_employers"
     t.boolean  "convicted_of_felony"
     t.string   "position_applying_for"
     t.boolean  "full_time"
@@ -68,6 +67,27 @@ ActiveRecord::Schema.define(:version => 20110822235635) do
     t.date     "available_start_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "legal_to_work_in_usa"
+    t.string   "reference1_name"
+    t.string   "reference1_company"
+    t.string   "reference1_relationship"
+    t.string   "reference1_contact"
+    t.string   "reference2_name"
+    t.string   "reference2_company"
+    t.string   "reference2_relationship"
+    t.string   "reference2_contact"
+    t.boolean  "employer1_contactable",       :default => true
+    t.boolean  "employer2_contactable",       :default => true
+    t.boolean  "employer3_contactable",       :default => true
+    t.string   "employer1_no_contact_reason"
+    t.string   "employer2_no_contact_reason"
+    t.string   "employer3_no_contact_reason"
+    t.string   "employer1_position"
+    t.string   "employer2_position"
+    t.string   "employer3_position"
+    t.string   "employer1_phone"
+    t.string   "employer2_phone"
+    t.string   "employer3_phone"
   end
 
   create_table "subscribers", :force => true do |t|

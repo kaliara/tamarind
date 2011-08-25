@@ -29,13 +29,17 @@ $accent: #a0422a;
 
 
 html, body, p, div, strong, div, span, h1, h2, h3, h4, h5{
-  font: 18px/1em 'Myriad Pro', 'Myriad', Helvetica, sans-serif;
+  font: 14px/1em 'Myriad Pro', 'myriad-pro-condensed', 'Myriad', Helvetica, sans-serif;
   color: #b1aca0;
 }
 
 body{
-  background: #000 url(image_path('background.jpg')) 45% -800px no-repeat;
+  background: #000 url(image_path('background.jpg')) 45% -400px no-repeat;
   padding: 20px;
+}
+
+p{
+  margin: 0 0 10px;
 }
 
 strong{
@@ -44,8 +48,8 @@ strong{
 }
 
 address{
-  display: inline;
   font-style: normal;
+  margin: 10px 0;
   span{
     margin: 0 7px;
   }
@@ -54,7 +58,7 @@ address{
 h2 {
   color: $accent;
   line-height: 90%;
-  margin: 80px 0 0;
+  margin: 50px 0 0;
   text-transform: uppercase;
   font-size: 270%;
   font-stretch: condensed;
@@ -85,7 +89,7 @@ a{
 
 ul{
   list-style: none;
-  padding-left: 10px;
+  padding-left: 0;
   li{
     margin: 0 0 30px;
   }
@@ -130,8 +134,8 @@ ul li a{
     background-image:     -ms-linear-gradient(top, #3d3933, #59554c);
     opacity: 0.7;
     border: 1px solid #6a675f;
-    color: #ccc;
-    padding: 3px;
+    color: #fff;
+    padding: 3px 5px;
     font-size: 90%;
     &:focus{
       opacity: 1;
@@ -152,15 +156,23 @@ ul li a{
 .note{
   font-size: 80%;
   opacity: 0.7;
+}
+.field .note{
   margin-left: 10px;
 }
 
+// new applicant
+$label_width: 125px;
+
 .new_applicant {
+  h3{
+    margin-left: $label_width + 10;
+  }
   .field {
     clear: both;
     margin: 5px 0;
     label{
-      width: 125px;
+      width: $label_width;
       display: block;
       float: left;
       text-align: right;
@@ -186,14 +198,14 @@ ul li a{
   opacity: 0.7;
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 0;
 }
 .scrollbar_present{
   padding-left: 35px;
-  background-position: 44.5% -800px;
+  background-position: 44.5% -400px;
 }
 
 

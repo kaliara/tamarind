@@ -1,5 +1,5 @@
 //variables and mixins
-$accent: #a0422a;
+$accent: #b32727;
 
 @mixin button-base {
   background: #cbac59;
@@ -58,7 +58,7 @@ address{
 h2 {
   color: $accent;
   line-height: 90%;
-  margin: 50px 0 0;
+  margin: 50px 0 20px;
   text-transform: uppercase;
   font-size: 270%;
   font-weight: normal;
@@ -119,6 +119,12 @@ ul li a{
   }
   &.blog{
     background: transparent url(image_path('icon_blog.png')) 0 0 no-repeat;
+  }
+  &.front_house{
+    background: transparent url(image_path('icon_front.png')) 0 0 no-repeat;
+  }
+  &.back_house{
+    background: transparent url(image_path('icon_back.png')) 0 0 no-repeat;
   }
 }
 

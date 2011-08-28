@@ -1,4 +1,6 @@
 class Admin::SubscribersController < ApplicationController
+  before_filter :admin_required
+
   # GET /admin/subscribers
   # GET /admin/subscribers.json
   def index

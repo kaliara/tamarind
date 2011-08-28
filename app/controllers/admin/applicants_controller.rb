@@ -1,4 +1,6 @@
 class Admin::ApplicantsController < ApplicationController
+  before_filter :admin_required
+
   # GET /admin/applicants
   # GET /admin/applicants.json
   def index

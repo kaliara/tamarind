@@ -1,0 +1,23 @@
+<% if admin? %>
+  <h2>Admin Navigation</h2>
+  <ul>
+    <li><%= link_to "Applicants", admin_applicants_path %></li>
+    <li><%= link_to "Subscribers", admin_subscribers_path %></li>
+  </ul>
+<% else %>
+  <%= form_tag(:controller => "admin", :action => "login") do %>
+    <h2>Admin Login</h2>
+    <div class="field">
+      <%= label_tag :email %>
+      <%= text_field_tag :email, params[:email] %>
+    </div>
+    <div class="field">
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag "Login" %>
+    </div>
+  <% end %>
+<% end %>

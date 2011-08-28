@@ -11,6 +11,6 @@ class ApplicationController < ActionController::Base
   end
   
   def admin_required
-    redirect_to root_url unless admin?
+    redirect_to admin_home_path unless admin?
   end
 end

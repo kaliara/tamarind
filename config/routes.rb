@@ -1,7 +1,8 @@
 App::Application.routes.draw do
-  match 'invite/:code' => 'subscribers#new', :as => :invite
+  match 'invite/:code'                => 'subscribers#new', :as => :invite
+  match 'applicants/apply/:position'  => 'applicants#new',  :as => :new_applicant
 
-  resources :applicants, :only => [:new, :create, :show]
+  resources :applicants,  :only => [:create]
   resources :subscribers, :only => [:new, :create, :show]
 
   namespace :admin do

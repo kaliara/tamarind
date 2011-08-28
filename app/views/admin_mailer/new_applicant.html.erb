@@ -1,0 +1,56 @@
+<p>
+  <b>Name:</b>
+  <%= @applicant.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @applicant.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @applicant.evening_phone %>
+</p>
+
+<p>
+  <b>Address</b>
+  <%= @applicant.address_street1 %><br>
+  <%= @applicant.address_street2 %><br>
+  <%= @applicant.address_city %>, <%= @applicant.address_state %> <%= @applicant.address_zipcode %>
+</p>
+
+<p>
+  <b>Highlights:</b>
+  <%= @applicant.brag %>
+</p>
+
+<br><br>
+
+<p>
+  <b>Position applying for:</b>
+  <%= @applicant.position_applying_for %>
+</p>
+
+<p>
+  <b>Full time:</b>
+  <%= @applicant.full_time? ? "Yes" : "No" %>
+</p>
+
+<p>
+  <b>Desired salary:</b>
+  <%= number_to_currency @applicant.desired_salary %>
+</p>
+
+<p>
+  <b>Available shifts:</b>
+  <%= @applicant.available_shifts %>
+</p>
+
+<p>
+  <b>Available start date:</b>
+  <%= @applicant.available_start_date.strftime("%b-%d-%Y") %>
+</p>
+
+
+<%= link_to 'View this Applicant', admin_applicant_url(@applicant) %>

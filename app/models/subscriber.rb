@@ -1,7 +1,7 @@
 class Subscriber < ActiveRecord::Base
   validates :email, :presence => true, 
                     :length => {:minimum => 3, :maximum => 254},
-                    :uniqueness => {:message => "is already subscribed"},
+                    :uniqueness => {:message => "is already subscribed to the list"},
                     :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :message => "is not correctly formatted"}
   
   MAILCHIMP_LIST_ID = "99cd4f5fb9"

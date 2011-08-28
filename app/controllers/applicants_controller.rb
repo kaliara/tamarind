@@ -1,15 +1,4 @@
 class ApplicantsController < ApplicationController
-  # GET /applicants/1
-  # GET /applicants/1.json
-  def show
-    @applicant = Applicant.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render :json => @applicant }
-    end
-  end
-
   # GET /applicants/new
   # GET /applicants/new.json
   def new
@@ -28,8 +17,12 @@ class ApplicantsController < ApplicationController
 
     respond_to do |format|
       if @applicant.save
-        format.html { redirect_to @applicant, :notice => 'Applicant was successfully created.' }
+        format.html { render :action => "thanks", :notice => 'Applicant was successfully created.' }
         format.json { render :json => @applicant, :status => :created, :location => @applicant }
+        
+        # send email confirmation
+        ApplicantMailer.application_received(@applicant).deliver
+        AdminMailer.new_applicant(@applicant).deliver
       else
         format.html { render :action => "new" }
         format.json { render :json => @applicant.errors, :status => :unprocessable_entity }

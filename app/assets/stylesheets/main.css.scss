@@ -177,7 +177,7 @@ $label_width: 125px;
   .field {
     clear: both;
     margin: 5px 0;
-    label{
+    label, .alt_label{
       width: $label_width;
       display: block;
       float: left;
@@ -185,6 +185,19 @@ $label_width: 125px;
       font-size: 90%;
       margin-right: 10px;
       padding-top: 6px;
+    }
+    .alt_label{
+      padding-top: 3px;
+    }
+  }
+  .checkbox_field{
+    input{
+      margin-left: 0;
+    }
+    label{
+      float: none;
+      display: inline;
+      margin-right: 0;
     }
   }
   .button{
@@ -195,7 +208,6 @@ $label_width: 125px;
     font-weight: bold;
   }
 }
-
 
 
 // special

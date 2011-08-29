@@ -1,9 +1,3 @@
 <h2>Thanks for Signing Up</h2>
 
 <p>We'll let you know when we open by sending an email to <%= @subscriber.email %></p>
-
-
-<h2>Invite a Friend</h2>
-<p>Get a friend to we'll give you <strong>10% off your first visit</strong>.</p>
-
-<p><strong class="link"><%= invite_url(:code => @subscriber.invite_url) %></strong></p>

@@ -92,9 +92,10 @@
     <%= f.label :employer1_end_date, "End Date" %>
     <%= f.date_select :employer1_end_date, :start_year => 1970, :end_year => Date.today.year, :order => [:month, :day, :year], :include_blank => true, :default => "" %><span class="note">(leave blank if current employer)</span>
   </div>
-  <div class="field">
-    <%= f.label :employer1_contactable, "May we contact this employer?" %>
+  <div class="field checkbox_field">
+    <div class="alt_label">Employer Contact</div>
     <%= f.check_box :employer1_contactable %>
+    <%= f.label :employer1_contactable, "You may contact this employer" %>
   </div>
   <div class="field">
     <%= f.label :employer1_no_contact_reason, "If not, provide reason" %>
@@ -105,10 +106,118 @@
     <%= f.text_area :employer1_notes %>
   </div>
   
-  <div style="display: none">
+  <h3 id="add_employers" style="<%= "display: none" unless params[:all_employers].nil? %>"><%= link_to "Add More Employers", new_applicant_path(:all_employers => true) %></h3>
+  
+  <div id="additional_employers" style="<%= "display: none" if params[:all_employers].nil? %>">
     <h3>Second Most Recent Employer</h3>
+    <div class="field">
+      <%= f.label :employer2_name, "Name" %>
+      <%= f.text_field :employer2_name %>
+    </div>
+    <div class="field">
+      <%= f.label :employer2_position, "Position" %>
+      <%= f.text_field :employer2_position %>
+    </div>
+    <div class="field">
+      <%= f.label :employer2_address_street1, "Street 1" %>
+      <%= f.text_field :employer2_address_street1 %>
+    </div>
+    <div class="field">
+      <%= f.label :employer2_address_street2, "Street 2" %>
+      <%= f.text_field :employer2_address_street2 %>
+    </div>
+    <div class="field">
+      <%= f.label :employer2_address_city, "City" %>
+      <%= f.text_field :employer2_address_city %>
+    </div>
+    <div class="field">
+      <%= f.label :employer2_address_state, "State" %>
+      <%= f.text_field :employer2_address_state %>
+    </div>
+    <div class="field">
+      <%= f.label :employer2_address_zipcode, "Zip Code" %>
+      <%= f.text_field :employer2_address_zipcode %>
+    </div>
+    <div class="field">
+      <%= f.label :employer2_phone, "Phone" %>
+      <%= f.text_field :employer2_phone %>
+    </div>
+    <div class="field">
+      <%= f.label :employer2_start_date, "Start Date" %>
+      <%= f.date_select :employer2_start_date, :start_year => 1970, :end_year => Date.today.year, :order => [:month, :day, :year] %>
+    </div>
+    <div class="field">
+      <%= f.label :employer2_end_date, "End Date" %>
+      <%= f.date_select :employer2_end_date, :start_year => 1970, :end_year => Date.today.year, :order => [:month, :day, :year] %>
+    </div>
+    <div class="field checkbox_field">
+      <div class="alt_label">Employer Contact</div>
+      <%= f.check_box :employer2_contactable %>
+      <%= f.label :employer2_contactable, "You may contact this employer" %>
+    </div>
+    <div class="field">
+      <%= f.label :employer2_no_contact_reason, "If not, provide reason" %>
+      <%= f.text_field :employer2_no_contact_reason %>
+    </div>
+    <div class="field">
+      <%= f.label :employer2_notes, "Highlights and Contributions" %>
+      <%= f.text_area :employer2_notes %>
+    </div>
     
-    
+    <h3>Third Most Recent Employer</h3>
+    <div class="field">
+      <%= f.label :employer3_name, "Name" %>
+      <%= f.text_field :employer3_name %>
+    </div>
+    <div class="field">
+      <%= f.label :employer3_position, "Position" %>
+      <%= f.text_field :employer3_position %>
+    </div>
+    <div class="field">
+      <%= f.label :employer3_address_street1, "Street 1" %>
+      <%= f.text_field :employer3_address_street1 %>
+    </div>
+    <div class="field">
+      <%= f.label :employer3_address_street2, "Street 2" %>
+      <%= f.text_field :employer3_address_street2 %>
+    </div>
+    <div class="field">
+      <%= f.label :employer3_address_city, "City" %>
+      <%= f.text_field :employer3_address_city %>
+    </div>
+    <div class="field">
+      <%= f.label :employer3_address_state, "State" %>
+      <%= f.text_field :employer3_address_state %>
+    </div>
+    <div class="field">
+      <%= f.label :employer3_address_zipcode, "Zip Code" %>
+      <%= f.text_field :employer3_address_zipcode %>
+    </div>
+    <div class="field">
+      <%= f.label :employer3_phone, "Phone" %>
+      <%= f.text_field :employer3_phone %>
+    </div>
+    <div class="field">
+      <%= f.label :employer3_start_date, "Start Date" %>
+      <%= f.date_select :employer3_start_date, :start_year => 1970, :end_year => Date.today.year, :order => [:month, :day, :year] %>
+    </div>
+    <div class="field">
+      <%= f.label :employer3_end_date, "End Date" %>
+      <%= f.date_select :employer3_end_date, :start_year => 1970, :end_year => Date.today.year, :order => [:month, :day, :year] %>
+    </div>
+    <div class="field checkbox_field">
+      <div class="alt_label">Employer Contact</div>
+      <%= f.check_box :employer3_contactable %>
+      <%= f.label :employer3_contactable, "You may contact this employer" %>
+    </div>
+    <div class="field">
+      <%= f.label :employer3_no_contact_reason, "If not, provide reason" %>
+      <%= f.text_field :employer3_no_contact_reason %>
+    </div>
+    <div class="field">
+      <%= f.label :employer3_notes, "Highlights and Contributions" %>
+      <%= f.text_area :employer3_notes %>
+    </div>
   </div>
   
   <h2>Education and Experience</h2>
@@ -160,28 +269,31 @@
   </div>
 
   <h3>Legal Information</h3>
-  <div class="field">
-    <%= f.label :convicted_of_felony, "Have you ever been convicted of a felony?" %><span class="note">(check the box if you have)</span>
+  <div class="field checkbox_field">
+    <div class="alt_label">Criminal History</div>
     <%= f.check_box :convicted_of_felony %>
+    <%= f.label :convicted_of_felony, "I have been convicted of a felony" %><span class="note">(check the box if you have)</span>
   </div>
-  <div class="field">
-    <%= f.label :legal_to_work_in_usa, "Are you legally eligible to work in the USA?" %> <span class="note">(proof of documentation required)</span>
+  <div class="field checkbox_field">
+    <div class="alt_label">Eligibility</div>
     <%= f.check_box :legal_to_work_in_usa %>
+    <%= f.label :legal_to_work_in_usa, "I am legally eligible to work in the USA" %> <span class="note">(proof of documentation required)</span>
   </div>
   
   
   <h2>Position Information</h2>
-  <div class="field checkbox">
+  <div class="field">
     <%= f.label :position_applying_for, "Applying For" %>
     <%= f.select :position_applying_for, options_for_select([["Front of the House","front"],["Back of the House","back"]], :selected => params[:position]), :include_blank => true %>
   </div>
-  <div class="field">
-    <%= f.label :full_time, "Available Full-time?" %>
+  <div class="field checkbox_field">
+    <div class="alt_label">Employment Status</div>
     <%= f.check_box :full_time %>
+    <%= f.label :full_time, "Full-Time" %> <span class="note">(leave unchecked to apply for Part-time work)</span>
   </div>
   <div class="field">
     <%= f.label :desired_salary, "Desired Salary" %>
-    <%= f.number_field :desired_salary %>
+    <%= f.number_field :desired_salary %> <span class="note">(example "35000" for $35,000)</span>
   </div>
   <div class="field">
     <%= f.label :available_shifts, "Available Shifts" %>
@@ -200,4 +312,6 @@
 if(scrollbarPresent()){
   $('body').addClass('scrollbar_present');
 }
+
+$('#add_employers').click(function(){$('#additional_employers').show();$("#add_employers").hide();return false;})
 </script>

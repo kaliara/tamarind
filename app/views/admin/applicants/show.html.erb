@@ -1,5 +1,6 @@
 <h2>Applicant Review</h2>
 
+<h2>Contact Information</h2>
 <p>
   <b>First name:</b>
   <%= @applicant.first_name %>
@@ -16,7 +17,7 @@
 </p>
 
 <p>
-  <b>Evening phone:</b>
+  <b>Phone:</b>
   <%= @applicant.evening_phone %>
 </p>
 
@@ -41,9 +42,13 @@
 </p>
 
 <p>
-  <b>Address zipcode:</b>
+  <b>Address zip code:</b>
   <%= @applicant.address_zipcode %>
 </p>
+
+
+<h2>Previous Employers</h2>
+<h3>Most Recent Employer</h3>
 
 <p>
   <b>Employer1 name:</b>
@@ -76,6 +81,11 @@
 </p>
 
 <p>
+  <b>Employer1 Phone:</b>
+  <%= @applicant.employer1_phone %>
+</p>
+
+<p>
   <b>Employer1 start date:</b>
   <%= @applicant.employer1_start_date %>
 </p>
@@ -86,18 +96,29 @@
 </p>
 
 <p>
+  <b>Employer1 Contactable:</b>
+  <%= @applicant.employer1_contactable %>
+</p>
+
+<p>
+  <b>Employer1 No Contact Reason:</b>
+  <%= @applicant.employer1_no_contact_reason %>
+</p>
+
+<p>
   <b>Employer1 notes:</b>
   <%= @applicant.employer1_notes %>
 </p>
 
+<h3>Second Most Recent Employer</h3>
 <p>
   <b>Employer2 name:</b>
   <%= @applicant.employer2_name %>
 </p>
 
 <p>
-  <b>Employer2 address street1:</b>
-  <%= @applicant.employer2_address_street1 %>
+  <b>Employer2 address street2:</b>
+  <%= @applicant.employer2_address_street2 %>
 </p>
 
 <p>
@@ -121,6 +142,11 @@
 </p>
 
 <p>
+  <b>Employer2 Phone:</b>
+  <%= @applicant.employer2_phone %>
+</p>
+
+<p>
   <b>Employer2 start date:</b>
   <%= @applicant.employer2_start_date %>
 </p>
@@ -131,23 +157,34 @@
 </p>
 
 <p>
+  <b>Employer2 Contactable:</b>
+  <%= @applicant.employer2_contactable %>
+</p>
+
+<p>
+  <b>Employer2 No Contact Reason:</b>
+  <%= @applicant.employer2_no_contact_reason %>
+</p>
+
+<p>
   <b>Employer2 notes:</b>
   <%= @applicant.employer2_notes %>
 </p>
 
+<h3>Third Most Recent Employer</h3>
 <p>
   <b>Employer3 name:</b>
   <%= @applicant.employer3_name %>
 </p>
 
 <p>
-  <b>Employer3 address street1:</b>
-  <%= @applicant.employer3_address_street1 %>
+  <b>Employer3 address street3:</b>
+  <%= @applicant.employer3_address_street3 %>
 </p>
 
 <p>
-  <b>Employer3 address street2:</b>
-  <%= @applicant.employer3_address_street2 %>
+  <b>Employer3 address street3:</b>
+  <%= @applicant.employer3_address_street3 %>
 </p>
 
 <p>
@@ -166,6 +203,11 @@
 </p>
 
 <p>
+  <b>Employer3 Phone:</b>
+  <%= @applicant.employer3_phone %>
+</p>
+
+<p>
   <b>Employer3 start date:</b>
   <%= @applicant.employer3_start_date %>
 </p>
@@ -176,25 +218,47 @@
 </p>
 
 <p>
+  <b>Employer3 Contactable:</b>
+  <%= @applicant.employer3_contactable %>
+</p>
+
+<p>
+  <b>Employer3 No Contact Reason:</b>
+  <%= @applicant.employer3_no_contact_reason %>
+</p>
+
+<p>
   <b>Employer3 notes:</b>
   <%= @applicant.employer3_notes %>
 </p>
 
+
+
+<h2>Education and Experience</h2>
 <p>
   <b>Education completed:</b>
   <%= @applicant.education_completed %>
 </p>
 
 <p>
-  <b>Brag:</b>
+  <b>Highlights:</b>
   <%= @applicant.brag %>
 </p>
 
+
+<h3>Legal Information</h3>
 <p>
   <b>Convicted of felony:</b>
   <%= @applicant.convicted_of_felony %>
 </p>
 
+<p>
+  <b>Legal to Work in USA:</b>
+  <%= @applicant.legal_to_work_in_usa %>
+</p>
+
+
+<h2>Position Information</h2>
 <p>
   <b>Position applying for:</b>
   <%= @applicant.position_applying_for %>
@@ -203,6 +267,11 @@
 <p>
   <b>Full time:</b>
   <%= @applicant.full_time %>
+</p>
+
+<p>
+  <b>Part time:</b>
+  <%= @applicant.part_time %>
 </p>
 
 <p>

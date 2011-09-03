@@ -1,8 +1,6 @@
 <%= form_for(@applicant) do |f| %>
   <% if @applicant.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@applicant.errors.count, "error") %> prohibited this applicant from being saved:</h2>
-
       <ul>
       <% @applicant.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -230,44 +228,6 @@
     <%= f.text_area :brag %>
   </div>
   
-  <h2>References</h2>
-  <p class="note">Please provide references of supervisors from previous positions within the Restaurant and Hospitality industry:</p>
-  <h3>First Reference</h3>
-  <div class="field">
-    <%= f.label :reference1_name, "First and Last Name" %>
-    <%= f.text_field :reference1_name %>
-  </div>
-  <div class="field">
-    <%= f.label :reference1_company, "Company" %>
-    <%= f.text_field :reference1_company %>
-  </div>
-  <div class="field">
-    <%= f.label :reference1_relationship, "Relationship" %>
-    <%= f.text_field :reference1_relationship %> <span class="note">(example: "direct supervisor")</span>
-  </div>
-  <div class="field">
-    <%= f.label :reference1_contact, "Contact Information" %>
-    <%= f.text_field :reference1_contact %> <span class="note">(phone number or email address)</span>
-  </div>
-  
-  <h3>Second Reference</h3>
-  <div class="field">
-    <%= f.label :reference2_name, "First and Last Name" %>
-    <%= f.text_field :reference2_name %>
-  </div>
-  <div class="field">
-    <%= f.label :reference2_company, "Company" %>
-    <%= f.text_field :reference2_company %>
-  </div>
-  <div class="field">
-    <%= f.label :reference2_relationship, "Relationship" %>
-    <%= f.text_field :reference2_relationship %>
-  </div>
-  <div class="field">
-    <%= f.label :reference2_contact, "Contact Information" %>
-    <%= f.text_field :reference2_contact %>
-  </div>
-
   <h3>Legal Information</h3>
   <div class="field checkbox_field">
     <div class="alt_label">Criminal History</div>
@@ -283,13 +243,15 @@
   
   <h2>Position Information</h2>
   <div class="field">
-    <%= f.label :position_applying_for, "Applying For" %>
+    <%= f.label :position_applying_for, "Interested In" %>
     <%= f.select :position_applying_for, options_for_select([["Front of the House","front"],["Back of the House","back"]], :selected => params[:position]), :include_blank => true %>
   </div>
   <div class="field checkbox_field">
-    <div class="alt_label">Employment Status</div>
+    <div class="alt_label">Availability</div>
     <%= f.check_box :full_time %>
-    <%= f.label :full_time, "Full-Time" %> <span class="note">(leave unchecked to apply for Part-time work)</span>
+    <%= f.label :full_time, "Full-Time" %>&nbsp;&nbsp;&nbsp;
+    <%= f.check_box :part_time %>
+    <%= f.label :part_time, "Full-Time" %>
   </div>
   <div class="field">
     <%= f.label :desired_salary, "Desired Salary" %>
@@ -304,7 +266,7 @@
     <%= f.date_select :available_start_date, :start_year => Date.today.year, :end_year => Date.today.year + 1, :order => [:month, :day, :year] %>
   </div>
   <div class="actions">
-    <%= f.submit "Submit Application", :class => "button" %>
+    <%= f.submit "Submit Inquiry", :class => "button" %>
   </div>
 <% end %>
 

@@ -8,7 +8,6 @@
     <th>Daytime phone</th>
     <th>Evening phone</th>
     <th>Position applying for</th>
-    <th>Full time</th>
     <th>Desired salary</th>
     <th>Available shifts</th>
     <th>Available start date</th>
@@ -25,12 +24,10 @@
     <td><%= applicant.daytime_phone %></td>
     <td><%= applicant.evening_phone %></td>
     <td><%= applicant.position_applying_for %></td>
-    <td><%= applicant.full_time %></td>
     <td><%= applicant.desired_salary %></td>
     <td><%= applicant.available_shifts %></td>
     <td><%= applicant.available_start_date %></td>
     <td><%= link_to 'Show', admin_applicant_path(applicant) %></td>
-    <td><%= link_to 'Edit', edit_admin_applicant_path(applicant) %></td>
     <td><%= link_to 'Destroy', admin_applicant_path(applicant), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>

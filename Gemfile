@@ -31,3 +31,5 @@ gem 'capistrano'
 # To use debugger
 # gem 'ruby-debug'
 
+# pdf generation
+gem 'wicked_pdf'

@@ -1,0 +1,31 @@
+<h1>Listing sections</h1>
+
+<table>
+  <tr>
+    <th>Menu</th>
+    <th>Name</th>
+    <th>Position</th>
+    <th>Show name</th>
+    <th>Hidden</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sections.each do |section| %>
+  <tr>
+    <td><%= section.menu.name %></td>
+    <td><%= section.name %></td>
+    <td><%= section.position %></td>
+    <td><%= section.show_name %></td>
+    <td><%= section.hidden %></td>
+    <td><%= link_to 'Show', admin_section_path(section) %></td>
+    <td><%= link_to 'Edit', edit_admin_section_path(section) %></td>
+    <td><%= link_to 'Destroy', admin_section_path(section), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Section', new_admin_section_path %>

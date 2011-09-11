@@ -1,0 +1,34 @@
+<h2>Editing <%= @menu.name %> Menu</h3>
+
+<%= form_for([:admin,@menu]) do |f| %>
+  <% if @menu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
+
+      <ul>
+      <% @menu.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :viewable %><br />
+    <%= f.check_box :viewable %>
+  </div>
+  <div class="field">
+    <%= f.label :pdf_link %><br />
+    <%= f.text_field :pdf_link %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<%= link_to 'Show', admin_menu_path(@menu) %> |
+<%= link_to 'Back', admin_menus_path %>

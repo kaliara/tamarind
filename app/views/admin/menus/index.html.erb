@@ -1,0 +1,27 @@
+<h2>Listing menus</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Viewable</th>
+    <th>Pdf link</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @menus.each do |menu| %>
+  <tr>
+    <td><%= menu.name %></td>
+    <td><%= menu.viewable? ? "Yes" : "No" %></td>
+    <td><%= menu.pdf_link %></td>
+    <td><%= link_to 'Show', admin_menu_path(menu) %></td>
+    <td><%= link_to 'Edit', edit_admin_menu_path(menu) %></td>
+    <td><%= link_to 'Destroy', admin_menus_path(menu), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Menu', new_admin_menu_path %>

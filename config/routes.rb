@@ -11,6 +11,9 @@ App::Application.routes.draw do
   namespace :admin do
     resources :applicants
     resources :subscribers
+    resources :items
+    resources :sections
+    resources :menus
   end
 
   # The priority is based upon order of creation:

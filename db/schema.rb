@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110903123817) do
+ActiveRecord::Schema.define(:version => 20110911010125) do
 
   create_table "admins", :force => true do |t|
     t.string   "email"
@@ -90,6 +90,35 @@ ActiveRecord::Schema.define(:version => 20110903123817) do
     t.string   "employer2_phone"
     t.string   "employer3_phone"
     t.boolean  "part_time",                   :default => false
+  end
+
+  create_table "items", :force => true do |t|
+    t.integer  "section_id"
+    t.string   "name"
+    t.text     "description"
+    t.decimal  "price",              :precision => 10, :scale => 0
+    t.integer  "position"
+    t.boolean  "direct_from_london"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "menus", :force => true do |t|
+    t.string   "name"
+    t.boolean  "viewable",   :default => false
+    t.string   "pdf_link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sections", :force => true do |t|
+    t.integer  "menu_id"
+    t.string   "name"
+    t.integer  "position"
+    t.boolean  "show_name"
+    t.boolean  "hidden"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "subscribers", :force => true do |t|

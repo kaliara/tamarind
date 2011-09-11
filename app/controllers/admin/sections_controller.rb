@@ -46,7 +46,7 @@ class Admin::SectionsController < ApplicationController
 
     respond_to do |format|
       if @section.save
-        format.html { redirect_to admin_sections_path(@section), :notice => 'Section was successfully created.' }
+        format.html { redirect_to admin_section_path(@section), :notice => 'Section was successfully created.' }
         format.json { render :json => @section, :status => :created, :location => @section }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class Admin::SectionsController < ApplicationController
 
     respond_to do |format|
       if @section.update_attributes(params[:section])
-        format.html { redirect_to admin_sections_path(@section), :notice => 'Section was successfully updated.' }
+        format.html { redirect_to admin_section_path(@section), :notice => 'Section was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }

@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= @menu.name %> Menu</h2>
+<p>
+  <b>Viewable:</b>
+  <%= @menu.viewable? ? "Yes" : "No" %>
+</p>
+
+<p>
+  <b>Pdf link:</b>
+  <%= @menu.pdf_link %>
+</p>

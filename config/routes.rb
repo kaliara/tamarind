@@ -1,19 +1,20 @@
 App::Application.routes.draw do
-  match 'invite/:code'                 => 'subscribers#new',  :as => :invite
+  # match 'invite/:code'                 => 'subscribers#new',  :as => :invite
   match 'applicants/apply/:position'   => 'applicants#new',   :as => :new_applicant
   match 'admin/login'                  => 'admin#login',      :as => :admin_login 
   match 'admin/logout'                 => 'admin#logout',     :as => :admin_logout
   match 'admin'                        => 'admin#home',       :as => :admin_home 
 
   resources :applicants,  :only => [:create]
+  resources :menus,       :only => [:index, :show]
   resources :subscribers, :only => [:new, :create, :show]
 
   namespace :admin do
     resources :applicants
-    resources :subscribers
+    resources :menus
     resources :items
     resources :sections
-    resources :menus
+    resources :subscribers
   end
 
   # The priority is based upon order of creation:

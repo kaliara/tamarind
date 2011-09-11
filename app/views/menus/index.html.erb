@@ -1,0 +1,21 @@
+<h2>Listing menus</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Viewable</th>
+    <th>Pdf link</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @menus.each do |menu| %>
+  <tr>
+    <td><%= menu.name %></td>
+    <td><%= menu.viewable? ? "Yes" : "No" %></td>
+    <td><%= menu.pdf_link %></td>
+    <td><%= link_to 'Show', menu %></td>
+  </tr>
+<% end %>
+</table>

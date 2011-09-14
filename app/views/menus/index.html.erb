@@ -7,7 +7,6 @@
     <th>Pdf link</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @menus.each do |menu| %>
@@ -15,7 +14,8 @@
     <td><%= menu.name %></td>
     <td><%= menu.viewable? ? "Yes" : "No" %></td>
     <td><%= menu.pdf_link %></td>
-    <td><%= link_to 'Show', menu %></td>
+    <td><%= link_to 'Show', view_menu_path(:name => menu.name.downcase) %></td>
+    <td><%= link_to 'PDF', view_menu_path(:name => menu.name.downcase, :format => 'pdf') %></td>
   </tr>
 <% end %>
 </table>

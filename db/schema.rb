@@ -115,7 +115,7 @@ ActiveRecord::Schema.define(:version => 20110911010125) do
     t.integer  "menu_id"
     t.string   "name"
     t.integer  "position"
-    t.boolean  "show_name"
+    t.boolean  "show_name",  :default => true
     t.boolean  "hidden"
     t.datetime "created_at"
     t.datetime "updated_at"

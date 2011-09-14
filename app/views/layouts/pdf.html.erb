@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <%# inline_stylesheet_link_tag "pdf" %>
+    <%# wicked_pdf_javascript_include_tag "number_pages" %>
+    <style type="text/css" media="screen">
+      @font-face {
+          font-family: 'MyriadProCondensed';
+          src: url('http://tamarindoflondon.com/type/myriadpro-cond-webfont.eot');
+          src: local("☺"),
+               url('http://tamarindoflondon.com/type/myriadpro-cond-webfont.eot?#iefix') format('embedded-opentype'),
+               url('http://tamarindoflondon.com/type/myriadpro-cond-webfont.woff') format('woff'),
+               url('http://tamarindoflondon.com/type/myriadpro-cond-webfont.ttf') format('truetype'),
+               url('http://tamarindoflondon.com/type/myriadpro-cond-webfont.svg#MyriadProCondensed') format('svg');
+          font-weight: normal;
+          font-style: normal;
+
+      }
+      body{
+        margin: 0;
+        padding: 0;
+        color: #2E1C14;
+        font: normal 12px/1.25em serif;
+        height: 31.84in;
+      }
+      th{
+        font-family: 'MyriadProCondensed';
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body onload='number_pages'>
+    <div id="header">
+      <%# wicked_pdf_image_tag 'mysite.jpg' %>
+    </div>
+    <div id="content">
+      <%= yield %>
+    </div>
+    <div id="bg"></div>
+  </body>
+</html>

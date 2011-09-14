@@ -1,9 +1,11 @@
 App::Application.routes.draw do
   # match 'invite/:code'                 => 'subscribers#new',  :as => :invite
-  match 'applicants/apply/:position'   => 'applicants#new',   :as => :new_applicant
-  match 'admin/login'                  => 'admin#login',      :as => :admin_login 
-  match 'admin/logout'                 => 'admin#logout',     :as => :admin_logout
-  match 'admin'                        => 'admin#home',       :as => :admin_home 
+  match 'applicants/apply/:position'   => 'applicants#new',     :as => :new_applicant
+  match 'admin/login'                  => 'admin#login',        :as => :admin_login 
+  match 'admin/logout'                 => 'admin#logout',       :as => :admin_logout
+  match 'admin'                        => 'admin#home',         :as => :admin_home 
+  match 'menus/:name(.:format)'        => 'menus#show',         :as => :view_menu
+  
 
   resources :applicants,  :only => [:create]
   resources :menus,       :only => [:index, :show]

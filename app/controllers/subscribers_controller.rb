@@ -6,9 +6,6 @@ class SubscribersController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.pdf do
-        render :pdf => "new"
-      end
       format.json { render :json => @subscriber }
     end
   end

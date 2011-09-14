@@ -4,7 +4,7 @@ class CreateSections < ActiveRecord::Migration
       t.integer :menu_id
       t.string :name
       t.integer :position
-      t.boolean :show_name
+      t.boolean :show_name, :default => true
       t.boolean :hidden
 
       t.timestamps

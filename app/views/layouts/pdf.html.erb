@@ -6,17 +6,38 @@
     <%# inline_stylesheet_link_tag "pdf" %>
     <%# wicked_pdf_javascript_include_tag "number_pages" %>
     <style type="text/css" media="screen">
+      body, p, div, ul, li{
+        font: normal 14pt/1.2em serif;
+      }
       body{
         margin: 0;
-        padding: 0;
+        padding: 1in 0 1in 0.5in;
         color: #2E1C14;
-        font: normal 12px/1.25em serif;
-        height: 31.84in;
       }
-      th{
+      h3{
         font-family: 'Myriad Pro';
         font-stretch: condensed;
         font-size: 20px;
+      }
+      
+      /* SECTION */
+      .section{
+        margin-bottom: 50px;
+        clear: both;
+      }
+      .section li{
+        margin-bottom: 25px;
+        height: 2em;
+      }
+      
+      .two_column{
+        margin-right: -60px;
+      }
+      .two_column li{
+        display: block;
+        float: left;
+        width: 40%;
+        margin-right: 60px;
       }
     </style>
   </head>
@@ -27,6 +48,5 @@
     <div id="content">
       <%= yield %>
     </div>
-    <div id="bg"></div>
   </body>
 </html>

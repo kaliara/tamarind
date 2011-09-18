@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110911010125) do
+ActiveRecord::Schema.define(:version => 20110918122255) do
 
   create_table "admins", :force => true do |t|
     t.string   "email"
@@ -119,6 +119,7 @@ ActiveRecord::Schema.define(:version => 20110911010125) do
     t.boolean  "hidden"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "two_column", :default => false
   end
 
   create_table "subscribers", :force => true do |t|

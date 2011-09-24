@@ -6,11 +6,9 @@
     <% 5.times do %>
     <% section.items.each do |item| %>
       <li>
-        <%= item.name %>
-        --
-        <%= item.description %>
-        ......
-        <%= number_to_currency item.price, :precision => 0 %>
+        <h4><%= item.name %></h4>
+        <div class="price"><%= number_to_currency item.price, :precision => 0 %></div>
+        <p class="description"><%= item.description %></p>
       </li>
     <% end %>
     <% end %>

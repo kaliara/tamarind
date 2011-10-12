@@ -6,7 +6,7 @@ class AdminController < ApplicationController
     @admin = Admin.find_by_email(params[:email])
     if !@admin.nil? and @admin.valid_credentials?(params[:password])    
       session[:admin] = @admin.new_session_id
-      # notice => "Logged in successfully, welcome back."
+      # :notice => "Logged in successfully, welcome back."
     else
       # :error => "Wrong email or password."
     end

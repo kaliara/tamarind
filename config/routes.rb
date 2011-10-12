@@ -1,4 +1,6 @@
 App::Application.routes.draw do
+  resources :contents
+
   match 'applicants/apply/:position'   => 'applicants#new',     :as => :new_applicant
   match 'admin/login'                  => 'admin#login',        :as => :admin_login 
   match 'admin/logout'                 => 'admin#logout',       :as => :admin_logout
@@ -12,6 +14,7 @@ App::Application.routes.draw do
 
   namespace :admin do
     resources :applicants
+    resources :contents
     resources :menus
     resources :items
     resources :sections

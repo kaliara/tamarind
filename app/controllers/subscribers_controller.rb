@@ -1,4 +1,6 @@
 class SubscribersController < ApplicationController
+  layout 'splash'
+  
   # GET /subscribers/new
   # GET /subscribers/new.json
   def new

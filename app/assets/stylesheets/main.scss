@@ -28,14 +28,14 @@ $accent: #b32727;
 }  
 
 
+// main tags
 html, body, p, div, strong, div, span, h1, h2, h3, h4, h5{
-  font: 14px/1em 'Myriad Pro', 'Myriad', Helvetica, sans-serif;
-  color: #b1aca0;
+  font: 16px/1.2em 'Myriad Pro', 'Myriad', Helvetica, sans-serif;
+  color: #e7e3d9;
 }
 
 body{
-  background: #000 url(image_path('background.jpg')) 45% -300px no-repeat;
-  padding: 10px;
+  background: #000 url(image_path('background.jpg')) center top no-repeat;
 }
 
 p{
@@ -60,7 +60,7 @@ h2 {
   line-height: 90%;
   margin: 40px 0 10px;
   text-transform: uppercase;
-  font-size: 240%;
+  font-size: 300%;
   font-weight: normal;
   font-family: 'myriad-pro-condensed'; 
   .note{
@@ -81,10 +81,10 @@ a{
   color: #f5cd4e;
   text-decoration: none;
   &:hover{
-    color: #6a6144;
+    color: #ac7e01;
   }
   &:visited{
-    color: #6a6144;
+    color: #ac7e01;
   }
 }
 .link{
@@ -101,38 +101,100 @@ ul{
 }
 
 .wrapper{
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .main{
-  z-index: 1;
-  position: relative;
+  clear: both;
 }
 
-.header a img{
-  border: 0;
-}
 
-ul li a{
-  padding: 8px 0 12px  40px;
-  &.facebook{
-    background: transparent url(image_path('icon_facebook.png')) 0 0 no-repeat;
+
+// header
+.header{
+  background: transparent url(image_path("background_header.png")) repeat 0 0;
+  padding: 10px 20px;
+  margin-top: 25px;
+
+  a img{
+    border: 0;
   }
-  &.twitter{
-    background: transparent url(image_path('icon_twitter.png')) 0 0 no-repeat;
+  
+  .logo{
+    float: left;
+    margin-right: 20px;
   }
-  &.blog{
-    background: transparent url(image_path('icon_blog.png')) 0 0 no-repeat;
+
+  .reservation{
+    float: right;
+    margin: 12px 0 0 45px;
+    
+    .make_reservation{
+      line-height: 2em;
+      font-size: 215%;
+      font-weight: normal;
+      font-family: 'myriad pro', 'Myriad';
+      display: block;
+      width: 300px;
+      height: 55px;
+      float: right;
+      overflow: hidden;
+      color: #f5cd4e;
+    
+      &:hover {
+        cursor:pointer;
+      }
+      &:before {
+        content: url(image_path("btn_reservation.png"));
+        display: -moz-inline-box;
+        display: inline-block;
+        font-size: 0;
+        line-height: 0;
+      }
+    }
   }
-  &.front_house{
-    background: transparent url(image_path('icon_front.png')) 0 0 no-repeat;
-  }
-  &.back_house{
-    background: transparent url(image_path('icon_back.png')) 0 0 no-repeat;
+  
+  .nav{
+    float: right;
+    margin-top: 35px;
+
+    ul li{
+      float: left;
+      margin: 0 15px 0 0;
+      
+      ul.sub_nav{
+        position: absolute;
+        margin-top: 10px;
+        li{
+          margin-right: 10px;
+          
+          a{
+            padding: 10px 5px;
+            color: #ac7e01;
+            text-transform: none;
+            font-size: 140%;
+          }
+        }
+      }
+    }
+    ul li.last{
+      margin-right: 0;
+      padding-right: 0;
+    }
+    a, a:link, a:focus, a:visited{
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 175%;
+      font-weight: normal;
+      font-family: 'myriad-pro-condensed';
+      padding: 5px;
+      &:hover{
+        color: #f5cd4e;
+      }
+    }
   }
 }
-
 
 
 // forms
@@ -170,6 +232,108 @@ ul li a{
 }
 .field .note{
   margin-left: 10px;
+}
+
+
+
+// special
+.shade{
+  background-color: #000;
+  opacity: 0.7;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.scrollbar_present{
+  padding-left: 25px;
+  background-position: 44.2% -300px;
+}
+
+
+// error
+.error{
+  font-size: 90%;
+  color: #c33;
+  margin: 10px 0;
+}
+.field_with_errors{
+  display: inline;
+}
+
+
+// opentable form
+.opentable_form{
+  background: transparent url(image_path("background_header.png")) repeat 0 0;
+  position: absolute;
+  margin: 80px 0 0 90px;
+  padding: 0 20px 20px;
+  border-radius: 0 0 10px 10px;
+  -moz-border-radius: 0 0 10px 10px;
+  -webkit-border-radius: 0 0 10px 10px;
+  
+  .OT_searchTimeField, .OT_searchDateField, .OT_searchPartyField{
+    font-size: 14px;
+    width: 125px;
+  }
+  .OTButton, #OTButton{
+    width: 134px;
+  }
+  a.OT_Find_a_Table:link, a.OT_Find_a_Table:visited, a.OT_Find_a_Table:hover, a.OT_Find_a_Table:active{
+    text-shadow: 1px 1px 2px #000;
+    font-size: 15px;
+    height: 25px;
+  }
+  a.OT_Find_a_Table:hover{
+    background-position: 0 -25px;
+  }
+  a.OT_Find_a_Table:active{
+    background-position: 0 -50px;
+  }
+  .OT_wrapper{
+    font-size: 120% !important;
+    background: none;
+    border: 0;
+    padding-bottom: 65px;
+    padding-left: 6px;
+    background: #222 url(image_path('logo_opentable.png')) no-repeat 67% 94%;
+    width: 183px;
+  }
+  .OT_header{
+    display: none;
+  }
+  .OT_day, .OT_time, .OT_party{
+    background-image: url("http://www.opentable.com/frontdoor/img/icons_final_light.png");
+    border: 0;
+  }
+  a.OT_navLink:hover{
+    background-color: #eee;
+  }
+  a.OT_navLink.selected{
+    background-color: #ccc;
+  }
+  .OT_submit{
+    padding-top: 10px;
+    padding-left: 20px;
+  }
+  .OTButton .OT_Find_a_Table{
+    background-image: url(image_path('btn_opentable.png'));
+  }
+  #OT_timeList, #OT_partyList{
+    width: 128px;
+  }
+  #OT_timeList .OT_navListItem, #OT_partyList .OT_navListItem{
+    width: 110px;
+  }
+}
+
+#ui-datepicker-div{
+  margin-left: -13px !important;
+  .ui-datepicker-month, .ui-datepicker-year{
+    color: #444;
+  }
 }
 
 // new applicant
@@ -212,96 +376,4 @@ $label_width: 125px;
     font-size: 100%;
     font-weight: bold;
   }
-}
-
-
-// opentable form
-#reservation_form{
-  .OT_searchTimeField, .OT_searchDateField, .OT_searchPartyField{
-    font-size: 14px;
-    width: 125px;
-  }
-  .OTButton, #OTButton{
-    width: 134px;
-  }
-  a.OT_Find_a_Table:link, a.OT_Find_a_Table:visited, a.OT_Find_a_Table:hover, a.OT_Find_a_Table:active{
-    text-shadow: 1px 1px 2px #000;
-    font-size: 15px;
-    height: 25px;
-  }
-  a.OT_Find_a_Table:hover{
-    background-position: 0 -25px;
-  }
-  a.OT_Find_a_Table:active{
-    background-position: 0 -50px;
-  }
-  .OT_wrapper{
-    font-size: 120% !important;
-    background: none;
-    border: 0;
-    padding-bottom: 65px;
-    padding-left: 6px;
-    background: #222 url("/assets/opentable_logo.png") no-repeat 67% 94%;
-    width: 183px;
-  }
-  .OT_header{
-    display: none;
-  }
-  .OT_day, .OT_time, .OT_party{
-    background-image: url("http://www.opentable.com/frontdoor/img/icons_final_light.png");
-    border: 0;
-  }
-  a.OT_navLink:hover{
-    background-color: #eee;
-  }
-  a.OT_navLink.selected{
-    background-color: #ccc;
-  }
-  .OT_submit{
-    padding-top: 10px;
-    padding-left: 20px;
-  }
-  .OTButton .OT_Find_a_Table{
-    background-image: url("/assets/find_a_table.png");
-  }
-  #OT_timeList, #OT_partyList{
-    width: 128px;
-  }
-  #OT_timeList .OT_navListItem, #OT_partyList .OT_navListItem{
-    width: 110px;
-  }
-}
-
-#ui-datepicker-div{
-  margin-left: -13px !important;
-  .ui-datepicker-month, .ui-datepicker-year{
-    color: #444;
-  }
-}
-
-// special
-.shade{
-  background-color: #000;
-  opacity: 0.7;
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
-.scrollbar_present{
-  padding-left: 25px;
-  background-position: 44.2% -300px;
-}
-
-
-// error
-.error{
-  font-size: 90%;
-  color: #c33;
-  margin: 10px 0;
-}
-.field_with_errors{
-  display: inline;
 }

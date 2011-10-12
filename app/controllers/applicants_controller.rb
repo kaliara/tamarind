@@ -1,4 +1,6 @@
 class ApplicantsController < ApplicationController
+  layout 'splash'
+
   # GET /applicants/new
   # GET /applicants/new.json
   def new

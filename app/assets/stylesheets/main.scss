@@ -31,7 +31,7 @@ $accent: #b32727;
 // main tags
 html, body, p, div, strong, div, span, h1, h2, h3, h4, h5{
   font: 16px/1.2em 'Myriad Pro', 'Myriad', Helvetica, sans-serif;
-  color: #e7e3d9;
+  color: #e1d8cc;
 }
 
 body{
@@ -107,6 +107,18 @@ ul{
 
 .main{
   clear: both;
+  min-height: 600px;
+  margin-bottom: 50px;
+  padding-left: 20px;
+  
+  p, span, div, strong{
+    font-size: 18px;
+    line-height: 1.5em;
+  }
+  
+  .layout_half{
+    max-width: 47%;
+  }
 }
 
 
@@ -132,7 +144,7 @@ ul{
     
     .make_reservation{
       line-height: 2em;
-      font-size: 215%;
+      font-size: 30px;
       font-weight: normal;
       font-family: 'myriad pro', 'Myriad';
       display: block;
@@ -173,7 +185,7 @@ ul{
             padding: 10px 5px;
             color: #ac7e01;
             text-transform: none;
-            font-size: 140%;
+            font-size: 20px;
           }
         }
       }
@@ -185,12 +197,78 @@ ul{
     a, a:link, a:focus, a:visited{
       color: #fff;
       text-transform: uppercase;
-      font-size: 175%;
+      font-size: 26px;
       font-weight: normal;
       font-family: 'myriad-pro-condensed';
       padding: 5px;
       &:hover{
         color: #f5cd4e;
+      }
+    }
+  }
+}
+
+
+// footer
+$footer_element_margin: 75px;
+
+.footer{
+  background: transparent url(image_path("background_header.png")) repeat 0 0;
+  
+  span, h3, h4, h5, h6, div, p, strong{
+    color: #888;
+  }
+  
+  .overview{
+    background: transparent url(image_path("background_header.png")) repeat 0 0;
+    padding: 30px 0;
+    
+    .logo{
+      float: left;
+      margin-right: $footer_element_margin;
+    }
+    .location{
+      float: left;
+      margin-right: $footer_element_margin;
+      padding: 10px 0;
+      
+      address{
+        margin: 0;
+      }
+    }
+    .contact{
+      padding: 10px 0;
+    }
+  }
+  
+  .sitemap{
+    padding: 30px 0;
+    
+    ul{
+      position: relative;
+      left: 231 + $footer_element_margin;
+    }
+  }
+      
+  ul{
+    float: left;
+    margin-right: 60px;
+    
+    li{
+      margin: 0;
+      
+      h5{
+        margin-bottom: 5px;
+      }
+  
+      a, a:link, a:visited, a:hover{
+        color: #424242;
+        padding: 2px 0;
+        font-size: 90%;
+
+        &:hover{
+         color: #ccc; 
+        }
       }
     }
   }
@@ -235,7 +313,6 @@ ul{
 }
 
 
-
 // special
 .shade{
   background-color: #000;
@@ -263,78 +340,6 @@ ul{
   display: inline;
 }
 
-
-// opentable form
-.opentable_form{
-  background: transparent url(image_path("background_header.png")) repeat 0 0;
-  position: absolute;
-  margin: 80px 0 0 90px;
-  padding: 0 20px 20px;
-  border-radius: 0 0 10px 10px;
-  -moz-border-radius: 0 0 10px 10px;
-  -webkit-border-radius: 0 0 10px 10px;
-  
-  .OT_searchTimeField, .OT_searchDateField, .OT_searchPartyField{
-    font-size: 14px;
-    width: 125px;
-  }
-  .OTButton, #OTButton{
-    width: 134px;
-  }
-  a.OT_Find_a_Table:link, a.OT_Find_a_Table:visited, a.OT_Find_a_Table:hover, a.OT_Find_a_Table:active{
-    text-shadow: 1px 1px 2px #000;
-    font-size: 15px;
-    height: 25px;
-  }
-  a.OT_Find_a_Table:hover{
-    background-position: 0 -25px;
-  }
-  a.OT_Find_a_Table:active{
-    background-position: 0 -50px;
-  }
-  .OT_wrapper{
-    font-size: 120% !important;
-    background: none;
-    border: 0;
-    padding-bottom: 65px;
-    padding-left: 6px;
-    background: #222 url(image_path('logo_opentable.png')) no-repeat 67% 94%;
-    width: 183px;
-  }
-  .OT_header{
-    display: none;
-  }
-  .OT_day, .OT_time, .OT_party{
-    background-image: url("http://www.opentable.com/frontdoor/img/icons_final_light.png");
-    border: 0;
-  }
-  a.OT_navLink:hover{
-    background-color: #eee;
-  }
-  a.OT_navLink.selected{
-    background-color: #ccc;
-  }
-  .OT_submit{
-    padding-top: 10px;
-    padding-left: 20px;
-  }
-  .OTButton .OT_Find_a_Table{
-    background-image: url(image_path('btn_opentable.png'));
-  }
-  #OT_timeList, #OT_partyList{
-    width: 128px;
-  }
-  #OT_timeList .OT_navListItem, #OT_partyList .OT_navListItem{
-    width: 110px;
-  }
-}
-
-#ui-datepicker-div{
-  margin-left: -13px !important;
-  .ui-datepicker-month, .ui-datepicker-year{
-    color: #444;
-  }
-}
 
 // new applicant
 $label_width: 125px;

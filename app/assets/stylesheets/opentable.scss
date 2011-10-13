@@ -1,0 +1,71 @@
+// opentable form
+.opentable_form{
+  background: transparent url(image_path("background_header.png")) repeat 0 0;
+  position: absolute;
+  margin: 80px 0 0 90px;
+  padding: 0 20px 20px;
+  border-radius: 0 0 10px 10px;
+  -moz-border-radius: 0 0 10px 10px;
+  -webkit-border-radius: 0 0 10px 10px;
+  
+  .OT_searchTimeField, .OT_searchDateField, .OT_searchPartyField{
+    font-size: 14px;
+    width: 125px;
+  }
+  .OTButton, #OTButton{
+    width: 134px;
+  }
+  a.OT_Find_a_Table:link, a.OT_Find_a_Table:visited, a.OT_Find_a_Table:hover, a.OT_Find_a_Table:active{
+    text-shadow: 1px 1px 2px #000;
+    font-size: 15px;
+    height: 25px;
+  }
+  a.OT_Find_a_Table:hover{
+    background-position: 0 -25px;
+  }
+  a.OT_Find_a_Table:active{
+    background-position: 0 -50px;
+  }
+  .OT_wrapper{
+    font-size: 120% !important;
+    background: none;
+    border: 0;
+    padding-bottom: 65px;
+    padding-left: 6px;
+    background: #222 url(image_path('logo_opentable.png')) no-repeat 67% 94%;
+    width: 183px;
+  }
+  .OT_header{
+    display: none;
+  }
+  .OT_day, .OT_time, .OT_party{
+    background-image: url("http://www.opentable.com/frontdoor/img/icons_final_light.png");
+    border: 0;
+  }
+  a.OT_navLink:hover{
+    background-color: #eee;
+  }
+  a.OT_navLink.selected{
+    background-color: #ccc;
+  }
+  .OT_submit{
+    padding-top: 10px;
+    padding-left: 20px;
+  }
+  .OTButton .OT_Find_a_Table{
+    background-image: url(image_path('btn_opentable.png'));
+  }
+  #OT_timeList, #OT_partyList{
+    width: 128px;
+  }
+  #OT_timeList .OT_navListItem, #OT_partyList .OT_navListItem{
+    width: 110px;
+  }
+}
+
+#ui-datepicker-div{
+  margin-left: -13px !important;
+  .ui-datepicker-month, .ui-datepicker-year{
+    color: #444;
+  }
+}

@@ -28,7 +28,7 @@
           </ul>
         </li>
         <li><%= link_to "Location", "#" %></li>
-        <li><%= link_to "About", "#" %></li>
+        <li><%= link_to "About", view_page_path(:slug => 'about') %></li>
         <li><%= link_to "Blog", "http://blog.tamarindoflondon.com" %></li>
         <li class="last"><%= link_to "Contact", "#" %></li>
       </ul>
@@ -36,9 +36,65 @@
   </div>
 </div>
 
-<div class="wrapper">
-  <div class="main">
-    <%= yield %>
+<div class="main">
+  <div class="wrapper">
+    <div class="layout_half">
+      <%= yield %>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="overview">
+    <div class="wrapper clearfix">
+      <h4 class="logo"><%= link_to image_tag(image_path('logo_footer.png'), :alt => "Tamarind of London"), root_path, :title => "Tamarind of London" %></h4>
+      
+      <div class="location">
+        <address>7862 East Pacific Coast Highway<br>Newport Beach, California 92651</address>
+      </div>
+  
+      <div class="contact">
+        <span class="phone">call us at: (213) 555-1234</span><br>
+        <span class="email">info@tamarindoflondon.com</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="sitemap">
+    <div class="wrapper clearfix">
+      <ul class="nav">
+        <li><h5>Menus</h5></li>
+        <li><%= link_to "Dinner", view_menu_path(:name => "dinner") %></li>
+        <li><%= link_to "Dessert", view_menu_path(:name => "dessert") %></li>
+        <li><%= link_to "Wine", view_menu_path(:name => "wine") %></li>
+        <li><%= link_to "Cocktails", view_menu_path(:name => "cocktails") %></li>
+      </ul>
+  
+      <ul class="nav">
+        <li><h5>Location</h5></li>
+        <li><%= link_to "Map", view_page_path(:slug => 'map') %></li>
+        <li><%= link_to "Hours", view_page_path(:slug => 'hours') %></li>
+      </ul>
+  
+      <ul>
+        <li><h5>About</h5></li>
+        <li><%= link_to "History", view_page_path(:slug => 'history') %></li>
+        <li><%= link_to "Team", view_page_path(:slug => 'team') %></li>
+        <li><%= link_to "Hours", view_page_path(:slug => 'hours') %></li>
+      </ul>
+  
+      <ul>
+        <li><h5>Blog</h5></li>
+        <li><%= link_to "Blog", "http://blog.tamarindoflondon.com" %></li>
+      </ul>
+  
+      <ul>
+        <li><h5>Contact</h5></li>
+        <li><%= link_to "Make a Reservation", new_reservation_path %></li>
+        <li><%= link_to "Phone and Email", view_page_path(:slug => 'contact') %></li>
+        <li><%= link_to "Leave Feedback", "new_feedback_path" %></li>
+      </ul>
+    </div>
   </div>
 </div>
 

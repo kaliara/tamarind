@@ -5,6 +5,6 @@ function scrollbarPresent() {
 }
 
 $(document).ready(function(){
-   $('#make_reservation').click(function(){$('#opentable_form').fadeToggle(); var clicky_custom = {};clicky_custom.goal = { name: 'clicked Make Reservation' }; return false;});
-   $('#OT_Find_a_Table').click(function(){var clicky_custom = {};clicky_custom.goal = { name: 'clicked Find Table' };})
+   $('#make_reservation').click(function(){$('#opentable_form').fadeToggle(); clicky.log('/reservations/new#js','Make a Reservation'); return false;});
+   $('#OT_Find_a_Table').click(function(){clicky.goal('643');})
 });

@@ -1,23 +1,9 @@
-<h2>Listing menus</h2>
+<h2>Menus</h2>
 
 <p><%= render_content 'menu_intro' %></p>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Viewable</th>
-    <th>Pdf link</th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @menus.each do |menu| %>
-  <tr>
-    <td><%= menu.name %></td>
-    <td><%= menu.viewable? ? "Yes" : "No" %></td>
-    <td><%= menu.pdf_link %></td>
-    <td><%= link_to 'Show', view_menu_path(:name => menu.name.downcase) %></td>
-    <td><%= link_to 'PDF', view_menu_path(:name => menu.name.downcase, :format => 'pdf') %></td>
-  </tr>
-<% end %>
-</table>
+<ul>
+  <% @menus.each do |menu| %>
+    <li><%= link_to menu.name, view_menu_path(:name => menu.name.downcase) %> (<%= link_to 'PDF', view_menu_path(:name => menu.name.downcase, :format => 'pdf') %>)</li>
+  <% end %>
+</ul>

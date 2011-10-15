@@ -2,7 +2,7 @@ class MenusController < ApplicationController
   # GET /menus
   # GET /menus.json
   def index
-    @menus = Menu.all
+    @menus = Menu.viewable
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,7 +15,7 @@ class MenusController < ApplicationController
   def show
     @menu = Menu.find_by_name(params[:name])
 
-    unless @menu.nil?
+    unless @menu.nil? or !@menu.viewable?
       respond_to do |format|
         format.html # show.html.erb
         format.pdf do
@@ -34,7 +34,7 @@ class MenusController < ApplicationController
         format.json { render :json => @menu }
       end
     else
-      redirect_to root_url
+      redirect_to menus_path
     end
   end
 end

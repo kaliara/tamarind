@@ -1,0 +1,22 @@
+<p>
+  <b>Name:</b>
+  <%= @message.from_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @message.from_email %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%= @message.subject %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @message.body %>
+</p>
+
+
+<%= link_to 'Back', admin_messages_path %>

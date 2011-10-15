@@ -1,0 +1,21 @@
+<h1>Customer Messages</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Subject</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @messages.each do |message| %>
+  <tr>
+    <td><%= message.from_name %></td>
+    <td><%= message.from_email %></td>
+    <td><%= ["Question", "Feedback", "Other.."][message.reason.to_i] %></td>
+    <td><%= link_to 'Show', admin_message_path(message) %></td>
+    <td><%= link_to 'Destroy', admin_message_path(message), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

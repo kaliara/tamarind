@@ -12,7 +12,7 @@
 
 <div class="header clearfix">
   <div class="wrapper">
-    <h1 class="logo"><%= link_to image_tag(image_path('logo_header.png'), :alt => "Tamarind of London"), root_path, :title => "Tamarind of London" %></h1>
+    <h1 class="logo"><%= link_to image_tag(image_path('logo_header.png'), :alt => "Tamarind of London"), home_path, :title => "Tamarind of London" %></h1>
     <div class="reservation">
       <%= link_to "Make a Reservation", new_reservation_path, :class => "make_reservation", :id => "make_reservation" %>
       <div id="opentable_form" class="opentable_form" style="display:none"><script type="text/javascript" src="http://www.opentable.com/frontdoor/default.aspx?rid=69718&restref=69718&hover=1"></script></div>
@@ -30,7 +30,7 @@
         <li><%= link_to "Location", "#" %></li>
         <li><%= link_to "About", view_page_path(:slug => 'about') %></li>
         <li><%= link_to "Blog", "http://blog.tamarindoflondon.com" %></li>
-        <li class="last"><%= link_to "Contact", "#" %></li>
+        <li class="last"><%= link_to "Contact", new_message_path %></li>
       </ul>
     </div>
   </div>
@@ -47,7 +47,7 @@
 <div class="footer">
   <div class="overview">
     <div class="wrapper clearfix">
-      <h4 class="logo"><%= link_to image_tag(image_path('logo_footer.png'), :alt => "Tamarind of London"), root_path, :title => "Tamarind of London" %></h4>
+      <h4 class="logo"><%= link_to image_tag(image_path('logo_footer.png'), :alt => "Tamarind of London"), home_path, :title => "Tamarind of London" %></h4>
       
       <div class="location">
         <address>7862 East Pacific Coast Highway<br>Newport Beach, California 92651</address>
@@ -92,7 +92,7 @@
         <li><h5>Contact</h5></li>
         <li><%= link_to "Make a Reservation", new_reservation_path %></li>
         <li><%= link_to "Phone and Email", view_page_path(:slug => 'contact') %></li>
-        <li><%= link_to "Leave Feedback", "new_feedback_path" %></li>
+        <li><%= link_to "Leave Feedback", new_message_path %></li>
       </ul>
     </div>
   </div>

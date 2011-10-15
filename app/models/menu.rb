@@ -4,4 +4,6 @@ class Menu < ActiveRecord::Base
   
   validates :name, :presence => true,
                    :uniqueness => {:message => "with that name already created"}
+                   
+  scope :viewable, where('viewable = ?', 1)
 end

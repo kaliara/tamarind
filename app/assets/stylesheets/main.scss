@@ -135,12 +135,12 @@ ul{
   
   .logo{
     float: left;
-    margin-right: 20px;
+    margin-right: 15px;
   }
 
   .reservation{
     float: right;
-    margin: 12px 0 0 45px;
+    margin: 12px 0 0 30px;
     
     .make_reservation{
       line-height: 2em;
@@ -173,7 +173,7 @@ ul{
 
     ul li{
       float: left;
-      margin: 0 15px 0 0;
+      margin: 0 10px 0 0;
       
       ul.sub_nav{
         position: absolute;
@@ -225,6 +225,9 @@ ul{
   display: block !important;
 }
 
+.narrow .header .nav ul li ul.sub_nav{
+  visibility: hidden;
+}
 
 
 // footer

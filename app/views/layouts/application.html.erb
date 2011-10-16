@@ -8,7 +8,7 @@
   <script type="text/javascript" src="http://use.typekit.com/ijt8vpn.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
-<body class="<%= params[:controller] %>">
+<body class="<%= @body_class || params[:controller] %>">
 
 <div class="header clearfix">
   <div class="wrapper">
@@ -19,18 +19,18 @@
     </div>
     <div class="nav">
       <ul>
-        <li><%= link_to "Menus", menus_path %>
+        <li class="link_menus"><%= link_to "Menus", menus_path %>
           <ul class="sub_nav"  style="display:none">
-            <li><%= link_to "Dinner", view_menu_path(:name => "dinner") %></li>
-            <li><%= link_to "Dessert", view_menu_path(:name => "dessert") %></li>
-            <li><%= link_to "Wine", view_menu_path(:name => "wine") %></li>
-            <li><%= link_to "Cocktails", view_menu_path(:name => "cocktails") %></li>
+            <li class="link_menus_dinner"><%= link_to "Dinner", view_menu_path(:name => "dinner") %></li>
+            <li class="link_menus_dessert"><%= link_to "Dessert", view_menu_path(:name => "dessert") %></li>
+            <li class="link_menus_wine"><%= link_to "Wine", view_menu_path(:name => "wine") %></li>
+            <li class="link_menus_cocktails"><%= link_to "Cocktails", view_menu_path(:name => "cocktails") %></li>
           </ul>
         </li>
-        <li><%= link_to "Location", "#" %></li>
-        <li><%= link_to "About", view_page_path(:slug => 'about') %></li>
-        <li><%= link_to "Blog", "http://blog.tamarindoflondon.com" %></li>
-        <li class="last"><%= link_to "Contact", new_message_path %></li>
+        <li class="link_location"><%= link_to "Location", "#" %></li>
+        <li class="link_about"><%= link_to "About", view_page_path(:slug => 'about') %></li>
+        <li class="link_blog"><%= link_to "Blog", "http://blog.tamarindoflondon.com" %></li>
+        <li class="link_contact last"><%= link_to "Contact", new_message_path %></li>
       </ul>
     </div>
   </div>
@@ -49,14 +49,13 @@
     <div class="wrapper clearfix">
       <h4 class="logo"><%= link_to image_tag(image_path('logo_footer.png'), :alt => "Tamarind of London"), home_path, :title => "Tamarind of London" %></h4>
       
-      <div class="location">
+      <a class="location" href="http://maps.google.com/maps?q=7862+East+Pacific+Coast+Highway+Newport+Beach,+California&oe=utf-8&client=firefox-a&hnear=7862+E+Pacific+Coast+Hwy,+Laguna+Beach,+California+92651&gl=us&t=m&z=16&vpsrc=0" target="_blank">
         <address>7862 East Pacific Coast Highway<br>Newport Beach, California 92651</address>
-      </div>
-  
-      <div class="contact">
+      </a>
+      <a class="contact" href="mailto:&#x69;&#x6E;&#x66;&#x6F;&#x40;&#x74;&#x61;&#x6D;&#x61;&#x72;&#x69;&#x6E;&#x64;&#x6F;&#x66;&#x6C;&#x6F;&#x6E;&#x64;&#x6F;&#x6E;&#x2E;&#x63;&#x6F;&#x6D;">
         <span class="phone">call us at: (213) 555-1234</span><br>
         <span class="email">info@tamarindoflondon.com</span>
-      </div>
+      </a>
     </div>
   </div>
   

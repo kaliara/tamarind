@@ -177,7 +177,7 @@ ul{
       
       ul.sub_nav{
         position: absolute;
-        margin-top: 10px;
+        margin-top: 7px;
         li{
           margin-right: 10px;
           
@@ -187,6 +187,11 @@ ul{
             text-transform: none;
             font-size: 20px;
           }
+        }
+      }
+      &:hover{
+        ul.sub_nav{
+          display: block !important;
         }
       }
     }
@@ -208,9 +213,22 @@ ul{
   }
 }
 
+// navigation active
+.menus        .header .nav ul li.link_menus > a,
+.menus.dinner .header .nav ul li.link_menus .link_menus_dinner a,
+.pages.about  .header .nav ul li.link_about > a,
+.messages     .header .nav ul li.link_contact > a {
+  color: #f5cd4e;
+}
+
+.menus.dinner .header .nav ul li.link_menus ul.sub_nav{
+  display: block !important;
+}
+
+
 
 // footer
-$footer_element_margin: 75px;
+$footer_element_margin: 65px;
 
 .footer{
   background: transparent url(image_path("background_header.png")) repeat 0 0;
@@ -226,18 +244,41 @@ $footer_element_margin: 75px;
     .logo{
       float: left;
       margin-right: $footer_element_margin;
+      opacity: 0.4;
+      &:hover{
+        opacity: 1;
+      }
     }
     .location{
+      background: transparent url(image_path("icon_location.png")) no-repeat 0 7px;
       float: left;
       margin-right: $footer_element_margin;
-      padding: 10px 0;
-      
+      padding: 10px 0 7px 63px;
+      color: #888;
       address{
+        
         margin: 0;
+      }
+      &:hover{
+        color: #F5CD4E;
+        background-position: 0 -134px;
       }
     }
     .contact{
-      padding: 10px 0;
+      background: transparent url(image_path("icon_contact.png")) no-repeat 0 7px;
+      float: left;
+      padding: 10px 0 7px 63px;
+      
+      &:hover{
+        color: #F5CD4E;
+        background-position: 0 -134px;
+        .phone{
+          color: #fff;
+        }
+        .email{
+          color: #F5CD4E;
+        }
+      }
     }
   }
   

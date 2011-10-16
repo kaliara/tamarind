@@ -5,6 +5,7 @@ function scrollbarPresent() {
 }
 
 $(document).ready(function(){
-   $('#make_reservation').click(function(){$('#opentable_form').fadeToggle(); clicky.goal('644'); return false;});
-   $('#OT_Find_a_Table').click(function(){clicky.goal('643');})
+  // reservations
+  $('#make_reservation').click(function(){$('#opentable_form').fadeToggle(); clicky.goal('644'); return false;});
+  $('#OT_Find_a_Table').click(function(){clicky.goal('643');})
 });

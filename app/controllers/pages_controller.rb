@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
+    @body_class = "pages #{params[:slug].parameterize}"
     if File.exists?(Rails.root.join("app", "views", "pages", "#{params[:slug]}.html.erb"))
       render :action => params[:slug]
     else

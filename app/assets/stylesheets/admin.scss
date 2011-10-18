@@ -274,3 +274,84 @@ ul{
 .field_with_errors{
   display: inline;
 }
+
+
+// live_edit_menu
+.live_edit_menu{
+  margin: 50px 100px;
+  
+  h3.no_name{
+    opacity: 0.15;
+  }
+  .section{
+    margin-bottom: 75px;
+    
+    .item{
+      position: relative;
+      left: -93px;
+      padding: 5px 0 5px 90px;
+      margin-bottom: 15px;
+      cursor: move;
+      width: 50%;
+      &:hover{
+        background: transparent url(image_path("icon_move.png")) no-repeat  56px 8px;
+        .edit_menu_item{
+          display: block;
+        }
+      }
+      input{
+        background: none;
+        border: 1px solid #000;
+        color: #E1D8CC;
+        font-size: 20px;
+        &:hover{
+          background: rgba(200,200,200,0.2);
+          border: 1px inset rgba(255,255,255,0.2);
+        }
+        &.editing, &:focus{
+          color: #fff;
+          background: rgba(200,200,200,0.4);
+          border: 1px inset rgba(255,255,255,0.5);          
+        }
+      }
+      h4{
+        float: left;
+        width: 250px;
+        margin-right: 10px;
+        cursor: text;
+        input{
+          width: 100%;
+        }
+      }
+      .description{
+        input{
+          color: #666;
+          font-size: 70%;
+          font-weight: normal;
+          width: 500px;
+          &.editing, &:focus{
+            color: #fff;
+          }
+        }
+      }
+      .price{
+        input{
+          width: 45px;
+        }
+      }
+      .edit_menu_item{
+        display: none;
+        color: #F5CD4E;
+        font-size: 75%;
+        position: absolute;
+        left: 0;
+        padding: 5px;
+      }
+    }
+    .item.ui-sortable-helper{
+      background-color: rgba(33,33,33,0.7);
+      cursor: -moz-grabbing;
+      opacity: 0.75;
+    }
+  }
+}

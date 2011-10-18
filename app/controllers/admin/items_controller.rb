@@ -49,6 +49,7 @@ class Admin::ItemsController < ApplicationController
       if @item.save
         format.html { redirect_to admin_item_path(@item), :notice => 'Item was successfully created.' }
         format.json { render :json => @item, :status => :created, :location => @item }
+        format.js   { render :nothing => true }
       else
         format.html { render :action => "new" }
         format.json { render :json => @item.errors, :status => :unprocessable_entity }
@@ -65,6 +66,7 @@ class Admin::ItemsController < ApplicationController
       if @item.update_attributes(params[:item])
         format.html { redirect_to admin_item_path(@item), :notice => 'Item was successfully updated.' }
         format.json { head :ok }
+        format.js   { render :nothing => true }
       else
         format.html { render :action => "edit" }
         format.json { render :json => @item.errors, :status => :unprocessable_entity }
@@ -81,6 +83,7 @@ class Admin::ItemsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to admin_items_url }
       format.json { head :ok }
+      format.js   { render :nothing => true }
     end
   end
 end

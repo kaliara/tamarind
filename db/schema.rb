@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111014131315) do
+ActiveRecord::Schema.define(:version => 20111018055823) do
 
   create_table "admins", :force => true do |t|
     t.string   "email"
@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(:version => 20111014131315) do
     t.string   "name"
     t.text     "description"
     t.decimal  "price",              :precision => 10, :scale => 0
-    t.integer  "position"
+    t.integer  "position",                                          :default => 0
     t.boolean  "direct_from_london"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -142,7 +142,7 @@ ActiveRecord::Schema.define(:version => 20111014131315) do
     t.string   "name"
     t.integer  "position"
     t.boolean  "show_name",  :default => true
-    t.boolean  "hidden"
+    t.boolean  "hidden",     :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "two_column", :default => false

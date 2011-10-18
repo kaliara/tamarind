@@ -49,6 +49,7 @@ class Admin::SectionsController < ApplicationController
       if @section.save
         format.html { redirect_to admin_section_path(@section), :notice => 'Section was successfully created.' }
         format.json { render :json => @section, :status => :created, :location => @section }
+        format.js   { render :nothing => true }
       else
         format.html { render :action => "new" }
         format.json { render :json => @section.errors, :status => :unprocessable_entity }
@@ -65,6 +66,7 @@ class Admin::SectionsController < ApplicationController
       if @section.update_attributes(params[:section])
         format.html { redirect_to admin_section_path(@section), :notice => 'Section was successfully updated.' }
         format.json { head :ok }
+        format.js   { render :nothing => true }
       else
         format.html { render :action => "edit" }
         format.json { render :json => @section.errors, :status => :unprocessable_entity }
@@ -81,6 +83,7 @@ class Admin::SectionsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to admin_sections_url }
       format.json { head :ok }
+      format.js   { render :nothing => true }
     end
   end
 end

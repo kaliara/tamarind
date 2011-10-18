@@ -21,10 +21,9 @@
       <ul>
         <li class="link_menus"><%= link_to "Menus", menus_path %>
           <ul class="sub_nav" style="display:none">
-            <li class="link_menus_dinner"><%= link_to "Dinner", view_menu_path(:name => "dinner") %></li>
-            <li class="link_menus_dessert"><%= link_to "Dessert", view_menu_path(:name => "dessert") %></li>
-            <li class="link_menus_wine"><%= link_to "Wine", view_menu_path(:name => "wine") %></li>
-            <li class="link_menus_cocktails"><%= link_to "Cocktails", view_menu_path(:name => "cocktails") %></li>
+            <% Menu.viewable.each do |menu| %>
+              <li class="link_menus_<%= menu.name.parameterize %>"><%= link_to menu.name, view_menu_path(:slug => menu.slug) %></li>
+            <% end %>
           </ul>
         </li>
         <li class="link_location"><%= link_to "Location", "#" %></li>
@@ -63,10 +62,9 @@
     <div class="wrapper clearfix">
       <ul class="nav">
         <li><h5>Menus</h5></li>
-        <li><%= link_to "Dinner", view_menu_path(:name => "dinner") %></li>
-        <li><%= link_to "Dessert", view_menu_path(:name => "dessert") %></li>
-        <li><%= link_to "Wine", view_menu_path(:name => "wine") %></li>
-        <li><%= link_to "Cocktails", view_menu_path(:name => "cocktails") %></li>
+        <% Menu.viewable.each do |menu| %>
+          <li><%= link_to menu.name, view_menu_path(:slug => menu.slug) %></li>
+        <% end %>
       </ul>
   
       <ul class="nav">

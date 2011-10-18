@@ -13,10 +13,10 @@ class MenusController < ApplicationController
   # GET /menus/1
   # GET /menus/1.json
   def show
-    @menu = Menu.find_by_name(params[:name])
+    @menu = Menu.find_by_slug(params[:slug])
     
     unless @menu.nil? or !@menu.viewable?
-      @body_class = "menus #{@menu.name.parameterize}"
+      @body_class = "menus menu_#{@menu.slug}"
       respond_to do |format|
         format.html # show.html.erb
         format.pdf do

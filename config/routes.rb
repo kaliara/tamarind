@@ -3,7 +3,7 @@ App::Application.routes.draw do
   match 'admin/login'                  => 'admin#login',        :as => :admin_login 
   match 'admin/logout'                 => 'admin#logout',       :as => :admin_logout
   match 'admin'                        => 'admin#home',         :as => :admin_home 
-  match 'menus/:name(.:format)'        => 'menus#show',         :as => :view_menu
+  match 'menus/:slug(.:format)'        => 'menus#show',         :as => :view_menu
   match 'info/:slug'                   => 'pages#show',         :as => :view_page
   
   resources :applicants,    :only => [:create]

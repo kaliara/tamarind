@@ -8,7 +8,7 @@
   <script type="text/javascript" src="http://use.typekit.com/ijt8vpn.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
-<body class="<%= @body_class || params[:controller] %>">
+<body class="<%= @body_class || params[:controller].parameterize %>">
 
 <div class="header clearfix">
   <div class="wrapper">
@@ -20,7 +20,7 @@
     <div class="nav">
       <ul>
         <li class="link_menus"><%= link_to "Menus", menus_path %>
-          <ul class="sub_nav"  style="display:none">
+          <ul class="sub_nav" style="display:none">
             <li class="link_menus_dinner"><%= link_to "Dinner", view_menu_path(:name => "dinner") %></li>
             <li class="link_menus_dessert"><%= link_to "Dessert", view_menu_path(:name => "dessert") %></li>
             <li class="link_menus_wine"><%= link_to "Wine", view_menu_path(:name => "wine") %></li>
@@ -83,8 +83,10 @@
       </ul>
   
       <ul>
-        <li><h5>Blog</h5></li>
+        <li><h5>Connect</h5></li>
         <li><%= link_to "Blog", "http://blog.tamarindoflondon.com" %></li>
+        <li><%= link_to "Facebook", "http://www.facebook.com/tamarindoflondon", :target => "_blank" %></li>
+        <li><%= link_to "Twitter", "http://www.twitter.com/tamarindlondon", :target => "_blank" %></li>
       </ul>
   
       <ul>

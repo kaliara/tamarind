@@ -1,3 +1,22 @@
+/*reset.css */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,hr,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,hr{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+sup{vertical-align:top;font-size:70%;position:relative;}
+body{line-height:1;}
+ul,ol{list-style:none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,
+q:before,q:after{content:'';content:none;}
+:focus{outline:0;}
+ins{text-decoration:none;}
+del{text-decoration:line-through;}
+table{border-collapse:collapse;border-spacing:0;}
+img{margin:0;border:0;}
+p{margin:0 0 0 0;border:0;}
+strong,b{font-weight:bold;}
+em{font-style:italic;}
+input[type="checkbox"]{margin:0;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+
 //variables and mixins
 $accent: #b32727;
 $label_width: 125px;
@@ -36,12 +55,13 @@ $footer_element_margin: 65px;
 
 // main tags
 html, body, p, div, strong, div, span, h1, h2, h3, h4, h5{
-  font: 16px/1.2em 'Myriad Pro', 'Myriad', Helvetica, sans-serif;
+  font: 20px/1.2em 'Myriad Pro', 'Myriad', Helvetica, sans-serif;
   color: #e1d8cc;
 }
 
 body{
-  background: #000 url(image_path('background.jpg')) center top no-repeat;
+  background: #000;
+  padding: 20px;
 }
 
 p{
@@ -80,7 +100,6 @@ h3{
   font-weight: bold;
   font-size: 125%;
   color: #eee;
-  margin: 25px 0 5px $label_width + 10;
 }
 
 a{
@@ -106,92 +125,42 @@ ul{
   }
 }
 
-.wrapper{
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.main{
-  clear: both;
-  min-height: 600px;
-  margin-bottom: 50px;
-  padding-left: 20px;
-  
-  p, span, div, strong{
-    font-size: 18px;
-    line-height: 1.5em;
-  }
-  
-  .layout_half{
-    max-width: 47%;
-  }
-}
-
 
 
 // header
 .header{
-  background: transparent url(image_path("background_header.png")) repeat 0 0;
-  padding: 10px 20px;
-  margin-top: 25px;
+  padding-top: 20px;
 
   a img{
     border: 0;
   }
   
   .logo{
-    float: left;
-    margin-right: 15px;
-  }
-
-  .reservation{
     float: right;
-    margin: 12px 0 0 30px;
-    
-    .make_reservation{
-      line-height: 2em;
-      font-size: 30px;
-      font-weight: normal;
-      font-family: 'myriad pro', 'Myriad';
-      display: block;
-      width: 300px;
-      height: 55px;
-      float: right;
-      overflow: hidden;
-      color: #f5cd4e;
-    
-      &:hover {
-        cursor:pointer;
-      }
-      &:before {
-        content: url(image_path("btn_reservation.png"));
-        display: -moz-inline-box;
-        display: inline-block;
-        font-size: 0;
-        line-height: 0;
-      }
+    margin-right: 50px;
+    img{
+      width: 350px;
     }
   }
   
   .nav{
-    float: right;
-    margin-top: 32px;
-
+    padding-top: 20px;
     ul li{
       float: left;
-      margin: 0 10px 0 0;
+      margin: 0 25px 0 0;
       
       ul.sub_nav{
         position: absolute;
         margin-top: 7px;
+        max-width: 600px;
         li{
           margin-right: 10px;
           
           a{
-            padding: 10px 5px;
+            padding: 0 5px 3px;
             color: #ac7e01;
             text-transform: none;
-            font-size: 20px;
+            font-size: 25px;
           }
         }
       }
@@ -208,10 +177,10 @@ ul{
     a, a:link, a:focus, a:visited{
       color: #fff;
       text-transform: uppercase;
-      font-size: 26px;
+      font-size: 35px;
       font-weight: normal;
       font-family: 'myriad-pro-condensed';
-      padding: 5px;
+      padding: 15px 5px;
       &:hover{
         color: #f5cd4e;
       }
@@ -219,108 +188,6 @@ ul{
   }
 }
 
-// navigation active
-.menus        .header .nav ul li.link_menus > a,
-.menus.dinner .header .nav ul li.link_menus .link_menus_dinner a,
-.pages.about  .header .nav ul li.link_about > a,
-.messages     .header .nav ul li.link_contact > a {
-  color: #f5cd4e;
-}
-
-.menus.dinner .header .nav ul li.link_menus ul.sub_nav{
-  display: block !important;
-}
-
-.narrow .header .nav ul li ul.sub_nav{
-  visibility: hidden;
-}
-
-
-// footer
-.footer{
-  background: transparent url(image_path("background_header.png")) repeat 0 0;
-  
-  span, h3, h4, h5, h6, div, p, strong{
-    color: #888;
-  }
-  
-  .overview{
-    background: transparent url(image_path("background_header.png")) repeat 0 0;
-    padding: 30px 0;
-    
-    .logo{
-      float: left;
-      margin-right: $footer_element_margin;
-      opacity: 0.4;
-      &:hover{
-        opacity: 1;
-      }
-    }
-    .location{
-      background: transparent url(image_path("icon_location.png")) no-repeat 0 7px;
-      float: left;
-      margin-right: $footer_element_margin;
-      padding: 10px 0 7px 63px;
-      color: #888;
-      address{
-        
-        margin: 0;
-      }
-      &:hover{
-        color: #F5CD4E;
-        background-position: 0 -134px;
-      }
-    }
-    .contact{
-      background: transparent url(image_path("icon_contact.png")) no-repeat 0 7px;
-      float: left;
-      padding: 10px 0 7px 63px;
-      
-      &:hover{
-        color: #F5CD4E;
-        background-position: 0 -134px;
-        .phone{
-          color: #fff;
-        }
-        .email{
-          color: #F5CD4E;
-        }
-      }
-    }
-  }
-  
-  .sitemap{
-    padding: 30px 0;
-    
-    ul{
-      position: relative;
-      left: 231 + $footer_element_margin;
-    }
-  }
-      
-  ul{
-    float: left;
-    margin-right: 60px;
-    
-    li{
-      margin: 0;
-      
-      h5{
-        margin-bottom: 5px;
-      }
-  
-      a, a:link, a:visited, a:hover{
-        color: #424242;
-        padding: 2px 0;
-        font-size: 90%;
-
-        &:hover{
-         color: #ccc; 
-        }
-      }
-    }
-  }
-}
 
 
 // forms
@@ -398,24 +265,6 @@ ul{
 }
 
   
-
-// special
-.shade{
-  background-color: #000;
-  opacity: 0.7;
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
-.scrollbar_present{
-  padding-left: 25px;
-  background-position: 44.2% -300px;
-}
-
-
 // error
 .error{
   font-size: 90%;

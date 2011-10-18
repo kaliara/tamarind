@@ -1,4 +1,5 @@
 class Admin::ItemsController < ApplicationController
+  layout 'admin'
   before_filter :admin_required
 
   # GET /items

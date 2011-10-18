@@ -1,4 +1,5 @@
 class Admin::ApplicantsController < ApplicationController
+  layout 'admin'
   before_filter :admin_required
 
   # GET /admin/applicants

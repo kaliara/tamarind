@@ -1,4 +1,5 @@
 class Admin::SectionsController < ApplicationController
+  layout 'admin'
   before_filter :admin_required
 
   # GET /sections

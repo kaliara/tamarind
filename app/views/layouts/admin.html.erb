@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <title>Tamarind of London :: Newport Beach, California</title>
+  <%= stylesheet_link_tag "admin", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <script type="text/javascript" src="http://use.typekit.com/ijt8vpn.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body class="admin">
+
+<div class="header clearfix">
+  <h1 class="logo"><%= link_to image_tag(image_path('logo_header.png'), :alt => "Tamarind of London"), home_path, :title => "Tamarind of London" %></h1>
+  <div class="nav">
+    <% if admin? %>
+    <ul>
+      <li><%= link_to "Applicants", admin_applicants_path %></li>
+      <li>
+        <%= link_to "Menus", admin_menus_path %>
+        <ul class="sub_nav" style="display: none">
+          <% Menu.viewable.each do |menu| %>
+            <li><%= link_to menu.name, edit_admin_menu_path(menu) %></li>
+          <% end %>
+        </ul>
+      </li>
+      <li><%= link_to "Content", admin_contents_path %></li>
+      <li>
+        <%= link_to "Pages", admin_pages_path %>
+        <ul class="sub_nav" style="display: none">
+          <% Page.published.each do |page| %>
+            <li><%= link_to page.name, edit_admin_page_path(page) %></li>
+          <% end %>
+        </ul>
+      </li>
+      <li><%= link_to "Subscribers", admin_subscribers_path %></li>
+    </ul>
+    <% end %>
+  </div>
+</div>
+
+<div class="main">
+  <%= yield %>
+</div>
+
+</body>
+</html>

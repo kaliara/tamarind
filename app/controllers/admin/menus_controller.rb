@@ -1,4 +1,5 @@
 class Admin::MenusController < ApplicationController
+  layout 'admin'
   before_filter :admin_required
 
   # GET /menus

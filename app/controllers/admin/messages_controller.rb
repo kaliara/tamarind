@@ -1,4 +1,6 @@
 class Admin::MessagesController < ApplicationController
+  layout 'admin'
+
   # GET /messages
   # GET /messages.json
   def index

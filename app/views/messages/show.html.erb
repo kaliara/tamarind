@@ -1,16 +1,18 @@
 <h2>Thank You</h2>
 
 <p id="notice"><%= notice %></p>
-
+<br>
 <p>
   <b>From:</b>
   <%= @message.from_name %> (<%= @message.from_email %>)
 </p>
 
+<% unless @message.reason == 2 %>
 <p>
   <b>Subject:</b>
   <%= @message.subject %>
 </p>
+<% end %>
 
 <p>
   <b>Message:</b>

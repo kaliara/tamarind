@@ -64,7 +64,7 @@ class Admin::ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.update_attributes(params[:item])
-        format.html { redirect_to admin_item_path(@item), :notice => 'Item was successfully updated.' }
+        format.html { redirect_to edit_admin_menu_path(@item.section.menu), :notice => 'Item was successfully updated.' }
         format.json { head :ok }
         format.js   { render :nothing => true }
       else

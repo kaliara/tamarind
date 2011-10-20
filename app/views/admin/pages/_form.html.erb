@@ -12,19 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :slug %><br />
+    <%= f.label :slug %>
     <%= f.text_field :slug %> <span class="note">(a 'slug' is what will show up in the URL)</span>
   </div>
   <div class="field">
-    <%= f.label :content %><br />
+    <%= f.label :content %>
     <%= f.text_area :content %>
   </div>
   <div class="field">
-    <%= f.label :published %><br />
+    <%= f.label :published, :class => "alt_label" %>
     <%= f.check_box :published %>
   </div>
   <div class="actions">

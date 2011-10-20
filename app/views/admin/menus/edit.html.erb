@@ -17,8 +17,11 @@
 
 <div id="live_edit_menu" class="live_edit_menu">
   <% @menu.sections.each do |section| %>
-    <h3 class="<%= 'no_name' unless section.show_name? %>"><%= section.name %></h3>
     <ul class="section <%= "two_column" if section.two_column? %>">
+      <%= form_for([:admin,section], :remote => true) do |f| %>
+        <%= f.hidden_field :position %>
+        <h3 class="<%= 'no_name' unless section.show_name? %>"><%= section.name %></h3>
+      <% end %>
       <% section.items.each do |item| %>
         <li class="item">
           <%= form_for([:admin, item], :remote => true) do |f| %>
@@ -32,32 +35,26 @@
       <% end %>
     </ul>
   <% end %>
+  
+  <%= link_to "Add Section", new_admin_section_path, :id => "add_section_link" %>
+  <%= form_for([:admin, Section.new], :html => {:style => "display: none"}) do |f| %>
+    <h3>New Section</h3>
+    <%= f.hidden_field :menu_id, :value => @menu.id %>
+    <%= f.hidden_field :hidden, :value => false %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :show_name, :class => "alt_label" %>
+      <%= f.check_box :show_name %><span class="note">(uncheck to hide name on menu)</span>
+    </div>
+    <div class="actions">
+      <%= f.submit "Add Section" %>
+    </div>
+  <% end %>
 </div>
-
-
-
-<%= form_for([:admin, Section.new], :remote => true) do |f| %>
-  <%= f.hidden_field :menu_id, :value => @menu.id %>
-  <%= f.hidden_field :hidden, :value => false %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :show_name %>
-    <%= f.check_box :show_name %><span class="note">(uncheck to hide name on menu)</span>
-  </div>
-  <div class="actions">
-    <%= f.submit "Add Section" %>
-  </div>
-<% end %>
-
-
-
-
-
-
 
 
 
@@ -73,19 +70,24 @@
 
 <script type="text/javascript" charset="utf-8">
   $('.section').sortable({
+    items: "li",
     update: function(){
       $(this).find('#item_position').each(function(index, element){$(element).val(index)});
       $(this).find('form').submit();
+    }
+  });
+
+  $('.live_edit_menu').sortable({
+    items: "ul",
+    handle: "h3", 
+    update: function(){
+      $(this).find('#section_position').each(function(index, element){$(element).val(index)});
+      $(this).find('.edit_section').submit();
     }
   });
   
   $('.section .item h4').click(function(){($(this).addClass('editing'))});
   $('.edit_item input').change(function(){$(this).parentsUntil('form').submit()});
 
-  $('#new_section').submit(function(){
-    $('#live_edit_menu').append('<h3>' + $('#section_name').val() + '</h3><ul class="section"></ul>');
-  });
-  $('#new_section').bind('ajax:success', function(){
-    $(this)[0].reset(); 
-  })
+  $('#add_section_link').click(function(){$('#new_section').show(); $(this).hide(); return false;});
 </script>

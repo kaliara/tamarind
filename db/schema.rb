@@ -140,7 +140,7 @@ ActiveRecord::Schema.define(:version => 20111018055823) do
   create_table "sections", :force => true do |t|
     t.integer  "menu_id"
     t.string   "name"
-    t.integer  "position"
+    t.integer  "position",   :default => 0
     t.boolean  "show_name",  :default => true
     t.boolean  "hidden",     :default => true
     t.datetime "created_at"

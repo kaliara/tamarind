@@ -16,11 +16,14 @@
 
 
 <div id="live_edit_menu" class="live_edit_menu">
-  <% @menu.sections.each do |section| %>
+  <% @menu.sections.non_hidden.each do |section| %>
     <ul class="section <%= "two_column" if section.two_column? %>">
       <%= form_for([:admin,section], :remote => true) do |f| %>
         <%= f.hidden_field :position %>
-        <h3 class="<%= 'no_name' unless section.show_name? %>"><%= section.name %></h3>
+        <h3 class="<%= 'no_name' unless section.show_name? %>">
+          <%= link_to "Details", edit_admin_section_path(section), :class => "edit_menu_section" %>
+          <%= f.text_field :name %>
+        </h3>
       <% end %>
       <% section.items.each do |item| %>
         <li class="item">
@@ -33,10 +36,11 @@
           <% end %>
         </li>
       <% end %>
+      <%= link_to "Add Item", new_admin_item_path(:section_id => section.id), :id => "add_item_link", :class => "add_item_link" %>
     </ul>
   <% end %>
   
-  <%= link_to "Add Section", new_admin_section_path, :id => "add_section_link" %>
+  <%= link_to "Add Section", new_admin_section_path, :id => "add_section_link", :class => "add_section_link" %>
   <%= form_for([:admin, Section.new], :html => {:style => "display: none"}) do |f| %>
     <h3>New Section</h3>
     <%= f.hidden_field :menu_id, :value => @menu.id %>
@@ -80,14 +84,17 @@
   $('.live_edit_menu').sortable({
     items: "ul",
     handle: "h3", 
+    axis: "y",
     update: function(){
       $(this).find('#section_position').each(function(index, element){$(element).val(index)});
       $(this).find('.edit_section').submit();
     }
   });
   
+  $('.live_edit_menu input').bind('keyup', function(e) {var code = (e.keyCode ? e.keyCode : e.which);if(code == 13) {$(this).trigger("blur");}});  
   $('.section .item h4').click(function(){($(this).addClass('editing'))});
   $('.edit_item input').change(function(){$(this).parentsUntil('form').submit()});
 
   $('#add_section_link').click(function(){$('#new_section').show(); $(this).hide(); return false;});
+  // $('.add_item_link').click(function(){$(this).parentsUntil('.section').find('#new_item').show(); $(this).hide(); return false;});
 </script>

@@ -1,9 +1,9 @@
 <h2>Editing <%= @menu.name %> Menu</h3>
 
-<%= form_for([:admin,@menu]) do |f| %>
+<%= form_for([:admin,@menu], :html => {:class => "edit_menu clearfix"}) do |f| %>
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :size => 15 %>
   </div>
   <div class="field">
     <%= f.label :viewable %>
@@ -91,7 +91,7 @@
     }
   });
   
-  $('.live_edit_menu input').bind('keyup', function(e) {var code = (e.keyCode ? e.keyCode : e.which);if(code == 13) {$(this).trigger("blur");}});  
+  $('.live_edit_menu input').bind('keyup', function(e) {var code = (e.keyCode ? e.keyCode : e.which);if(code == 13) {$(this).trigger("blur");$(this).parentsUntil('form').submit();}});  
   $('.section .item h4').click(function(){($(this).addClass('editing'))});
   $('.edit_item input').change(function(){$(this).parentsUntil('form').submit()});
 

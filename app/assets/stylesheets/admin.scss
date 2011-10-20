@@ -283,6 +283,7 @@ ul{
   
   .section{
     margin-bottom: 75px;
+    clear: both;
     
     h3{
       padding: 5px 0 5px 90px;
@@ -383,6 +384,17 @@ ul{
         padding: 5px;
       }
     }
+    &.two_column{
+      margin-right: -60px;
+
+      li{
+        height: 3em;
+        display: block;
+        float: left;
+        margin-right: 60px;
+        width: 30%;
+      }
+    }    
   }
   .add_section_link{
     font-size: 115%;
@@ -391,7 +403,9 @@ ul{
     font-size: 80%;
   }
   .add_item_link, .add_section_link{
+    display: block;
     color: #ac7e01;
+    clear: both;
     &:hover{
       color: #F5CD4E;
     }
@@ -402,4 +416,19 @@ ul{
     cursor: -moz-grabbing;
     opacity: 0.75;
   }
+}
+
+.edit_menu{
+  margin-bottom: 30px;
+}
+.edit_menu .field, .edit_menu .actions{
+  float: left;
+  margin-right: 30px;
+  clear: none;
+  label, .alt_label{
+    width: 85px;
+  }
+}
+.edit_menu .actions input{
+  margin: 0;
 }

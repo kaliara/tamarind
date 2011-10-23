@@ -10,4 +10,8 @@ module ApplicationHelper
   def nice_date(date)
     date.strftime("%b %e, %Y")
   end
+  
+  def nice_phone(num)
+    number_to_phone num.gsub(/\-|\(|\)|\s/,""), :area_code => true, :delimiter => "-"
+  end
 end

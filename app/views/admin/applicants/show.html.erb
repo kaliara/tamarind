@@ -1,292 +1,162 @@
-<h2>Applicant Review</h2>
-
 <h2>Contact Information</h2>
 <p>
-  <b>First name:</b>
-  <%= @applicant.first_name %>
+  <strong>Name:</strong>
+  <%= @applicant.first_name %> <%= @applicant.last_name %>
 </p>
 
 <p>
-  <b>Last name:</b>
-  <%= @applicant.last_name %>
-</p>
-
-<p>
-  <b>Email:</b>
+  <strong>Email:</strong>
   <%= @applicant.email %>
 </p>
 
 <p>
-  <b>Phone:</b>
+  <strong>Phone:</strong>
   <%= @applicant.evening_phone %>
 </p>
 
 <p>
-  <b>Address street1:</b>
+  <strong>Address street1:</strong>
   <%= @applicant.address_street1 %>
 </p>
 
 <p>
-  <b>Address street2:</b>
+  <strong>Address street2:</strong>
   <%= @applicant.address_street2 %>
 </p>
 
 <p>
-  <b>Address city:</b>
+  <strong>Address city:</strong>
   <%= @applicant.address_city %>
 </p>
 
 <p>
-  <b>Address state:</b>
+  <strong>Address state:</strong>
   <%= @applicant.address_state %>
 </p>
 
 <p>
-  <b>Address zip code:</b>
+  <strong>Address zip code:</strong>
   <%= @applicant.address_zipcode %>
 </p>
 
 
-<h2>Previous Employers</h2>
-<h3>Most Recent Employer</h3>
+<h2>Previous Employer <span class="note">(Most Recent)</span></h2>
+<% unless @applicant.employer1_name.blank? and @applicant.employer1_address_street1.blank? %>
+  <p>
+    <strong>Dates:</strong>
+    <%= nice_date @applicant.employer1_start_date %> - <%= @applicant.employer1_end_date.blank? ? "Present" : nice_date(@applicant.employer1_end_date) %>
+    <br><br>
+    <strong><%= @applicant.employer1_name %></strong><br>
+    <%= @applicant.employer1_address_street1 %> <%= @applicant.employer1_address_street2 %><br>
+    <%= @applicant.employer1_address_city %>, <%= @applicant.employer1_address_state %> <%= @applicant.employer1_address_zipcode %>
+    <br>
+    <%= @applicant.employer1_phone %>
+    <br><br>
+    <strong><%= @applicant.employer1_contactable? ? "YES," : "NO, not" %></strong> okay to contact <span class="note"><%= "(" + @applicant.employer1_no_contact_reason + ")" unless @applicant.employer1_contactable? %></span>
+    <br><br>
+    <strong>Highlights</strong><br><%= nice_notes @applicant.employer1_notes %>
+  </p>
+<% else %>
+  <p>No employer entered</p>
+<% end %>
 
-<p>
-  <b>Employer1 name:</b>
-  <%= @applicant.employer1_name %>
-</p>
 
-<p>
-  <b>Employer1 address street1:</b>
-  <%= @applicant.employer1_address_street1 %>
-</p>
+<h2>Previous Employer <span class="note">(2nd Most Recent)</span></h2>
+<% unless @applicant.employer2_name.blank? and @applicant.employer2_address_street1.blank? %>
+  <p>
+    <strong>Dates:</strong>
+    <%= @applicant.employer2_start_date.strftime("%b %e, %Y") %> - <%= @applicant.employer2_end_date.blank? ? "Present" : @applicant.employer2_end_date.strftime("%b %e, %Y") %>
+    <br><br>
+    <strong><%= @applicant.employer2_name %></strong><br>
+    <%= @applicant.employer2_address_street1 %> <%= @applicant.employer2_address_street2 %><br>
+    <%= @applicant.employer2_address_city %>, <%= @applicant.employer2_address_state %> <%= @applicant.employer2_address_zipcode %>
+    <br>
+    <%= @applicant.employer2_phone %>
+    <br><br>
+    <strong><%= @applicant.employer2_contactable? ? "YES," : "NO, not" %></strong> okay to contact <span class="note"><%= "(" + @applicant.employer2_no_contact_reason + ")" unless @applicant.employer2_contactable? %></span>
+    <br><br>
+    <strong>Highlights</strong><br><%= nice_notes @applicant.employer2_notes %>
+  </p>
+<% else %>
+  <p>No second employer entered</p>
+<% end %>
 
-<p>
-  <b>Employer1 address street2:</b>
-  <%= @applicant.employer1_address_street2 %>
-</p>
 
-<p>
-  <b>Employer1 address city:</b>
-  <%= @applicant.employer1_address_city %>
-</p>
-
-<p>
-  <b>Employer1 address state:</b>
-  <%= @applicant.employer1_address_state %>
-</p>
-
-<p>
-  <b>Employer1 address zipcode:</b>
-  <%= @applicant.employer1_address_zipcode %>
-</p>
-
-<p>
-  <b>Employer1 Phone:</b>
-  <%= @applicant.employer1_phone %>
-</p>
-
-<p>
-  <b>Employer1 start date:</b>
-  <%= @applicant.employer1_start_date %>
-</p>
-
-<p>
-  <b>Employer1 end date:</b>
-  <%= @applicant.employer1_end_date %>
-</p>
-
-<p>
-  <b>Employer1 Contactable:</b>
-  <%= @applicant.employer1_contactable %>
-</p>
-
-<p>
-  <b>Employer1 No Contact Reason:</b>
-  <%= @applicant.employer1_no_contact_reason %>
-</p>
-
-<p>
-  <b>Employer1 notes:</b>
-  <%= @applicant.employer1_notes %>
-</p>
-
-<h3>Second Most Recent Employer</h3>
-<p>
-  <b>Employer2 name:</b>
-  <%= @applicant.employer2_name %>
-</p>
-
-<p>
-  <b>Employer2 address street2:</b>
-  <%= @applicant.employer2_address_street1 %>
-</p>
-
-<p>
-  <b>Employer2 address street2:</b>
-  <%= @applicant.employer2_address_street2 %>
-</p>
-
-<p>
-  <b>Employer2 address city:</b>
-  <%= @applicant.employer2_address_city %>
-</p>
-
-<p>
-  <b>Employer2 address state:</b>
-  <%= @applicant.employer2_address_state %>
-</p>
-
-<p>
-  <b>Employer2 address zipcode:</b>
-  <%= @applicant.employer2_address_zipcode %>
-</p>
-
-<p>
-  <b>Employer2 Phone:</b>
-  <%= @applicant.employer2_phone %>
-</p>
-
-<p>
-  <b>Employer2 start date:</b>
-  <%= @applicant.employer2_start_date %>
-</p>
-
-<p>
-  <b>Employer2 end date:</b>
-  <%= @applicant.employer2_end_date %>
-</p>
-
-<p>
-  <b>Employer2 Contactable:</b>
-  <%= @applicant.employer2_contactable %>
-</p>
-
-<p>
-  <b>Employer2 No Contact Reason:</b>
-  <%= @applicant.employer2_no_contact_reason %>
-</p>
-
-<p>
-  <b>Employer2 notes:</b>
-  <%= @applicant.employer2_notes %>
-</p>
-
-<h3>Third Most Recent Employer</h3>
-<p>
-  <b>Employer3 name:</b>
-  <%= @applicant.employer3_name %>
-</p>
-
-<p>
-  <b>Employer3 address street3:</b>
-  <%= @applicant.employer3_address_street1 %>
-</p>
-
-<p>
-  <b>Employer3 address street3:</b>
-  <%= @applicant.employer3_address_street2 %>
-</p>
-
-<p>
-  <b>Employer3 address city:</b>
-  <%= @applicant.employer3_address_city %>
-</p>
-
-<p>
-  <b>Employer3 address state:</b>
-  <%= @applicant.employer3_address_state %>
-</p>
-
-<p>
-  <b>Employer3 address zipcode:</b>
-  <%= @applicant.employer3_address_zipcode %>
-</p>
-
-<p>
-  <b>Employer3 Phone:</b>
-  <%= @applicant.employer3_phone %>
-</p>
-
-<p>
-  <b>Employer3 start date:</b>
-  <%= @applicant.employer3_start_date %>
-</p>
-
-<p>
-  <b>Employer3 end date:</b>
-  <%= @applicant.employer3_end_date %>
-</p>
-
-<p>
-  <b>Employer3 Contactable:</b>
-  <%= @applicant.employer3_contactable %>
-</p>
-
-<p>
-  <b>Employer3 No Contact Reason:</b>
-  <%= @applicant.employer3_no_contact_reason %>
-</p>
-
-<p>
-  <b>Employer3 notes:</b>
-  <%= @applicant.employer3_notes %>
-</p>
+<h2>Previous Employer <span class="note">(3rd Most Recent)</span></h2>
+<% unless @applicant.employer3_name.blank? and @applicant.employer3_address_street1.blank? %>
+  <p>
+    <strong>Dates:</strong>
+    <%= @applicant.employer3_start_date.strftime("%b %e, %Y") %> - <%= @applicant.employer3_end_date.blank? ? "Present" : @applicant.employer3_end_date.strftime("%b %e, %Y") %>
+    <br><br>
+    <strong><%= @applicant.employer3_name %></strong><br>
+    <%= @applicant.employer3_address_street1 %> <%= @applicant.employer3_address_street2 %><br>
+    <%= @applicant.employer3_address_city %>, <%= @applicant.employer3_address_state %> <%= @applicant.employer3_address_zipcode %>
+    <br>
+    <%= @applicant.employer3_phone %>
+    <br><br>
+    <strong><%= @applicant.employer3_contactable? ? "YES," : "NO, not" %></strong> okay to contact <span class="note"><%= "(" + @applicant.employer3_no_contact_reason + ")" unless @applicant.employer3_contactable? %></span>
+    <br><br>
+    <strong>Highlights</strong><br><%= nice_notes @applicant.employer3_notes %>
+  </p>
+<% else %>
+  <p>No third employer entered</p>
+<% end %>
 
 
 
 <h2>Education and Experience</h2>
 <p>
-  <b>Education completed:</b>
+  <strong>Education completed:</strong>
   <%= @applicant.education_completed %>
 </p>
 
 <p>
-  <b>Highlights:</b>
-  <%= @applicant.brag %>
+  <strong>Highlights</strong><br>
+  <%= nice_notes @applicant.brag %>
 </p>
 
 
-<h3>Legal Information</h3>
+<h2>Legal Information</h2>
 <p>
-  <b>Convicted of felony:</b>
-  <%= @applicant.convicted_of_felony %>
+  <strong>Convicted of felony:</strong> 
+  <%= nice_boolean @applicant.convicted_of_felony %>
 </p>
 
 <p>
-  <b>Legal to Work in USA:</b>
-  <%= @applicant.legal_to_work_in_usa %>
+  <strong>Legal to Work in USA:</strong> 
+  <%= nice_boolean @applicant.legal_to_work_in_usa %>
 </p>
 
 
 <h2>Position Information</h2>
 <p>
-  <b>Position applying for:</b>
+  <strong>Position applying for:</strong>  
   <%= @applicant.position_applying_for %>
 </p>
 
 <p>
-  <b>Full time:</b>
-  <%= @applicant.full_time %>
+  <strong>Full time:</strong> 
+  <%= nice_boolean @applicant.full_time %>
 </p>
 
 <p>
-  <b>Part time:</b>
-  <%= @applicant.part_time %>
+  <strong>Part time:</strong> 
+  <%= nice_boolean @applicant.part_time %>
 </p>
 
 <p>
-  <b>Desired salary:</b>
-  <%= @applicant.desired_salary %>
+  <strong>Desired salary:</strong> 
+  <%= number_to_currency @applicant.desired_salary %>
 </p>
 
 <p>
-  <b>Available shifts:</b>
+  <strong>Available shifts:</strong> 
   <%= @applicant.available_shifts %>
 </p>
 
 <p>
-  <b>Available start date:</b>
-  <%= @applicant.available_start_date %>
+  <strong>Available start date:</strong> 
+  <%= nice_date @applicant.available_start_date %>
 </p>
 
 

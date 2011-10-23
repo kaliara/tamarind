@@ -125,6 +125,21 @@ ul{
   }
 }
 
+table{
+  th{
+    text-align: left;
+    font-size: 90%;
+    color: #fff;
+    padding: 5px 0;
+    background: transparent;
+  }
+  td{
+    padding: 3px 15px 3px 0;
+  }
+  tr:nth-child(2n){
+    background: #151515;
+  }
+}
 
 
 // header

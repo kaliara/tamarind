@@ -1,34 +1,25 @@
-<h2>Listing applicants <span class="note">(<%= @applicants.size %> total)</span></h2>
+<h2>Applicants <span class="note">(<%= @applicants.size %> total)</span></h2>
 
 <table>
   <tr>
-    <th>First name</th>
-    <th>Last name</th>
+    <th>Name</th>
     <th>Email</th>
-    <th>Daytime phone</th>
-    <th>Evening phone</th>
-    <th>Position applying for</th>
-    <th>Desired salary</th>
-    <th>Available shifts</th>
-    <th>Available start date</th>
-    <th></th>
-    <th></th>
+    <th>Phone</th>
+    <th>Position</th>
+    <th>Shifts</th>
+    <th>Available</th>
     <th></th>
   </tr>
 
 <% @applicants.each do |applicant| %>
   <tr>
-    <td><%= applicant.first_name %></td>
-    <td><%= applicant.last_name %></td>
-    <td><%= applicant.email %></td>
-    <td><%= applicant.daytime_phone %></td>
+    <td><%= applicant.first_name %> <%= applicant.last_name %></td>
+    <td><span class="note"><%= applicant.email %></span></td>
     <td><%= applicant.evening_phone %></td>
     <td><%= applicant.position_applying_for %></td>
-    <td><%= applicant.desired_salary %></td>
-    <td><%= applicant.available_shifts %></td>
+    <td><span class="note"><%= applicant.available_shifts.truncate(30) %></span></td>
     <td><%= applicant.available_start_date %></td>
-    <td><%= link_to 'Show', admin_applicant_path(applicant) %></td>
-    <td><%= link_to 'Destroy', admin_applicant_path(applicant), :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Details', admin_applicant_path(applicant) %></td>
   </tr>
 <% end %>
 </table>

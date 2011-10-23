@@ -35,7 +35,7 @@ $footer_element_margin: 65px;
 
 
 // main tags
-html, body, p, div, strong, div, span, h1, h2, h3, h4, h5{
+html, body, p, h1, h2, h3, h4, h5{
   font: 16px/1.2em 'Myriad Pro', 'Myriad', Helvetica, sans-serif;
   color: #e1d8cc;
 }
@@ -116,8 +116,9 @@ ul{
   min-height: 600px;
   margin-bottom: 50px;
   padding-left: 20px;
+  line-height: 1.5em;
   
-  p, span, div, strong{
+  p{
     font-size: 18px;
     line-height: 1.5em;
   }
@@ -424,4 +425,10 @@ ul{
 }
 .field_with_errors{
   display: inline;
+}
+
+// ckeditor
+body.ckeditor{
+  background: #000;
+  line-height: 1.5em;
 }

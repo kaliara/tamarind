@@ -1,8 +1,6 @@
 <%= form_for([:admin, @content]) do |f| %>
   <% if @content.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@content.errors.count, "error") %> prohibited this content from being saved:</h2>
-
       <ul>
       <% @content.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -12,18 +10,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :value %><br />
+    <%= f.label :value %>
     <%= f.text_area :value %>
   </div>
   <div class="field">
-    <%= f.label :published %><br />
+    <%= f.label :published %>
     <%= f.check_box :published %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
+<%= render :partial => "/admin/wysiwyg", :locals => {:no_wrap_tags => true} %>

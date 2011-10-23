@@ -1,10 +1,8 @@
-<h1>Editing applicant</h1>
+<h2>Editing applicant</h2>
 
 <%= form_for([:admin,@applicant]) do |f| %>
   <% if @applicant.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@applicant.errors.count, "error") %> prohibited this applicant from being saved:</h2>
-
       <ul>
       <% @applicant.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -14,187 +12,187 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :first_name %><br />
+    <%= f.label :first_name %>
     <%= f.text_field :first_name %>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br />
+    <%= f.label :last_name %>
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :daytime_phone %><br />
+    <%= f.label :daytime_phone %>
     <%= f.text_field :daytime_phone %>
   </div>
   <div class="field">
-    <%= f.label :evening_phone %><br />
+    <%= f.label :evening_phone %>
     <%= f.text_field :evening_phone %>
   </div>
   <div class="field">
-    <%= f.label :address_street1 %><br />
+    <%= f.label :address_street1 %>
     <%= f.text_field :address_street1 %>
   </div>
   <div class="field">
-    <%= f.label :address_street2 %><br />
+    <%= f.label :address_street2 %>
     <%= f.text_field :address_street2 %>
   </div>
   <div class="field">
-    <%= f.label :address_city %><br />
+    <%= f.label :address_city %>
     <%= f.text_field :address_city %>
   </div>
   <div class="field">
-    <%= f.label :address_state %><br />
+    <%= f.label :address_state %>
     <%= f.text_field :address_state %>
   </div>
   <div class="field">
-    <%= f.label :address_zipcode %><br />
+    <%= f.label :address_zipcode %>
     <%= f.text_field :address_zipcode %>
   </div>
   <div class="field">
-    <%= f.label :employer1_name %><br />
+    <%= f.label :employer1_name %>
     <%= f.text_field :employer1_name %>
   </div>
   <div class="field">
-    <%= f.label :employer1_address_street1 %><br />
+    <%= f.label :employer1_address_street1 %>
     <%= f.text_field :employer1_address_street1 %>
   </div>
   <div class="field">
-    <%= f.label :employer1_address_street2 %><br />
+    <%= f.label :employer1_address_street2 %>
     <%= f.text_field :employer1_address_street2 %>
   </div>
   <div class="field">
-    <%= f.label :employer1_address_city %><br />
+    <%= f.label :employer1_address_city %>
     <%= f.text_field :employer1_address_city %>
   </div>
   <div class="field">
-    <%= f.label :employer1_address_state %><br />
+    <%= f.label :employer1_address_state %>
     <%= f.text_field :employer1_address_state %>
   </div>
   <div class="field">
-    <%= f.label :employer1_address_zipcode %><br />
+    <%= f.label :employer1_address_zipcode %>
     <%= f.text_field :employer1_address_zipcode %>
   </div>
   <div class="field">
-    <%= f.label :employer1_start_date %><br />
+    <%= f.label :employer1_start_date %>
     <%= f.date_select :employer1_start_date %>
   </div>
   <div class="field">
-    <%= f.label :employer1_end_date %><br />
+    <%= f.label :employer1_end_date %>
     <%= f.date_select :employer1_end_date %>
   </div>
   <div class="field">
-    <%= f.label :employer1_notes %><br />
+    <%= f.label :employer1_notes %>
     <%= f.text_area :employer1_notes %>
   </div>
   <div class="field">
-    <%= f.label :employer2_name %><br />
+    <%= f.label :employer2_name %>
     <%= f.text_field :employer2_name %>
   </div>
   <div class="field">
-    <%= f.label :employer2_address_street1 %><br />
+    <%= f.label :employer2_address_street1 %>
     <%= f.text_field :employer2_address_street1 %>
   </div>
   <div class="field">
-    <%= f.label :employer2_address_street2 %><br />
+    <%= f.label :employer2_address_street2 %>
     <%= f.text_field :employer2_address_street2 %>
   </div>
   <div class="field">
-    <%= f.label :employer2_address_city %><br />
+    <%= f.label :employer2_address_city %>
     <%= f.text_field :employer2_address_city %>
   </div>
   <div class="field">
-    <%= f.label :employer2_address_state %><br />
+    <%= f.label :employer2_address_state %>
     <%= f.text_field :employer2_address_state %>
   </div>
   <div class="field">
-    <%= f.label :employer2_address_zipcode %><br />
+    <%= f.label :employer2_address_zipcode %>
     <%= f.text_field :employer2_address_zipcode %>
   </div>
   <div class="field">
-    <%= f.label :employer2_start_date %><br />
+    <%= f.label :employer2_start_date %>
     <%= f.date_select :employer2_start_date %>
   </div>
   <div class="field">
-    <%= f.label :employer2_end_date %><br />
+    <%= f.label :employer2_end_date %>
     <%= f.date_select :employer2_end_date %>
   </div>
   <div class="field">
-    <%= f.label :employer2_notes %><br />
+    <%= f.label :employer2_notes %>
     <%= f.text_area :employer2_notes %>
   </div>
   <div class="field">
-    <%= f.label :employer3_name %><br />
+    <%= f.label :employer3_name %>
     <%= f.text_field :employer3_name %>
   </div>
   <div class="field">
-    <%= f.label :employer3_address_street1 %><br />
+    <%= f.label :employer3_address_street1 %>
     <%= f.text_field :employer3_address_street1 %>
   </div>
   <div class="field">
-    <%= f.label :employer3_address_street2 %><br />
+    <%= f.label :employer3_address_street2 %>
     <%= f.text_field :employer3_address_street2 %>
   </div>
   <div class="field">
-    <%= f.label :employer3_address_city %><br />
+    <%= f.label :employer3_address_city %>
     <%= f.text_field :employer3_address_city %>
   </div>
   <div class="field">
-    <%= f.label :employer3_address_state %><br />
+    <%= f.label :employer3_address_state %>
     <%= f.text_field :employer3_address_state %>
   </div>
   <div class="field">
-    <%= f.label :employer3_address_zipcode %><br />
+    <%= f.label :employer3_address_zipcode %>
     <%= f.text_field :employer3_address_zipcode %>
   </div>
   <div class="field">
-    <%= f.label :employer3_start_date %><br />
+    <%= f.label :employer3_start_date %>
     <%= f.date_select :employer3_start_date %>
   </div>
   <div class="field">
-    <%= f.label :employer3_end_date %><br />
+    <%= f.label :employer3_end_date %>
     <%= f.date_select :employer3_end_date %>
   </div>
   <div class="field">
-    <%= f.label :employer3_notes %><br />
+    <%= f.label :employer3_notes %>
     <%= f.text_area :employer3_notes %>
   </div>
   <div class="field">
-    <%= f.label :education_completed %><br />
+    <%= f.label :education_completed %>
     <%= f.text_field :education_completed %>
   </div>
   <div class="field">
-    <%= f.label :brag %><br />
+    <%= f.label :brag %>
     <%= f.text_area :brag %>
   </div>
   <div class="field">
-    <%= f.label :contact_previous_employers %><br />
+    <%= f.label :contact_previous_employers %>
     <%= f.check_box :contact_previous_employers %>
   </div>
   <div class="field">
-    <%= f.label :convicted_of_felony %><br />
+    <%= f.label :convicted_of_felony %>
     <%= f.check_box :convicted_of_felony %>
   </div>
   <div class="field">
-    <%= f.label :position_applying_for %><br />
+    <%= f.label :position_applying_for %>
     <%= f.text_field :position_applying_for %>
   </div>
   <div class="field">
-    <%= f.label :full_time %><br />
+    <%= f.label :full_time %>
     <%= f.check_box :full_time %>
   </div>
   <div class="field">
-    <%= f.label :desired_salary %><br />
+    <%= f.label :desired_salary %>
     <%= f.number_field :desired_salary %>
   </div>
   <div class="field">
-    <%= f.label :available_shifts %><br />
+    <%= f.label :available_shifts %>
     <%= f.text_field :available_shifts %>
   </div>
   <div class="field">
-    <%= f.label :available_start_date %><br />
+    <%= f.label :available_start_date %>
     <%= f.date_select :available_start_date %>
   </div>
   <div class="actions">

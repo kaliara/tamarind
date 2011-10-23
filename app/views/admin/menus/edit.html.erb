@@ -31,7 +31,7 @@
             <%= f.hidden_field :position %>
             <%= link_to "Details", edit_admin_item_path(item), :class => "edit_menu_item" %>
             <h4><%= f.text_field :name %></h4>
-            <div class="price">$<%= f.text_field :price %></div>
+            <div class="price">$<%= f.text_field :price, :value => nice_money(item.price) %></div>
             <p class="description"><%= f.text_field :description %></p>
           <% end %>
         </li>
@@ -91,7 +91,11 @@
     }
   });
   
-  $('.live_edit_menu input').bind('keyup', function(e) {var code = (e.keyCode ? e.keyCode : e.which);if(code == 13) {$(this).trigger("blur");$(this).parentsUntil('form').submit();}});  
+  $('.live_edit_menu input').bind('keyup', function(e) {
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if(code == 13) {$(this).trigger("blur");}
+    if(code == 27) {$(this).parentsUntil('form').parent().each(function(){this.reset();}); $(this).trigger("blur");}
+  });  
   $('.section .item h4').click(function(){($(this).addClass('editing'))});
   $('.edit_item input').change(function(){$(this).parentsUntil('form').submit()});
 

@@ -7,12 +7,12 @@
 
 <p>
   <b>Value:</b>
-  <%= @content.value %>
+  <%= @content.value.html_safe %>
 </p>
 
 <p>
   <b>Published:</b>
-  <%= @content.published %>
+  <%= nice_boolean @content.published %>
 </p>
 
 

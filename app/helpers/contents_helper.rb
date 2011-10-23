@@ -1,7 +1,7 @@
 module ContentsHelper
   def render_content(name)
     @content = Content.find_by_name(name)
-    (!@content.blank? and @content.published) ? @content.value : ""
+    (!@content.blank? and @content.published) ? @content.value.html_safe : ""
   end
   
   def content_exists?(name)

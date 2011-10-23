@@ -4,6 +4,17 @@ function scrollbarPresent() {
   return (docHeight >= scroll);
 }
 
+(function( $ ){
+  $.fn.tooltip = function() {
+    this.find('img').each(function(){
+      $('<div class="tooltip" style="display: none">' + $(this).attr('alt') + '</div>').insertBefore($(this));
+      $(this).parent().height($(this).height() + 1);
+      $(this).mouseenter(function(){$(this).prev('.tooltip').slideDown().delay(3000).fadeOut()});
+    });
+  };
+})( jQuery );
+
+
 $(document).ready(function(){
   // reservations
   $('#make_reservation').click(function(){$('#opentable_form').fadeToggle(); clicky.goal('644'); return false;});

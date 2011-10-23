@@ -14,4 +14,8 @@ module ApplicationHelper
   def nice_phone(num)
     number_to_phone num.gsub(/\-|\(|\)|\s/,""), :area_code => true, :delimiter => "-"
   end
+  
+  def nice_money(amount)
+    number_to_currency amount, :precision => 10, :significant => true, :strip_insignificant_zeros => true, :unit => ""
+  end
 end

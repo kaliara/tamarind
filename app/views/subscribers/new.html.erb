@@ -6,9 +6,12 @@
   <% if @subscriber.errors.any? %>
     <div class="error"><%= @subscriber.errors.full_messages.first %></div>
   <% end %>
-
+  <br>
   <div class="field">
-    <%= f.text_field :email, :size => 25 %>
+    <%= f.label :name %>
+    <%= f.text_field :name, :size => 23 %><br><br>
+    <%= f.label :email %>
+    <%= f.text_field :email, :size => 23 %>&nbsp;&nbsp;
     <%= f.submit "submit", :class => "button" %>
   </div>
 

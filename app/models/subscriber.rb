@@ -11,7 +11,7 @@ class Subscriber < ActiveRecord::Base
   
   def add_to_mailchimp_list
     h = Hominid::API.new(MAILCHIMP_API_KEY)
-    if h.list_subscribe(MAILCHIMP_LIST_ID, self.email, {'FNAME' => '', 'LNAME' => ''}, 'html', false, true, true, false)
+    if h.list_subscribe(MAILCHIMP_LIST_ID, self.email, {'FNAME' => self.name.split(" ").first.to_s, 'LNAME' => self.name.split(" ").last.to_s}, 'html', false, true, true, false)
       self.subscribed = true
       self.save
     end

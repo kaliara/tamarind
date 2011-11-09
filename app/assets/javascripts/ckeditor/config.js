@@ -13,4 +13,5 @@ CKEDITOR.editorConfig = function( config )
   config.dialog_backgroundCoverColor = '#000';
   config.disableNativeSpellChecker = false;  
   config.width = 850;
+  config.basePath = '/assets/ckeditor/'
 };

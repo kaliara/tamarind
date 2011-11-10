@@ -7,7 +7,7 @@
       <% section.items.each do |item| %>
         <li class="item">
           <h4><%= item.name %></h4>
-          <div class="price"><span class="currency">$</span><%= nice_money item.price %></div>
+          <div class="price"><%= nice_money item.price %></div>
           <p class="description"><%= item.description %></p>
         </li>
       <% end %>

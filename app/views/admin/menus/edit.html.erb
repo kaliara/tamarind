@@ -31,7 +31,7 @@
             <%= f.hidden_field :position %>
             <%= link_to "Details", edit_admin_item_path(item), :class => "edit_menu_item" %>
             <h4><%= f.text_field :name %></h4>
-            <div class="price">$<%= f.text_field :price, :value => nice_money(item.price) %></div>
+            <div class="price"><%= f.text_field :price, :value => nice_money(item.price) %></div>
             <p class="description"><%= f.text_field :description %></p>
           <% end %>
         </li>

@@ -17,9 +17,9 @@
 
 <div id="food_samples" class="food_samples">
   <ul class="clearfix">
-    <li><%= image_tag "photo_food_sample1.jpg", :alt => "These shrimp are packed with kick, spice and flavor. (leave not edible)" %></li>
-    <li><%= image_tag "photo_food_sample2.jpg", :alt => "Best meat ever!" %></li>
-    <li><%= image_tag "photo_food_sample3.jpg", :alt => "The little cog crackers are top of the line. We ship them direct from a small mom-and-pop shop in Turkey where they are made fresh" %></li>
+    <li><%= image_tag "photo_food_sample1.jpg", :alt => "#{render_content('menu_photo_caption_1')}" %></li>
+    <li><%= image_tag "photo_food_sample2.jpg", :alt => "#{render_content('menu_photo_caption_2')}" %></li>
+    <li><%= image_tag "photo_food_sample3.jpg", :alt => "#{render_content('menu_photo_caption_3')}" %></li>
   </ul>
 </div>
 

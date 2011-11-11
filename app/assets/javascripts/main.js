@@ -8,7 +8,7 @@ function scrollbarPresent() {
   $.fn.tooltip = function() {
     this.find('img').each(function(){
       $('<div class="tooltip" style="display: none">' + $(this).attr('alt') + '</div>').insertBefore($(this));
-      $(this).parent().height($(this).height() + 1);
+      // $(this).parent().height($(this).height() + 1);
       $(this).mouseenter(function(){$(this).prev('.tooltip').slideDown().delay(3000).fadeOut()});
     });
   };

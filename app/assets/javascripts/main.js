@@ -9,7 +9,7 @@ function scrollbarPresent() {
     this.find('img').each(function(){
       $('<div class="tooltip" style="display: none">' + $(this).attr('alt') + '</div>').insertBefore($(this));
       // $(this).parent().height($(this).height() + 1);
-      $(this).mouseenter(function(){$(this).prev('.tooltip').slideDown().delay(3000).fadeOut()});
+      $(this).mouseenter(function(){$(this).prev('.tooltip').slideDown().delay(5000).fadeOut()});
     });
   };
 })( jQuery );

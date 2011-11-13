@@ -14,6 +14,6 @@ class PageSweeper < ActionController::Caching::Sweeper
 
 private
   def expire_cache_for(page)
-    expire_action(:controller=>"pages",:action=>"show",:id=>page.id)
+    expire_action(:controller => "pages", :action => "show", :id => page.id)
   end
 end

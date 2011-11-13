@@ -1,5 +1,6 @@
 class Admin::MessagesController < ApplicationController
   layout 'admin'
+  before_filter :admin_required
 
   # GET /messages
   # GET /messages.json

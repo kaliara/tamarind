@@ -1,5 +1,6 @@
 class Admin::ContentsController < ApplicationController
   layout 'admin'
+  before_filter :admin_required
 
   # GET /contents
   # GET /contents.json

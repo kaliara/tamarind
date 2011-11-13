@@ -1,5 +1,6 @@
 class Admin::PagesController < ApplicationController
   layout 'admin'
+  before_filter :admin_required
   cache_sweeper :pages_sweeper
 
   # GET /pages

@@ -1,5 +1,5 @@
 class MenusController < ApplicationController
-  caches_page :index
+  caches_page [:index, :show]
   
   # GET /menus
   # GET /menus.json

@@ -1,4 +1,6 @@
 class MenusController < ApplicationController
+  caches_page :index
+  
   # GET /menus
   # GET /menus.json
   def index

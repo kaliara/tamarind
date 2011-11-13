@@ -1,5 +1,6 @@
 class ApplicantsController < ApplicationController
   layout 'splash'
+  caches_page :new
 
   # GET /applicants/new
   # GET /applicants/new.json

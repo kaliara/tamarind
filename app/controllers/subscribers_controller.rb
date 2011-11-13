@@ -1,5 +1,6 @@
 class SubscribersController < ApplicationController
   layout 'splash'
+  caches_page :new
   
   # GET /subscribers/new
   # GET /subscribers/new.json

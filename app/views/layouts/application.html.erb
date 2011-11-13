@@ -26,7 +26,7 @@
             <% end %>
           </ul>
         </li>
-        <li class="link_location"><%= link_to "Location", "#" %></li>
+        <li class="link_location"><%= link_to "Location", view_page_path(:slug => 'location') %></li>
         <li class="link_about"><%= link_to "About", view_page_path(:slug => 'about') %></li>
         <li class="link_blog"><%= link_to "Blog", "http://blog.tamarindoflondon.com" %></li>
         <li class="link_contact last"><%= link_to "Contact", new_message_path %></li>
@@ -69,28 +69,27 @@
   
       <ul class="nav">
         <li><h5>Location</h5></li>
-        <li><%= link_to "Map", view_page_path(:slug => 'map') %></li>
-        <li><%= link_to "Hours", view_page_path(:slug => 'hours') %></li>
+        <li><%= link_to "Directions", view_page_path(:slug => 'location') %></li>
+        <li><%= link_to "Hours", view_page_path(:slug => 'location') %></li>
       </ul>
   
       <ul>
-        <li><h5>About</h5></li>
-        <li><%= link_to "History", view_page_path(:slug => 'history') %></li>
+        <li><h5>Information</h5></li>
+        <li><%= link_to "About", view_page_path(:slug => 'about') %></li>
         <li><%= link_to "Team", view_page_path(:slug => 'team') %></li>
-        <li><%= link_to "Hours", view_page_path(:slug => 'hours') %></li>
+        <li><%= link_to "Hours", view_page_path(:slug => 'location') %></li>
       </ul>
   
       <ul>
         <li><h5>Connect</h5></li>
-        <li><%= link_to "Blog", "http://blog.tamarindoflondon.com" %></li>
+        <!-- <li><%= link_to "Blog", "http://blog.tamarindoflondon.com" %></li> -->
         <li><%= link_to "Facebook", "http://www.facebook.com/tamarindoflondon", :target => "_blank" %></li>
         <li><%= link_to "Twitter", "http://www.twitter.com/tamarindlondon", :target => "_blank" %></li>
       </ul>
   
       <ul>
         <li><h5>Contact</h5></li>
-        <li><%= link_to "Make a Reservation", new_reservation_path %></li>
-        <li><%= link_to "Phone and Email", view_page_path(:slug => 'contact') %></li>
+        <li><%= link_to "Phone and Email", new_message_path %></li>
         <li><%= link_to "Leave Feedback", new_message_path %></li>
       </ul>
     </div>

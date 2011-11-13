@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  caches_page :new
+  
   # GET /messages/1
   # GET /messages/1.json
   def show

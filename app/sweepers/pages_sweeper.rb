@@ -1,4 +1,4 @@
-class PageSweeper < ActionController::Caching::Sweeper
+class PagesSweeper < ActionController::Caching::Sweeper
   observe Page
   def after_update(page)
     expire_cache_for(page)
@@ -14,6 +14,6 @@ class PageSweeper < ActionController::Caching::Sweeper
 
 private
   def expire_cache_for(page)
-    expire_page(:controller => 'pages', :action => page.slug)
+    expire_page(:controller => '/pages', :action => 'show', :slug => page.slug)
   end
 end

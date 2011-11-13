@@ -1,5 +1,6 @@
 class Admin::PagesController < ApplicationController
   layout 'admin'
+  cache_sweeper :pages_sweeper
 
   # GET /pages
   # GET /pages.json

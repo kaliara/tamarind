@@ -1,6 +1,7 @@
 class Admin::ItemsController < ApplicationController
   layout 'admin'
   before_filter :admin_required
+  cache_sweeper :items_sweeper
 
   # GET /items
   # GET /items.json

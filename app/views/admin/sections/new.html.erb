@@ -1,4 +1,4 @@
-<h1>New Menu section</h1>
+<h2>New Menu section</h2>
 
 <%= form_for([:admin, @section]) do |f| %>
   <% if @section.errors.any? %>
@@ -14,23 +14,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :menu_id %><br />
+    <%= f.label :menu_id %>
     <%= f.select :menu_id, Menu.all.collect{|m| [m.name, m.id]} %>
   </div>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :show_name %><br />
+    <%= f.label :show_name %>
     <%= f.check_box :show_name %><span class="note">(uncheck to hide name on menu)</span>
   </div>
   <div class="field">
-    <%= f.label :two_column %><br />
+    <%= f.label :two_column %>
     <%= f.check_box :two_column %><span class="note">(menu displayed in two columns?)</span>
   </div>
   <div class="field">
-    <%= f.label :hidden %><br />
+    <%= f.label :hidden %>
     <%= f.check_box :hidden %>
   </div>
   <div class="actions">

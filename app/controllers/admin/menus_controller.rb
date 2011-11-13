@@ -1,6 +1,7 @@
 class Admin::MenusController < ApplicationController
   layout 'admin'
   before_filter :admin_required
+  cache_sweeper :menus_sweeper
 
   # GET /menus
   # GET /menus.json

@@ -1,6 +1,7 @@
 class Admin::SectionsController < ApplicationController
   layout 'admin'
   before_filter :admin_required
+  cache_sweeper :sections_sweeper
 
   # GET /sections
   # GET /sections.json

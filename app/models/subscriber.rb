@@ -7,6 +7,8 @@ class Subscriber < ActiveRecord::Base
   MAILCHIMP_LIST_ID = "99cd4f5fb9"
   MAILCHIMP_API_KEY = "5836f9cb2a97377f69220517159b73ee-us2"
   
+  default_scope order('created_at desc')
+  
   after_create :add_to_mailchimp_list
   
   def add_to_mailchimp_list

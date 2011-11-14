@@ -64,7 +64,7 @@ address{
 h2 {
   color: $accent;
   line-height: 90%;
-  margin: 40px 0 30px;
+  margin: 45px 0 25px;
   text-transform: uppercase;
   font-size: 300%;
   font-weight: normal;
@@ -133,7 +133,7 @@ ul{
   }
   
   .layout_half{
-    max-width: 47%;
+//    max-width: 47%;
   }
 }
 
@@ -237,6 +237,8 @@ ul{
 .pages.about      .header .nav ul li.link_about > a,
 .pages.about      .header .nav ul li.link_about .link_about_story > a,
 .pages.team       .header .nav ul li.link_about .link_about_team > a,
+.applicants       .header .nav ul li.link_about .link_about_careers > a,
+.applicants       .header .nav ul li.link_about > a,
 .messages         .header .nav ul li.link_contact > a {
   color: #f5cd4e;
 }
@@ -248,7 +250,8 @@ ul{
 }
 
 .pages.team  .header .nav ul li.link_about ul.sub_nav,
-.pages.about .header .nav ul li.link_about ul.sub_nav{
+.pages.about .header .nav ul li.link_about ul.sub_nav,
+.applicants  .header .nav ul li.link_about ul.sub_nav{
   display: block !important;
 }
 
@@ -366,7 +369,6 @@ ul{
     }
   }
   select{
-    min-width: 329px;
     height: 30px;
     padding: 5px;
     font-size: 90%;
@@ -397,7 +399,7 @@ ul{
   }
 }
 .actions{
-  margin-bottom: 20px;
+  margin: 20px 0;
   input{
     @include button-base;
   }
@@ -456,6 +458,17 @@ body.ckeditor{
 // home page
 body.home{
   background: #000 url(image_path('background_home.jpg')) no-repeat top center;
+  .new_subscriber{
+    margin-top: 20px;
+  }
+  .home_page_subscriber{
+    label{
+      width: 40px;
+    }
+    .button{
+      margin: 10px 0 0 50px;
+    }
+  }
 }
 
 // about page

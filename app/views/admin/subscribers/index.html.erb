@@ -2,12 +2,14 @@
 
 <table>
   <tr>
+    <th>Name</th>
     <th>Email</th>
     <th>Added On</th>
   </tr>
 
 <% @subscribers.each do |subscriber| %>
   <tr>
+    <td><%= subscriber.name %></td>
     <td><%= subscriber.email %></td>
     <td><%= subscriber.created_at.strftime("%b-%d-%Y") %></td>
   </tr>

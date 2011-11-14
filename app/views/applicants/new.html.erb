@@ -1,3 +1,5 @@
+<%= render_content "new_applicant_intro" %>
+
 <%= form_for(@applicant) do |f| %>
   <% if @applicant.errors.any? %>
     <div id="error_explanation">
@@ -262,7 +264,7 @@
     <%= f.text_field :available_shifts %> <span class="note">(example: "Fri-Sun Daytime and Tue-Thu Evenings")</span>
   </div>
   <div class="field">
-    <%= f.label :available_start_date, "Available Start Date" %>
+    <%= f.label :available_start_date, "Start Date" %>
     <%= f.date_select :available_start_date, :start_year => Date.today.year, :end_year => Date.today.year + 1, :order => [:month, :day, :year] %>
   </div>
   <div class="actions">

@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
   <script type="text/javascript" src="http://use.typekit.com/ijt8vpn.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <!--[if IE lte 7]> <link href="ie.css" rel="stylesheet" type="text/css"> <![endif]-->
 </head>
 <body class="<%= @body_class || params[:controller].parameterize %>">
 
@@ -19,7 +20,7 @@
     </div>
     <div class="nav">
       <ul>
-        <li class="link_menus"><%= link_to "Menus", menus_path %>
+        <li class="link_menus"><%= link_to "Menus", view_menu_path(:slug => "dinner") %>
           <ul class="sub_nav" style="display:none">
             <% Menu.viewable.each do |menu| %>
               <li class="link_menus_<%= menu.name.parameterize %>"><%= link_to menu.name, view_menu_path(:slug => menu.slug) %></li>
@@ -31,6 +32,7 @@
           <ul class="sub_nav" style="display:none">
             <li class="link_about_story"><%= link_to "Story", view_page_path(:slug => "about") %></li>
             <li class="link_about_team"><%= link_to "Team", view_page_path(:slug => "team") %></li>
+            <li class="link_about_careers"><%= link_to "Careers", new_applicant_path(:position => 'front') %></li>
           </ul>
         </li>
         <!-- <li class="link_blog"><%= link_to "Blog", "http://blog.tamarindoflondon.com" %></li> -->
@@ -82,6 +84,7 @@
         <li><h5>About</h5></li>
         <li><%= link_to "Tamarind", view_page_path(:slug => 'about') %></li>
         <li><%= link_to "Team", view_page_path(:slug => 'team') %></li>
+        <li><%= link_to "Careers", new_applicant_path(:position => 'front') %></li>
       </ul>
   
       <ul>

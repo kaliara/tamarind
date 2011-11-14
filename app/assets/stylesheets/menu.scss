@@ -36,10 +36,12 @@ body.menus{
         font-size: 80%;
         font-weight: normal;
         margin-bottom: 0;
+        clear: both;
       }
       .price{
         font-size: 95%;
         line-height: 1.2em;
+        float: left;
       }
     }
     &.two_column{
@@ -55,6 +57,29 @@ body.menus{
         }
       }
     }    
+  }
+  .direct_from_london{
+    display: block;
+    width: 22px;
+    height: 19px;
+    overflow: hidden;
+    color: #f5cd4e;
+    padding-left: 30px;
+    
+    &:before {
+      content: url(image_path("icon_direct.png"));
+      display: -moz-inline-box;
+      display: inline-block;
+      font-size: 0;
+      line-height: 0;
+    }
+  }
+  .direct_from_london_info{
+    margin: 70px 0 0;
+    .direct_from_london{
+      padding: 0 10px 0 0;
+      float: left;
+    }
   }
 }
 

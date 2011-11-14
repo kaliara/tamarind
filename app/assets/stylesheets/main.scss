@@ -41,7 +41,7 @@ html, body, p, h1, h2, h3, h4, h5{
 }
 
 body{
-  background: #000 url(image_path('background.jpg')) center top no-repeat;
+  background: #000 url(image_path('background_slate.jpg')) -275px -135px no-repeat;
 }
 
 p{
@@ -117,6 +117,15 @@ ul{
   margin-bottom: 50px;
   padding-left: 20px;
   line-height: 1.5em;
+  
+  ul{
+    list-style-type: disc;
+    margin-left: 20px;
+  
+    li{
+      margin: 0 0 5px;
+    }
+  }
   
   p{
     font-size: 18px;
@@ -339,31 +348,30 @@ ul{
     border: 1px solid #6a675f;
     color: #fff;
     padding: 3px 5px;
-    font-size: 90%;
+    font-size: 100%;
     &:focus{
       opacity: 1;
       border-color: #87837a;
     }
   }
   select{
-    font-size: 70%;
-    min-width: 333px;
+    min-width: 329px;
     height: 30px;
     padding: 5px;
+    font-size: 90%;
     option{
       padding: 5px;
     }
   }
   textarea{
     height: 110px;
-    width: 323px;
+    width: 317px;
   }
   label, .alt_label{
     width: $label_width;
     display: block;
     float: left;
     text-align: right;
-    font-size: 90%;
     margin-right: 10px;
     padding-top: 2px;
   }
@@ -434,12 +442,36 @@ body.ckeditor{
 }
 
 
+// home page
+body.home{
+  background: #000 url(image_path('background_home.jpg')) no-repeat top center;
+}
+
+// about page
+body.about{}
+
 // team page
 body.team{
   background: #000 url(image_path('background_slate.jpg')) no-repeat -275px -135px;
+  
+  .main { 
+    .layout_half{
+      max-width: 100%;
+    }
+  
+    .photo{
+      padding: 30px 0 75px 40px;
+    }
+  }
 }
 
 // location page
 body.location{
   background: #000 url(image_path('background_location.jpg')) no-repeat 0 -250px;
+  
+  .main{
+    .layout_half{
+      max-width: 100%;
+    }
+  }
 }

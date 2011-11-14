@@ -1,5 +1,5 @@
 <h2>Contact Us</h2>
-
+<%= render_content 'contact_page_intro' %>
 <%= form_for(@message) do |f| %>
   <% if @message.errors.any? %>
     <div id="error_explanation">

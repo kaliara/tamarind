@@ -5,7 +5,7 @@ class AdminController < ApplicationController
   end
   
   def login
-    @admin = Admin.find_by_email(params[:email])
+    @admin = Admin.find_by_email(params[:username]+"@tamarindoflondon.com")
     if !@admin.nil? and @admin.valid_credentials?(params[:password])    
       session[:admin] = @admin.new_session_id
       # :notice => "Logged in successfully, welcome back."

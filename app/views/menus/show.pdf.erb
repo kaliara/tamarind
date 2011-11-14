@@ -3,14 +3,12 @@
   <% @menu.sections.each do |section| %>
   <% if section.show_name? %><h3><%= section.name %></h3><% end %>
   <ul class="section <%= "two_column" if section.two_column? %>">
-    <% 5.times do %>
     <% section.items.each do |item| %>
       <li>
         <h4><%= item.name %></h4>
-        <div class="price"><%= number_to_currency item.price, :precision => 0 %></div>
+        <div class="price"><%= nice_money item.price %></div>
         <p class="description"><%= item.description %></p>
       </li>
-    <% end %>
     <% end %>
   </ul>
   <% end %>

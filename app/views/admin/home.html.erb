@@ -2,8 +2,8 @@
   <%= form_tag(:controller => "admin", :action => "login") do %>
     <h2>Admin Login</h2>
     <div class="field">
-      <%= label_tag :email %>
-      <%= text_field_tag :email, params[:email] %>
+      <%= label_tag :username %>
+      <%= text_field_tag :username, params[:username] %>
     </div>
     <div class="field">
       <%= label_tag :password %>

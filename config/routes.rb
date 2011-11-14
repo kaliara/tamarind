@@ -5,6 +5,7 @@ App::Application.routes.draw do
   match 'admin'                        => 'admin#home',         :as => :admin_home 
   match 'menus/:slug(.:format)'        => 'menus#show',         :as => :view_menu
   match 'info/:slug'                   => 'pages#show',         :as => :view_page
+  match '/home'                        => 'pages#home',         :as => :home
   
   resources :applicants,    :only => [:create]
   resources :menus,         :only => [:index, :show]
@@ -81,8 +82,5 @@ App::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
   
-  # temporary root path
-  match '/home'   => 'pages#home',     :as => :home
-  
-  root :to => "subscribers#new"
+  root :to => 'pages#home'
 end

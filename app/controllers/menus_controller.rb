@@ -18,7 +18,7 @@ class MenusController < ApplicationController
     @menu = Menu.find_by_slug(params[:slug])
     
     unless @menu.nil? or !@menu.viewable?
-      @body_class = "menus menu_#{@menu.slug}"
+      @body_class = "menus #{@menu.slug}"
       respond_to do |format|
         format.html # show.html.erb
         format.pdf do

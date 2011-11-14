@@ -230,14 +230,25 @@ ul{
 }
 
 // navigation active
-.menus        .header .nav ul li.link_menus > a,
-.menus.dinner .header .nav ul li.link_menus .link_menus_dinner a,
-.pages.about  .header .nav ul li.link_about > a,
-.messages     .header .nav ul li.link_contact > a {
+.menus            .header .nav ul li.link_menus > a,
+.menus.dinner     .header .nav ul li.link_menus .link_menus_dinner a,
+.menus.dessert    .header .nav ul li.link_menus .link_menus_dessert a,
+.menus.cocktails  .header .nav ul li.link_menus .link_menus_cocktails a,
+.pages.about      .header .nav ul li.link_about > a,
+.pages.about      .header .nav ul li.link_about .link_about_story > a,
+.pages.team       .header .nav ul li.link_about .link_about_team > a,
+.messages         .header .nav ul li.link_contact > a {
   color: #f5cd4e;
 }
 
-.menus.dinner .header .nav ul li.link_menus ul.sub_nav{
+.menus.dinner .header .nav ul li.link_menus ul.sub_nav,
+.menus.dessert .header .nav ul li.link_menus ul.sub_nav,
+.menus.cocktails .header .nav ul li.link_menus ul.sub_nav{
+  display: block !important;
+}
+
+.pages.team  .header .nav ul li.link_about ul.sub_nav,
+.pages.about .header .nav ul li.link_about ul.sub_nav{
   display: block !important;
 }
 
@@ -452,15 +463,13 @@ body.about{}
 
 // team page
 body.team{
-  background: #000 url(image_path('background_slate.jpg')) no-repeat -275px -135px;
-  
   .main { 
     .layout_half{
       max-width: 100%;
     }
   
     .photo{
-      padding: 30px 0 75px 40px;
+      padding: 0 0 60px 40px;
     }
   }
 }
@@ -468,6 +477,16 @@ body.team{
 // location page
 body.location{
   background: #000 url(image_path('background_location.jpg')) no-repeat 0 -250px;
+  
+  .main{
+    .layout_half{
+      max-width: 100%;
+    }
+  }
+}
+// location page
+body.location{
+//  background: #000 url(image_path('background_location.jpg')) no-repeat 0 -250px;
   
   .main{
     .layout_half{

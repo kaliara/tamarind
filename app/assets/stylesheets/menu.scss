@@ -1,9 +1,12 @@
 // menu
 body.menus{
-  background: #000;
   .main .layout_half{
     max-width: 100%;
-    width: 100%;
+    
+    ul{
+      list-style-type: none;
+      margin: 0;
+    }
   }
 }
 
@@ -64,6 +67,7 @@ body.menus{
       position: relative;
       float: left;
       height: 231px;
+      margin-bottom: 75px;
       img{
         border: 1px solid #555;
       }

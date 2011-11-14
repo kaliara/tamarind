@@ -27,8 +27,13 @@
           </ul>
         </li>
         <li class="link_location"><%= link_to "Location", view_page_path(:slug => 'location') %></li>
-        <li class="link_about"><%= link_to "About", view_page_path(:slug => 'about') %></li>
-        <li class="link_blog"><%= link_to "Blog", "http://blog.tamarindoflondon.com" %></li>
+        <li class="link_about"><%= link_to "About", view_page_path(:slug => 'about') %>
+          <ul class="sub_nav" style="display:none">
+            <li class="link_about_story"><%= link_to "Story", view_page_path(:slug => "about") %></li>
+            <li class="link_about_team"><%= link_to "Team", view_page_path(:slug => "team") %></li>
+          </ul>
+        </li>
+        <!-- <li class="link_blog"><%= link_to "Blog", "http://blog.tamarindoflondon.com" %></li> -->
         <li class="link_contact last"><%= link_to "Contact", new_message_path %></li>
       </ul>
     </div>
@@ -74,10 +79,9 @@
       </ul>
   
       <ul>
-        <li><h5>Information</h5></li>
-        <li><%= link_to "About", view_page_path(:slug => 'about') %></li>
+        <li><h5>About</h5></li>
+        <li><%= link_to "Tamarind", view_page_path(:slug => 'about') %></li>
         <li><%= link_to "Team", view_page_path(:slug => 'team') %></li>
-        <li><%= link_to "Hours", view_page_path(:slug => 'location') %></li>
       </ul>
   
       <ul>

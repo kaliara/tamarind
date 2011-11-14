@@ -7,13 +7,13 @@
   <%= csrf_meta_tags %>
   <script type="text/javascript" src="http://use.typekit.com/ijt8vpn.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-  <!--[if IE lte 7]> <link href="ie.css" rel="stylesheet" type="text/css"> <![endif]-->
+  <![if lte IE 7]><%= stylesheet_link_tag "ie", :media => "all" %><![endif]>
 </head>
 <body class="<%= @body_class || params[:controller].parameterize %>">
 
 <div class="header clearfix">
   <div class="wrapper">
-    <h1 class="logo"><%= link_to image_tag(image_path('logo_header.png'), :alt => "Tamarind of London"), home_path, :title => "Tamarind of London" %></h1>
+    <h1 class="logo"><%= link_to image_tag(image_path('logo_header.png'), :alt => "Tamarind of London"), root_url, :title => "Tamarind of London" %></h1>
     <div class="reservation">
       <%= link_to "Make a Reservation", new_reservation_path, :class => "make_reservation", :id => "make_reservation" %>
       <div id="opentable_form" class="opentable_form" style="display:none"><script type="text/javascript" src="http://www.opentable.com/frontdoor/default.aspx?rid=69718&restref=69718&hover=1"></script></div>
@@ -53,7 +53,7 @@
 <div class="footer">
   <div class="overview">
     <div class="wrapper clearfix">
-      <h4 class="logo"><%= link_to image_tag(image_path('logo_footer.png'), :alt => "Tamarind of London"), home_path, :title => "Tamarind of London" %></h4>
+      <h4 class="logo"><%= link_to image_tag(image_path('logo_footer.png'), :alt => "Tamarind of London"), root_url, :title => "Tamarind of London" %></h4>
       
       <a class="location" href="http://maps.google.com/maps?q=7862+East+Pacific+Coast+Highway+Newport+Beach,+California&oe=utf-8&client=firefox-a&hnear=7862+E+Pacific+Coast+Hwy,+Laguna+Beach,+California+92651&gl=us&t=m&z=16&vpsrc=0" target="_blank">
         <address>7862 East Pacific Coast Highway<br>Newport Beach, California 92651</address>

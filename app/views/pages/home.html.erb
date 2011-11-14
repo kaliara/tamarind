@@ -7,7 +7,7 @@
 <h2>Our Menu</h2>
 <p>Tamarind of London in Newport Beach has built on the success of<br>its Michelin-honored predecessor with its unique blend of<br>Indian cuisine and crossover dishes.<br>
   <% Menu.viewable.each do |menu| %>
-    <h3><%= link_to menu.name, view_menu_path(:slug => menu.slug) %></h3>
+    <div class="menu_listing"><%= link_to menu.name, view_menu_path(:slug => menu.slug) %></div>
   <% end %>
 </p>
 

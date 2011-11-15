@@ -14,7 +14,7 @@
 <h2>Connect With Us</h2>
 <p>Get the latest updates on our <a href="http://www.facebook.com/tamarindoflondon" class="facebook">Facebook page</a></p>
 <%= form_for(Subscriber.new) do |f| %>
-  <p>Join our newsletter for special offers an announcements:</p>
+  <p>Join our newsletter for special offers and announcements:</p>
   <div class="field home_page_subscriber">
     <%= f.label :name %>
     <%= f.text_field :name, :size => 23 %><br>
@@ -31,4 +31,4 @@
 <!-- <li><a href="http://blog.tamarindoflondon.com" class="blog">Blog</a></li> -->
 <br>
 <h2>Career Opportunities</h2>
-<p><%= link_to "Join a winning team", new_applicant_url(:position => "front"), :class => "front_house" %>&nbsp; and help bring Indian cuisine and crossover dishes to Newport Beach.</p>
+<p><%= link_to "Join a winning team", new_applicant_url(:position => "front"), :class => "front_house" %></p>

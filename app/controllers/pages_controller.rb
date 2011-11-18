@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  caches_page :show
+  caches_page :show, :home
   
   # GET /pages/1
   # GET /pages/1.json

@@ -20,9 +20,9 @@
 
 <div id="food_samples" class="food_samples">
   <ul class="clearfix">
-    <li><%= image_tag "#{@menu.slug}_photo1.jpg", :alt => "#{render_content('menu_photo_caption_1')}" %></li>
-    <li><%= image_tag "#{@menu.slug}_photo2.jpg", :alt => "#{render_content('menu_photo_caption_2')}" %></li>
-    <li><%= image_tag "#{@menu.slug}_photo3.jpg", :alt => "#{render_content('menu_photo_caption_3')}" %></li>
+    <li><%= image_tag "#{@menu.slug}_photo1.jpg", :alt => "#{render_content(@menu.slug + '_photo1_caption')}" %></li>
+    <li><%= image_tag "#{@menu.slug}_photo2.jpg", :alt => "#{render_content(@menu.slug + '_photo2_caption')}" %></li>
+    <li><%= image_tag "#{@menu.slug}_photo3.jpg", :alt => "#{render_content(@menu.slug + '_photo3_caption')}" %></li>
   </ul>
 </div>
 

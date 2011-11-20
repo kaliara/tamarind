@@ -62,7 +62,10 @@
     <div class="wrapper clearfix">
       <h4 class="logo"><%= link_to image_tag(image_path('logo_footer.png'), :alt => "Tamarind of London"), root_url, :title => "Tamarind of London" %></h4>
       
-      <a class="location" href="http://maps.google.com/maps?q=7862+East+Pacific+Coast+Highway+Newport+Beach,+California+92651&oe=utf-8&client=firefox-a&hnear=7862+E+Pacific+Coast+Hwy,+Laguna+Beach,+California+92651&gl=us&t=m&z=16&vpsrc=0" target="_blank">
+      <a class="location fullscreen_only" href="http://maps.google.com/maps?q=7862+Pacific+Coast+Hwy,+South+Coast,+Orange,+California+92657&hnear=7862+Pacific+Coast+Hwy,+South+Coast,+Orange,+California+92657&gl=us&t=m&z=16&vpsrc=0" target="_blank">
+        <address>7862 East Pacific Coast Highway<br>Newport Beach, California 92657</address>
+      </a>
+      <a class="location mobile_only" href="http://maps.google.com/maps?q=33.570868,-117.833678&gl=us&t=m&z=16&vpsrc=0" target="_blank">
         <address>7862 East Pacific Coast Highway<br>Newport Beach, California 92657</address>
       </a>
       <a class="contact" href="<%= new_message_path %>">

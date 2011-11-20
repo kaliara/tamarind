@@ -2,12 +2,18 @@
 <html>
 <head>
   <title>Tamarind of London :: Newport Beach, California</title>
-  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all", :id => "stylesheet" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <script type="text/javascript" src="http://use.typekit.com/ijt8vpn.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <!--[if lte IE 7]> <%= stylesheet_link_tag "ie", :media => "all" %> <![endif]-->
+  <script type="text/javascript" charset="utf-8">
+    if ((/mobile/i.test(navigator.userAgent)) && (/ipad/i.test(navigator.userAgent) == false)){
+      swapStylesheet("/assets/application_mobile.css");
+      document.write('<meta name="viewport" content="width=device-width,initial-scale=0.8,user-scalable=no" />');
+    }
+  </script>
 </head>
 <body class="<%= @body_class || params[:controller].parameterize %>">
 
@@ -20,7 +26,7 @@
     </div>
     <div class="nav">
       <ul>
-        <li class="link_menus"><%= link_to "Menus", view_menu_path(:slug => "dinner") %>
+        <li class="link_menus"><%= link_to "Menus", menus_path %>
           <ul class="sub_nav" style="display:none">
             <% Menu.viewable.each do |menu| %>
               <li class="link_menus_<%= menu.name.parameterize %>"><%= link_to menu.name, view_menu_path(:slug => menu.slug) %></li>
@@ -65,7 +71,7 @@
     </div>
   </div>
   
-  <div class="sitemap">
+  <div class="sitemap fullscreen_only">
     <div class="wrapper clearfix">
       <ul class="nav">
         <li><h5>Menus</h5></li>

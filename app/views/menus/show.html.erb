@@ -18,7 +18,7 @@
   <% if @menu.slug == "dinner" %><div class="direct_from_london_info"><div class="direct_from_london">**</div> = Item direct from London</div><% end %>
 </div>
 
-<div id="food_samples" class="food_samples">
+<div id="food_samples" class="food_samples fullscreen_only">
   <ul class="clearfix">
     <li><%= image_tag "#{@menu.slug}_photo1.jpg", :alt => "#{render_content(@menu.slug + '_photo1_caption')}" %></li>
     <li><%= image_tag "#{@menu.slug}_photo2.jpg", :alt => "#{render_content(@menu.slug + '_photo2_caption')}" %></li>

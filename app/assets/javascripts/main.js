@@ -4,6 +4,10 @@ function scrollbarPresent() {
   return (docHeight >= scroll);
 }
 
+function swapStylesheet(url) {
+  document.getElementById('stylesheet').href = url;
+}
+
 (function( $ ){
   $.fn.tooltip = function() {
     this.find('img').each(function(){

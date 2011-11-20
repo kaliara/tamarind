@@ -1,3 +1,12 @@
+// hide/show special elements
+.mobile_only{
+  display: block;
+}
+.fullscreen_only{
+  display: none;
+}
+
+
 //variables and mixins
 $accent: #b32727;
 $label_width: 125px;
@@ -15,9 +24,9 @@ $footer_element_margin: 65px;
   border: 0;
   cursor: pointer;
   opacity: 0.9;
-  margin: 10px 0 0 $label_width + 10;
-  padding: 4px 5px;
-  font-size: 100%;
+  margin: 10px 0 0;
+  padding: 7px 10px;
+  font-size: 125%;
   font-weight: bold;
   &:hover{
     opacity: 1;
@@ -36,12 +45,12 @@ $footer_element_margin: 65px;
 
 // main tags
 html, body, p, h1, h2, h3, h4, h5{
-  font: 16px/1.2em 'Myriad Pro', 'Myriad', Helvetica, sans-serif;
+  font: 22px/1.2em 'Myriad Pro', 'Myriad', Helvetica, sans-serif;
   color: #e1d8cc;
 }
 
 body{
-  background: #000 url(image_path('background_slate.jpg')) -275px -135px no-repeat;
+  background: #000;
 }
 
 p{
@@ -107,15 +116,13 @@ ul{
 }
 
 .wrapper{
-  max-width: 1200px;
-  margin: 0 auto;
+  width: auto;
+  max-width: auto;
 }
 
 .main{
-  clear: both;
-  min-height: 600px;
   margin-bottom: 50px;
-  padding-left: 20px;
+  padding: 10px 5px;
   line-height: 1.5em;
   
   ul{
@@ -132,31 +139,24 @@ ul{
     line-height: 1.5em;
   }
   
-  .layout_half{
-    max-width: 47%;
-  }
 }
 
 
 
 // header
 .header{
-  background: transparent url(image_path("background_header.png")) repeat 0 0;
-  padding: 10px 20px;
-  margin-top: 25px;
+  padding: 10px;
 
   a img{
     border: 0;
   }
   
   .logo{
-    float: left;
-    margin-right: 15px;
+    text-align: center;
   }
 
   .reservation{
-    float: right;
-    margin: 12px 0 0 30px;
+    margin-top: 20px;
     
     .make_reservation{
       line-height: 2em;
@@ -166,13 +166,10 @@ ul{
       display: block;
       width: 300px;
       height: 55px;
-      float: right;
       overflow: hidden;
       color: #f5cd4e;
+      margin: 5px auto;
     
-      &:hover {
-        cursor:pointer;
-      }
       &:before {
         content: url(image_path("btn_reservation.png"));
         display: -moz-inline-box;
@@ -184,32 +181,12 @@ ul{
   }
   
   .nav{
-    float: right;
-    margin-top: 32px;
+    margin-top: 30px;
+    font-size: 120%;
 
     ul li{
       float: left;
-      margin: 0 10px 0 0;
-      
-      ul.sub_nav{
-        position: absolute;
-        margin-top: 7px;
-        li{
-          margin-right: 10px;
-          
-          a{
-            padding: 10px 5px;
-            color: #ac7e01;
-            text-transform: none;
-            font-size: 20px;
-          }
-        }
-      }
-      &:hover{
-        ul.sub_nav{
-          display: block !important;
-        }
-      }
+      margin: 0 10px 0 0;      
     }
     ul li.last{
       margin-right: 0;
@@ -222,9 +199,6 @@ ul{
       font-weight: normal;
       font-family: 'myriad-pro-condensed';
       padding: 5px;
-      &:hover{
-        color: #f5cd4e;
-      }
     }
   }
 }
@@ -243,72 +217,35 @@ ul{
   color: #f5cd4e;
 }
 
-.menus.dinner .header .nav ul li.link_menus ul.sub_nav,
-.menus.dessert .header .nav ul li.link_menus ul.sub_nav,
-.menus.cocktails .header .nav ul li.link_menus ul.sub_nav{
-  display: block !important;
-}
-
-.pages.team  .header .nav ul li.link_about ul.sub_nav,
-.pages.about .header .nav ul li.link_about ul.sub_nav,
-.applicants  .header .nav ul li.link_about ul.sub_nav{
-  display: block !important;
-}
-
-.narrow .header .nav ul li ul.sub_nav{
-  visibility: hidden;
-}
-
 
 // footer
 .footer{
-  background: transparent url(image_path("background_header.png")) repeat 0 0;
+  padding-top: 30px;
   
   span, h3, h4, h5, h6, div, p, strong{
     color: #888;
   }
   
   .overview{
-    background: transparent url(image_path("background_header.png")) repeat 0 0;
-    padding: 30px 0;
-    
-    .logo{
-      float: left;
-      margin-right: $footer_element_margin;
-      opacity: 0.4;
-      &:hover{
-        opacity: 1;
-      }
-    }
+    font-size: 75%;
+    color: #888;
     .location{
-      background: transparent url(image_path("icon_location.png")) no-repeat 0 7px;
-      float: left;
-      margin-right: $footer_element_margin;
-      padding: 10px 0 7px 63px;
-      color: #888;
+      display: block;
+      background: transparent url(image_path("icon_location.png")) no-repeat 0 -128px;
+      padding: 7px 0 7px 68px;
       address{
-        
         margin: 0;
-      }
-      &:hover{
-        color: #F5CD4E;
-        background-position: 0 -134px;
       }
     }
     .contact{
-      background: transparent url(image_path("icon_contact.png")) no-repeat 0 7px;
-      float: left;
-      padding: 10px 0 7px 63px;
-      
-      &:hover{
+      display: block;
+      background: transparent url(image_path("icon_contact.png")) no-repeat 0 -126px;
+      padding: 7px 0 7px 68px;
+      .phone{
+        color: #fff;
+      }
+      .email{
         color: #F5CD4E;
-        background-position: 0 -134px;
-        .phone{
-          color: #fff;
-        }
-        .email{
-          color: #F5CD4E;
-        }
       }
     }
   }
@@ -369,7 +306,6 @@ ul{
     }
   }
   select{
-    height: 30px;
     padding: 5px;
     font-size: 90%;
     option{
@@ -381,10 +317,7 @@ ul{
     width: 317px;
   }
   label, .alt_label{
-    width: $label_width;
     display: block;
-    float: left;
-    text-align: right;
     margin-right: 10px;
     padding-top: 2px;
   }
@@ -420,24 +353,6 @@ ul{
 }
 
   
-
-// special
-.shade{
-  background-color: #000;
-  opacity: 0.7;
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
-.scrollbar_present{
-  padding-left: 25px;
-  background-position: 44.2% -300px;
-}
-
-
 // error
 .error{
   font-size: 90%;
@@ -448,16 +363,9 @@ ul{
   display: inline;
 }
 
-// ckeditor
-body.ckeditor{
-  background: #000;
-  line-height: 1.5em;
-}
-
 
 // home page
 body.home{
-  background: #000 url(image_path('background_home.jpg')) no-repeat top center;
   .new_subscriber{
     margin-top: 20px;
   }
@@ -466,38 +374,32 @@ body.home{
       width: 40px;
     }
     .button{
-      margin: 10px 0 0 50px;
+      margin: 10px 0 0;
     }
   }
   .menu_listing{
-    font-size: 115%;
+    font-size: 125%;
     margin: 4px 0;
   }
 }
 
-// about page
-body.about{}
-
 // team page
 body.team{
   .main { 
-    .layout_half{
-      max-width: 100%;
-    }
-  
     .photo{
       padding: 0 0 60px 40px;
     }
   }
 }
 
-// location page
-body.location{
-  background: #000 url(image_path('background_location.jpg')) no-repeat 0 -250px;
-  
-  .main{
-    .layout_half{
-      max-width: 100%;
-    }
+
+// menu additions
+.menu{
+  .direct_from_london{
+    height: 26px;
+//    padding-left: 30px;
   }
+.direct_from_london_info{
+  margin-top: 30px;
+}
 }

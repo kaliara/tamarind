@@ -1,9 +1,9 @@
 // hide/show special elements
 .mobile_only{
-  display: block;
+  display: block !important;
 }
 .fullscreen_only{
-  display: none;
+  display: none !important;
 }
 
 

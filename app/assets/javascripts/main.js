@@ -25,6 +25,9 @@ $(document).ready(function(){
   $('#make_reservation').click(function(){$('#opentable_form').fadeToggle(); clicky.goal('644'); return false;});
   $('#OT_Find_a_Table').click(function(){clicky.goal('643');})
   
+  // navigation (hide others when hovering)
+  $(".nav ul > li").hover(function(){$(this).siblings().addClass("hide_subnav")}, function(){$(this).siblings().removeClass("hide_subnav")});
+  
   // hide subnav on narrow pages
   if ($(document).width() < 1145)
     $('body').addClass('narrow');

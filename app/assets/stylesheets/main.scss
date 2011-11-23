@@ -194,14 +194,13 @@ ul{
 
     ul li{
       float: left;
-      margin: 0 10px 0 0;
+      padding: 0 10px 0 0;
       
       ul.sub_nav{
         position: absolute;
         margin-top: 7px;
         li{
-          margin-right: 10px;
-          
+          padding-right: 5px;
           a{
             padding: 10px 5px;
             color: #ac7e01;
@@ -235,32 +234,37 @@ ul{
 }
 
 // navigation active
-.menus            .header .nav ul li.link_menus > a,
-.menus.dinner     .header .nav ul li.link_menus .link_menus_dinner a,
-.menus.dessert    .header .nav ul li.link_menus .link_menus_dessert a,
-.menus.cocktails  .header .nav ul li.link_menus .link_menus_cocktails a,
-.pages.about      .header .nav ul li.link_about > a,
-.pages.about      .header .nav ul li.link_about .link_about_story > a,
-.pages.team       .header .nav ul li.link_about .link_about_team > a,
-.applicants       .header .nav ul li.link_about .link_about_careers > a,
-.applicants       .header .nav ul li.link_about > a,
-.messages         .header .nav ul li.link_contact > a {
+.menus                      .header .nav ul li.link_menus > a,
+.menus.dinner               .header .nav ul li.link_menus .link_menus_dinner a,
+.menus.dessert              .header .nav ul li.link_menus .link_menus_dessert a,
+.menus.cocktails            .header .nav ul li.link_menus .link_menus_cocktails a,
+.pages.about                .header .nav ul li.link_about > a,
+.pages.about                .header .nav ul li.link_about .link_about_story > a,
+.pages.team                 .header .nav ul li.link_about .link_about_team > a,
+.pages.press                .header .nav ul li.link_press > a,
+.pages.press                .header .nav ul li.link_press .link_press_coverage > a,
+.pages.media_inquiries      .header .nav ul li.link_press > a,
+.pages.media_inquiries      .header .nav ul li.link_press .link_press_media_inquiries > a,
+.applicants                 .header .nav ul li.link_about .link_about_careers > a,
+.applicants                 .header .nav ul li.link_about > a,
+.messages                   .header .nav ul li.link_contact > a {
   color: #f5cd4e;
 }
 
 .menus.dinner .header .nav ul li.link_menus ul.sub_nav,
 .menus.dessert .header .nav ul li.link_menus ul.sub_nav,
-.menus.cocktails .header .nav ul li.link_menus ul.sub_nav{
-  display: block !important;
-}
-
+.menus.cocktails .header .nav ul li.link_menus ul.sub_nav,
 .pages.team  .header .nav ul li.link_about ul.sub_nav,
 .pages.about .header .nav ul li.link_about ul.sub_nav,
-.applicants  .header .nav ul li.link_about ul.sub_nav{
+.applicants  .header .nav ul li.link_about ul.sub_nav,
+.pages.press .header .nav ul li.link_press ul.sub_nav,
+.pages.media_inquiries .header .nav ul li.link_press ul.sub_nav{
   display: block !important;
 }
 
-.narrow .header .nav ul li ul.sub_nav{
+
+.narrow .header .nav ul li ul.sub_nav,
+.header .nav ul li.hide_subnav ul{
   visibility: hidden;
 }
 

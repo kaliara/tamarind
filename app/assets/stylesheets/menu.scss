@@ -7,103 +7,103 @@ body.menus{
       list-style-type: none;
       margin: 0;
     }
-  }
-}
 
-.menu{
-  font-size: 125%;
-  float: left;
+    .menu{
+      font-size: 125%;
+      float: left;
   
-  .section{
-    margin-bottom: 30px;
-    clear: both;
-    
-    h3{
-      padding: 5px 0;
-      margin-top: 0;
-    }
-    .item{
-      padding: 5px 0;
-      margin-bottom: 10px;
-      h4{
-        float: left;
-        margin: 0 40px 0 0;
-        font-size: 95%;
-        line-height: 1.2em;
-      }
-      .description{
-        color: #666;
-        font-size: 80%;
-        font-weight: normal;
-        margin-bottom: 0;
+      .section{
+        margin-bottom: 30px;
         clear: both;
-      }
-      .price{
-        font-size: 95%;
-        line-height: 1.2em;
-        float: left;
-      }
-    }
-    &.two_column{
-      margin-right: -60px;
-      li{
-        height: 3em;
-        display: block;
-        float: left;
-        margin-right: 60px;
-        width: 35%;
+    
+        h3{
+          padding: 5px 0;
+          margin-top: 0;
+        }
         .item{
-          width: 50%;
+          padding: 5px 0;
+          margin-bottom: 10px;
+          h4{
+            float: left;
+            margin: 0 40px 0 0;
+            font-size: 95%;
+            line-height: 1.2em;
+          }
+          .description{
+            color: #666;
+            font-size: 80%;
+            font-weight: normal;
+            margin-bottom: 0;
+            clear: both;
+          }
+          .price{
+            font-size: 95%;
+            line-height: 1.2em;
+            float: left;
+          }
+        }
+        &.two_column{
+          margin-right: -60px;
+          li{
+            height: 3em;
+            display: block;
+            float: left;
+            margin-right: 60px;
+            width: 35%;
+            .item{
+              width: 50%;
+            }
+          }
+        }    
+      }
+      .direct_from_london{
+        display: block;
+        width: 22px;
+        height: 19px;
+        overflow: hidden;
+        color: #f5cd4e;
+        padding-left: 30px;
+    
+        &:before {
+          content: url(image_path("icon_direct.png"));
+          display: -moz-inline-box;
+          display: inline-block;
+          font-size: 0;
+          line-height: 0;
         }
       }
-    }    
-  }
-  .direct_from_london{
-    display: block;
-    width: 22px;
-    height: 19px;
-    overflow: hidden;
-    color: #f5cd4e;
-    padding-left: 30px;
-    
-    &:before {
-      content: url(image_path("icon_direct.png"));
-      display: -moz-inline-box;
-      display: inline-block;
-      font-size: 0;
-      line-height: 0;
-    }
-  }
-  .direct_from_london_info{
-    margin: 70px 0 0;
-    .direct_from_london{
-      padding: 0 10px 0 0;
-      float: left;
-    }
-  }
-}
-
-.food_samples{
-  margin-top: 20px;
-  float: right;
-  width: 335px;
-  ul{
-    li{
-      position: relative;
-      float: left;
-      height: 231px;
-      margin-bottom: 75px;
-      img{
-        border: 1px solid #555;
+      .direct_from_london_info{
+        margin: 70px 0 0;
+        .direct_from_london{
+          padding: 0 10px 0 0;
+          float: left;
+        }
       }
-      .tooltip{
-        background: url(image_path("background_tooltip.png")) no-repeat 1px -120px;
-        position: absolute;
-        bottom: 0;
-        text-align: center;
-        line-height: 1.2em;
-        padding: 33px 10px 10px;
-        width: 302px;
+    }
+
+    .food_samples{
+      margin-top: 20px;
+      float: right;
+      width: 335px;
+      ul{
+        li{
+          position: relative;
+          float: left;
+          height: 231px;
+          margin-bottom: 75px;
+          img{
+            border: 1px solid #555;
+          }
+          .tooltip{
+            background: url(image_path("background_tooltip.png")) no-repeat 1px -120px;
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+            line-height: 1.2em;
+            padding: 33px 10px 10px;
+            width: 302px;
+          }
+        }
       }
     }
   }

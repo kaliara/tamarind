@@ -108,3 +108,12 @@ body.menus{
     }
   }
 }
+
+// menu intro page
+body.menu_intro{
+  background: #000 url(image_path('background_menus.jpg')) no-repeat top center;
+  
+  .main .layout_half{
+    max-width: 47%;
+  }
+}

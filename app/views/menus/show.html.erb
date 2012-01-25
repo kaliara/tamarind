@@ -8,14 +8,11 @@
         <li class="item">
           <h4><%= item.name %></h4>
           <div class="price"><%= nice_money item.price %></div>
-          <% if item.direct_from_london? %><div class="direct_from_london">**</div><% end %>
           <p class="description"><%= item.description.html_safe %></p>
         </li>
       <% end %>
     </ul>
   <% end %>
-  
-  <% if @menu.slug == "dinner" %><div class="direct_from_london_info"><div class="direct_from_london">**</div> = Item direct from London</div><% end %>
 </div>
 
 <div id="food_samples" class="food_samples fullscreen_only">

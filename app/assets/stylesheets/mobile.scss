@@ -50,7 +50,7 @@ html, body, p, h1, h2, h3, h4, h5{
 }
 
 body{
-  background: #000;
+  background: #000 !important;
 }
 
 p{
@@ -157,6 +157,10 @@ ul{
 
   .reservation{
     margin-top: 20px;
+    
+    .reservation_phone{
+      text-align: center;
+    }
     
     .make_reservation{
       line-height: 2em;
@@ -351,6 +355,11 @@ ul{
   }
 }
 
+.main{
+  .layout_half{
+    max-width: 100%;
+  }
+}
   
 // error
 .error{
@@ -396,9 +405,8 @@ body.team{
 .menu{
   .direct_from_london{
     height: 26px;
-//    padding-left: 30px;
   }
-.direct_from_london_info{
+  .direct_from_london_info{
   margin-top: 30px;
-}
+  }
 }

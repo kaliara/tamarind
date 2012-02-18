@@ -39,10 +39,15 @@ namespace :deploy do
   end  
 end
 
-before "deploy" do 
-  run "export LANG=en_US.UTF-8"
-  puts "SETTING LANG to UTF-8"
+namespace :deploy do  
+  desc "Set LANG"  
+  task :set_lang, :roles => :app do  
+    run "export LANG=en_US.UTF-8"
+    puts "SETTING LANG to UTF-8"
+  end  
 end
+
+after "deploy", "deploy:set_lang"
 after "deploy", "deploy:migrate" 
 after "deploy", "deploy:cleanup"
 # after "deploy:symlink", "assets:symlink"

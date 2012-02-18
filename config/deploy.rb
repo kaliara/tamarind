@@ -39,6 +39,10 @@ namespace :deploy do
   end  
 end
 
+before "deploy" do 
+  run "export LANG=en_US.UTF-8"
+  puts "SETTING LANG to UTF-8"
+end
 after "deploy", "deploy:migrate" 
 after "deploy", "deploy:cleanup"
 # after "deploy:symlink", "assets:symlink"

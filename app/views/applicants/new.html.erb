@@ -90,7 +90,7 @@
   </div>
   <div class="field">
     <%= f.label :employer1_end_date, "End Date" %>
-    <%= f.date_select :employer1_end_date, :start_year => 1970, :end_year => Date.today.year, :order => [:month, :day, :year], :include_blank => true, :default => "" %><span class="note">(leave blank if current employer)</span>
+    <%= f.date_select :employer1_end_date, :start_year => 1970, :end_year => Date.today.year, :order => [:month, :day, :year], :include_blank => true, :default => "" %><span class="note">(leave blank if current)</span>
   </div>
   <div class="field checkbox_field">
     <div class="alt_label">Employer Contact</div>
@@ -239,7 +239,7 @@
   <div class="field checkbox_field">
     <div class="alt_label">Eligibility</div>
     <%= f.check_box :legal_to_work_in_usa %>
-    <%= f.label :legal_to_work_in_usa, "I am legally eligible to work in the USA" %> <span class="note">(proof of documentation required)</span>
+    <%= f.label :legal_to_work_in_usa, "I am legally eligible to work in the USA" %> <span class="note">(documentation required)</span>
   </div>
   
   
@@ -257,14 +257,14 @@
   </div>
   <div class="field">
     <%= f.label :desired_salary, "Desired Salary" %>
-    <%= f.number_field :desired_salary %> <span class="note">(example "35000" for $35,000)</span>
+    <%= f.number_field :desired_salary, :size => 20 %> <span class="note">(example "35000" for $35,000)</span>
   </div>
   <div class="field">
     <%= f.label :available_shifts, "Available Shifts" %>
-    <%= f.text_field :available_shifts %> <span class="note">(example: "Fri-Sun Daytime and Tue-Thu Evenings")</span>
+    <%= f.text_field :available_shifts, :size => 20 %> <span class="note">(example: "Fri-Sun Daytime")</span>
   </div>
   <div class="field">
-    <%= f.label :available_start_date, "Start Date" %>
+    <%= f.label :available_start_date, "Available to Start" %>
     <%= f.date_select :available_start_date, :start_year => Date.today.year, :end_year => Date.today.year + 1, :order => [:month, :day, :year] %>
   </div>
   <div class="actions">

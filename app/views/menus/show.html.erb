@@ -15,16 +15,12 @@
   <% end %>
 </div>
 
-<div id="food_samples" class="food_samples fullscreen_only">
-  <ul class="clearfix">
-    <li><%= image_tag "#{@menu.slug}_photo1.jpg", :alt => "#{render_content(@menu.slug + '_photo1_caption')}" %></li>
-    <li><%= image_tag "#{@menu.slug}_photo2.jpg", :alt => "#{render_content(@menu.slug + '_photo2_caption')}" %></li>
-    <li><%= image_tag "#{@menu.slug}_photo3.jpg", :alt => "#{render_content(@menu.slug + '_photo3_caption')}" %></li>
-  </ul>
+<div id="menu_samples" class="menu_samples fullscreen_only">
+  <%= render_content "#{@menu.slug}_photos" %>
 </div>
 
 <% content_for :scripts do %>
   <script type="text/javascript" charset="utf-8">
-    $('#food_samples').tooltip();
+    $('#menu_samples').tooltip();
   </script>
 <% end %>

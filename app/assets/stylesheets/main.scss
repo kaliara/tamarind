@@ -468,6 +468,16 @@ body.ckeditor{
 }
 
 
+// image styling
+.main img{
+  border: 1px solid #555555;
+}
+.media_inquiries .main img,
+.press .main img{
+  border: none;
+}
+
+
 // home page
 body.home{
   background: #000 url(image_path('background_home.jpg')) no-repeat top center;

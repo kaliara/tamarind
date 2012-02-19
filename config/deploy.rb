@@ -44,6 +44,7 @@ namespace :deploy do
   task :set_lang, :roles => :app do  
     run "export LANG=en_US.UTF-8"
     puts "SETTING LANG to UTF-8"
+    run "locale"
   end  
 end
 

@@ -47,7 +47,7 @@ namespace :deploy do
   end  
 end
 
-after "deploy:update_code", "deploy:set_lang"
+before "deploy", "deploy:set_lang"
 after "deploy", "deploy:migrate" 
 after "deploy", "deploy:cleanup"
 # after "deploy:symlink", "assets:symlink"

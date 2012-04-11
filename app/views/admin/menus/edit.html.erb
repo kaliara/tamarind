@@ -9,6 +9,10 @@
     <%= f.label :viewable %>
     <%= f.check_box :viewable %>
   </div>
+  <div class="field">
+    <%= f.label :position %>
+    <%= f.select :position, 1..Menu.count %>
+  </div>
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

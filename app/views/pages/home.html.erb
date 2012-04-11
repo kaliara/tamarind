@@ -2,12 +2,18 @@
 <%= render_content 'home_page_copy' %>
 
 <h2>Now Open</h2>
-<p class="fullscreen_only">Tamarind of London is located in the <strong>chic Crystal Cove Promenade</strong> <br> at <a href="http://maps.google.com/maps?q=7862+Pacific+Coast+Hwy,+South+Coast,+Orange,+California+92657&hnear=7862+Pacific+Coast+Hwy,+South+Coast,+Orange,+California+92657&gl=us&t=m&z=16&vpsrc=0" target="_blank">7862 East Coast Hwy, Newport Beach</a> and will be open for<br> dinner Monday - Sunday 5 p.m. - 10:30 p.m</p>
-<p class="mobile_only">Tamarind of London is located in the <strong>chic Crystal Cove Promenade</strong> at <a href="http://maps.google.com/maps?q=33.570868,-117.833678&gl=us&t=m&z=16&vpsrc=0" target="_blank">7862 East Coast Hwy, Newport Beach</a> and will be open for dinner Monday - Sunday 5 p.m. - 10:30 p.m</p>
+<p class="fullscreen_only">Tamarind of London is located in the <strong>chic Crystal Cove Promenade</strong> <br> at <a href="http://maps.google.com/maps?q=7862+Pacific+Coast+Hwy,+South+Coast,+Orange,+California+92657&hnear=7862+Pacific+Coast+Hwy,+South+Coast,+Orange,+California+92657&gl=us&t=m&z=16&vpsrc=0" target="_blank">7862 East Coast Hwy, Newport Beach</a></p>
+<p class="mobile_only">Tamarind of London is located in the <strong>chic Crystal Cove Promenade</strong> at <a href="http://maps.google.com/maps?q=33.570868,-117.833678&gl=us&t=m&z=16&vpsrc=0" target="_blank">7862 East Coast Hwy, Newport Beach</a></p>
+<ul class="hours">
+  <li><strong>Lunch:</strong> Friday to Sunday 11:30<sup>AM</sup> to 2:30<sup>PM</sup></li>
+  <li><strong>Dinner:</strong> Everyday 5<sup>PM</sup> onward</li>
+  <li><strong>Happy Hour:</strong> Monday to Thursday 4<sup>PM</sup> to 6<sup>PM</sup></li>
+  <li style="margin-left: 96px">Friday to Sunday 2:30<sup>PM</sup> to 5<sup>PM</sup></li>
+</ul>
 
 
 
-<h2>Our Menu</h2>
+<h2>Our Menus</h2>
 <p>Tamarind of London in Newport Beach has built on the <br class="fullscreen_only"> success of its Michelin-honored predecessor with its <br class="fullscreen_only">unique blend of  Indian cuisine and crossover dishes.<br>
   <% Menu.viewable.each do |menu| %>
     <div class="menu_listing"><%= link_to menu.name + " Menu", view_menu_path(:slug => menu.slug) %></div>

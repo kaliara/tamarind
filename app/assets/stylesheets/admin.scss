@@ -435,15 +435,21 @@ table{
 
 .edit_menu{
   margin-bottom: 30px;
-}
-.edit_menu .field, .edit_menu .actions{
-  float: left;
-  margin-right: 30px;
-  clear: none;
-  label, .alt_label{
-    width: 85px;
+
+  select{
+    min-width: 0;
   }
-}
-.edit_menu .actions input{
-  margin: 0;
+  
+  .field, .actions{
+    float: left;
+    margin-right: 30px;
+    clear: none;
+    label, .alt_label{
+      width: 85px;
+    }
+  }
+
+  .actions input{
+    margin: 0;
+  }
 }

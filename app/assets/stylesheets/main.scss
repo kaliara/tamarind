@@ -496,6 +496,17 @@ body.home{
     font-size: 115%;
     margin: 4px 0;
   }
+  .hours{
+    strong{
+      margin-right: 3px;
+    }
+    sup{
+      vertical-align: 25%;
+    }
+    li{
+      list-style-type: none;
+    }
+  }
 }
 
 // about page

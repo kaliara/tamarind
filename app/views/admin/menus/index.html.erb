@@ -4,7 +4,7 @@
   <tr>
     <th>Name</th>
     <th>Viewable</th>
-    <th>Pdf link</th>
+    <th>Position</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,7 +14,7 @@
   <tr>
     <td><%= menu.name %></td>
     <td><%= menu.viewable? ? "Yes" : "No" %></td>
-    <td><%= menu.pdf_link %></td>
+    <td><%= menu.position %></td>
     <td><%= link_to 'Show', admin_menu_path(menu) %></td>
     <td><%= link_to 'Edit', edit_admin_menu_path(menu) %></td>
     <td><%= link_to 'Destroy', admin_menu_path(menu), :confirm => 'Are you sure?', :method => :delete %></td>

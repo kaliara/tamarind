@@ -89,8 +89,10 @@ body.menus{
         li{
           position: relative;
           float: left;
-          height: 231px;
           margin-bottom: 75px;
+          img{
+            width: 322px;
+          }
           .tooltip{
             background: url(image_path("background_tooltip.png")) no-repeat 1px -120px;
             position: absolute;
